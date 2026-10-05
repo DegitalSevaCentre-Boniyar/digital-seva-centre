@@ -4,10 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0b2a4a">
-<title>DSC Mobile Zone | Mobile Repair, Printing, Gifts &amp; CSC Services | Boniyar</title>
+<title>DSC Mobile Zone | Mobile Repair, Printing, Custom Gifts &amp; CSC Services | Boniyar</title>
 <meta name="description" content="DSC Mobile Zone, Boniyar, Baramulla: mobile repair, accessories, photo and document printing, custom mugs, bottles and T-shirts, and CSC digital assistance.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"DSC Mobile Zone","telephone":["+919541291967","+919596175562"],"email":"[mirelectronics06@gmail.com](mailto:mirelectronics06@gmail.com)","address":{"@type":"PostalAddress","addressLocality":"Boniyar","addressRegion":"Jammu and Kashmir","addressCountry":"IN"}}
+</script>
+
+<!-- Error catcher + safety stub: runs first so problems are visible -->
+<script>
+[window.DSC](https://window.DSC) = { open: function(){ alert("The page script did not finish loading. Press Ctrl+F5. If this repeats, send a screenshot of the red message at the top of the page."); } };
+[window.addEventListener](https://window.addEventListener)("error", function (e) {
+  var b = [document.getElementById](https://document.getElementById)("errbar");
+  if (!b) { b = [document.createElement](https://document.createElement)("div"); [b.id](https://b.id) = "errbar";
+    [b.style.cssText](https://b.style.cssText) = "position:fixed;top:0;left:0;right:0;z-index:9999;background:#b42318;color:#fff;padding:10px 14px;font:14px Arial";
+    ([document.body](https://document.body) || [document.documentElemen](https://document.documentElemen)t).appendChild(b); }
+  [b.textContent](https://b.textContent) = "Page error: " + ([e.message](https://e.message) || "unknown") + " (line " + ([e.lineno](https://e.lineno) || "?") + ")";
+});
+</script>
+
 <style>
-:root{--navy:#0b2a4a;--navy2:#143d6b;--gold:#b7791f;--bg:#f4f6f9;--card:#fff;--ink:#17222e;--mut:#5a6878;--line:#d9e0e8;--ok:#17724a;--r:12px}
+:root{--navy:#0b2a4a;--navy2:#143d6b;--gold:#b7791f;--bg:#f4f6f9;--ink:#17222e;--mut:#5a6878;--line:#d9e0e8;--ok:#17724a;--r:12px}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:110px}
 body{margin:0;font:16px/1.6 "Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--bg)}
@@ -18,26 +34,22 @@ button,input,select,textarea{font:inherit}
 :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 [hidden]{display:none!important}
 
-/* utility bar */
 .util{background:#07192e;color:#cfd9e6;font-size:.8rem}
 .util .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 18px;padding:6px 0}
 .util a{text-decoration:none}.util a:hover{text-decoration:underline}
 .nojs{background:#fff3cd;color:#664d03;text-align:center;padding:8px;font-size:.9rem}
 
-/* header */
 header{background:#fff;border-bottom:4px solid var(--navy);position:sticky;top:0;z-index:50}
 .hd{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo{width:54px;height:54px;flex:none}
-.brand b{display:block;font-size:1.25rem;line-height:1.15;color:var(--navy);letter-spacing:.01em}
+.logo{width:54px;height:54px;flex:none;border-radius:12px}
+.brand b{display:block;font-size:1.25rem;line-height:1.15;color:var(--navy)}
 .brand small{color:var(--mut);font-size:.78rem}
 nav{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
 nav a{text-decoration:none;font-size:.88rem;font-weight:600;padding:9px 12px;border-radius:6px;color:var(--navy)}
 nav a:hover{background:#e8eef5}
-nav .cta{background:var(--navy);color:#fff}
-nav .cta:hover{background:var(--navy2)}
+nav [a.cta](https://a.cta){background:var(--navy);color:#fff}
 
-/* buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:10px 20px;border-radius:8px;border:2px solid transparent;font-weight:700;text-decoration:none;cursor:pointer;background:none;transition:transform .15s,background .15s}
 .btn:hover{transform:translateY(-2px)}
 .b1{background:var(--navy);color:#fff}.b1:hover{background:var(--navy2)}
@@ -45,8 +57,7 @@ nav .cta:hover{background:var(--navy2)}
 .bw{background:#1a8d4e;color:#fff}.bw:hover{background:#15753f}
 .bg{background:var(--gold);color:#fff}
 
-/* hero */
-.hero{background:linear-gradient(135deg,#0b2a4a,#174a7c);color:#fff;padding:54px 0}
+.hero{background:linear-gradient(135deg,#0b2a4a,#174a7c);color:#fff;padding:54px 0 64px}
 .hg{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
 .kick{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:4px 12px;border-radius:999px;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
 .hero h1{font-size:clamp(2rem,4.4vw,3.3rem);line-height:1.12;margin:14px 0;letter-spacing:-.02em}
@@ -54,44 +65,38 @@ nav .cta:hover{background:var(--navy2)}
 .hero .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .hero .b2{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
 .hv{position:relative;border-radius:16px;overflow:hidden;background:#0d355e;border:1px solid rgba(255,255,255,.2);min-height:280px;display:grid;place-items:center}
-.hv img{width:100%;height:100%;min-height:280px;object-fit:cover;display:block}
+.hv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hv .em{font-size:5rem}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:#fff;border:1px solid var(--line);border-radius:var(--r);margin-top:-28px;position:relative;box-shadow:0 10px 30px rgba(11,42,74,.12)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border:1px solid var(--line);border-radius:var(--r);margin-top:-30px;position:relative;box-shadow:0 10px 30px rgba(11,42,74,.12)}
 .stats div{padding:16px 14px;text-align:center;border-right:1px solid var(--line)}
 .stats div:last-child{border:0}
-.stats b{display:block;color:var(--navy);font-size:1.5rem}
+.stats b{display:block;color:var(--navy);font-size:1.4rem}
 .stats span{font-size:.8rem;color:var(--mut)}
-
-/* notice marquee */
 .notice{display:flex;gap:10px;align-items:center;background:#fff8e6;border:1px solid #efd9a0;border-left:5px solid var(--gold);padding:10px 14px;border-radius:8px;font-size:.9rem;margin-top:22px}
 
-/* sections */
 section{padding:60px 0}
+.alt{background:#fff;border-block:1px solid var(--line)}
 .sh{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px;border-bottom:2px solid var(--line);padding-bottom:12px}
 .sh .no{color:var(--gold);font-weight:800;font-size:.8rem;letter-spacing:.12em}
 .sh h2{margin:2px 0 0;font-size:clamp(1.5rem,2.6vw,2.1rem);color:var(--navy);line-height:1.2}
 .sh p{margin:0;color:var(--mut);max-width:460px;font-size:.92rem}
-.alt{background:#fff;border-block:1px solid var(--line)}
 
-/* service tiles */
-.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.tile{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--c,var(--navy));border-radius:var(--r);padding:22px;text-align:left;cursor:pointer;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+.tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.tile{background:#fff;border:1px solid var(--line);border-top:4px solid var(--c,var(--navy));border-radius:var(--r);padding:20px;text-align:left;cursor:pointer;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
 .tile:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(11,42,74,.14)}
-.tile .ic{font-size:2.2rem;width:62px;height:62px;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 12%,#fff);border-radius:14px;margin-bottom:12px}
-.tile h3{margin:0 0 6px;color:var(--navy);font-size:1.12rem}
-.tile p{margin:0 0 12px;color:var(--mut);font-size:.9rem;flex:1}
-.tile .go{font-weight:700;color:var(--c);font-size:.9rem}
-.tile ul{margin:0 0 12px;padding-left:18px;color:var(--mut);font-size:.84rem}
+.tile .ic{font-size:2.1rem;width:60px;height:60px;display:grid;place-items:center;background:#eef3f8;border-radius:14px;margin-bottom:12px}
+.tile h3{margin:0 0 6px;color:var(--navy);font-size:1.08rem}
+.tile ul{margin:0 0 12px;padding-left:18px;color:var(--mut);font-size:.84rem;flex:1}
+.tile .go{font-weight:700;color:var(--c);font-size:.88rem}
 
-/* repair table */
-.tbl{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;font-size:.92rem}
+.tblw{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);font-size:.92rem}
 .tbl th{background:var(--navy);color:#fff;text-align:left;padding:11px 14px;font-size:.82rem;letter-spacing:.04em}
 .tbl td{padding:11px 14px;border-top:1px solid var(--line)}
 .tbl tr:nth-child(even) td{background:#f8fafc}
-.tag{display:inline-block;background:#e4f3ea;color:var(--ok);font-size:.74rem;font-weight:700;padding:2px 9px;border-radius:999px}
-.tblw{overflow-x:auto}
+.tbl tbody tr{cursor:pointer}.tbl tbody tr:hover td{background:#eaf1f8}
+.tag{display:inline-block;background:#e4f3ea;color:var(--ok);font-size:.78rem;font-weight:700;padding:2px 9px;border-radius:999px}
 
-/* products */
 .pg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .pc{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
 .ph{position:relative;height:170px;background:linear-gradient(135deg,#e7eef6,#f6ecd8);display:grid;place-items:center;font-size:3.4rem;overflow:hidden}
@@ -101,34 +106,33 @@ section{padding:60px 0}
 .pc p{margin:0 0 10px;color:var(--mut);font-size:.86rem;flex:1}
 .pc .btn{min-height:40px;padding:6px 14px;font-size:.88rem}
 
-/* sizes */
 .sz{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
 .sz div{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px;text-align:center}
-.sz .box{margin:0 auto 10px;border:2px solid var(--navy);background:#eaf1f8;border-radius:4px;display:grid;place-items:center;font-size:1.4rem}
+.sz .box{margin:0 auto 10px;border:2px solid var(--navy);background:#eaf1f8;border-radius:4px;display:grid;place-items:center;font-size:1.3rem}
 .sz b{color:var(--navy)}.sz small{display:block;color:var(--mut)}
 
-/* process */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
-.st{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;position:relative}
+.st{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px}
 .st:before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;margin-bottom:10px}
 .st h3{margin:0 0 4px;font-size:1.02rem;color:var(--navy)}.st p{margin:0;color:var(--mut);font-size:.88rem}
 
-/* csc checklist */
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tr{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;text-align:center}
+.tr .e{font-size:2rem}.tr h3{margin:6px 0 4px;color:var(--navy);font-size:1rem}.tr p{margin:0;color:var(--mut);font-size:.86rem}
+
 .two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .box2{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px}
 .box2 h3{margin-top:0;color:var(--navy)}
 .ck{list-style:none;padding:0;margin:0}
 .ck li{padding:7px 0 7px 28px;position:relative;border-top:1px solid #edf1f5;font-size:.92rem}
-.ck li:before{content:"✔";position:absolute;left:0;color:var(--ok);font-weight:800}
+.ck li:before{content:"\2714";position:absolute;left:0;color:var(--ok);font-weight:800}
 .trustimg{margin-top:14px;border:1px dashed var(--line);border-radius:10px;overflow:hidden}
 .trustimg img{display:block;width:100%}
 
-/* faq */
 details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:0 18px;margin-bottom:10px}
 summary{padding:14px 0;font-weight:700;cursor:pointer;color:var(--navy)}
 details p{margin:0 0 14px;color:var(--mut)}
 
-/* contact */
 .ct{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
 .cb{background:var(--navy);color:#fff;border-radius:var(--r);padding:28px}
 .cb h2{margin-top:0}.cb a{color:#fff}
@@ -137,37 +141,35 @@ details p{margin:0 0 14px;color:var(--mut)}
 
 footer{background:#07192e;color:#b9c6d6;font-size:.82rem;padding:28px 0 90px}
 footer p{max-width:900px;margin:8px 0 0}
-
 .fab{position:fixed;right:14px;bottom:14px;z-index:60;display:flex;flex-direction:column;gap:10px}
 .fab a{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-size:1.5rem;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.3)}
 
-/* MODAL */
 .ov{position:fixed;inset:0;z-index:100;background:rgba(7,25,46,.7);display:none;align-items:center;justify-content:center;padding:12px}
 .ov.on{display:flex;animation:fade .25s}
-.md{background:#fff;width:min(920px,100%);max-height:calc(100vh - 24px);display:flex;flex-direction:column;border-radius:16px;overflow:hidden;animation:pop .32s cubic-bezier(.2,.8,.2,1);border-top:6px solid var(--c,var(--navy))}
+.md{background:#fff;width:min(940px,100%);max-height:calc(100vh - 24px);display:flex;flex-direction:column;border-radius:16px;overflow:hidden;animation:pop .32s cubic-bezier(.2,.8,.2,1);border-top:6px solid var(--c,var(--navy))}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 @keyframes pop{from{opacity:0;transform:translateY(28px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .mh{display:flex;align-items:center;gap:14px;padding:16px 20px;border-bottom:1px solid var(--line)}
 .mh .ic{font-size:2rem}
 .mh h2{margin:0;font-size:1.3rem;color:var(--navy)}
 .mh p{margin:0;color:var(--mut);font-size:.86rem}
 .mh .sp{flex:1}
 .x{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#f4f6f9;font-size:1.2rem;cursor:pointer}
-.x:hover{background:#e4e9f0}
 .mb{overflow-y:auto;padding:18px 20px;overscroll-behavior:contain}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
 .chip{border:1px solid var(--line);background:#f4f6f9;padding:6px 14px;border-radius:999px;font-size:.84rem;font-weight:600;cursor:pointer}
 .chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.gh{margin:16px 0 8px;color:var(--navy);font-size:1rem}
 .sl{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 .sv{display:flex;gap:14px;border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff;text-align:left;cursor:pointer;width:100%;animation:up .4s both;transition:border-color .15s,box-shadow .15s}
 .sv:hover{border-color:var(--c,var(--navy));box-shadow:0 6px 16px rgba(11,42,74,.1)}
-@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .th{position:relative;flex:none;width:76px;height:76px;border-radius:10px;background:linear-gradient(135deg,#e7eef6,#f6ecd8);display:grid;place-items:center;font-size:2.2rem;overflow:hidden}
 .th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .sv h4{margin:0 0 2px;color:var(--navy);font-size:1rem}
 .sv p{margin:0 0 6px;color:var(--mut);font-size:.82rem;line-height:1.4}
-.meta{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:.8rem}
-.meta b{color:var(--ok)}.meta span{color:var(--mut)}
+.meta{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.8rem}
+.meta b{color:var(--ok)}.meta i{color:var(--mut);font-style:normal}
 .back{border:0;background:none;color:var(--navy);font-weight:700;cursor:pointer;padding:0;margin-bottom:12px}
 .sel{background:#eef4fa;border:1px solid #cfdeee;border-radius:10px;padding:12px 14px;margin-bottom:14px;font-size:.92rem}
 .fg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -176,23 +178,24 @@ label{display:block;font-weight:700;font-size:.84rem}
 input,select,textarea{width:100%;margin-top:4px;padding:11px 12px;border:1px solid #b7c4d2;border-radius:8px;background:#fff;color:var(--ink)}
 textarea{min-height:76px;resize:vertical}
 .bud{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px}
-.bud label{font-weight:600;margin:0}
-.bud input{position:absolute;opacity:0;width:0;height:0}
-.bud span{display:block;text-align:center;border:1px solid #b7c4d2;border-radius:8px;padding:9px 6px;font-size:.84rem;cursor:pointer;background:#fff}
+.bud label{font-weight:600;margin:0;position:relative}
+.bud input{position:absolute;opacity:0;width:100%;height:100%;left:0;top:0;margin:0;cursor:pointer}
+.bud span{display:block;text-align:center;border:1px solid #b7c4d2;border-radius:8px;padding:9px 6px;font-size:.84rem;background:#fff}
 .bud input:checked+span{background:var(--navy);color:#fff;border-color:var(--navy)}
 .bud input:focus-visible+span{outline:3px solid var(--gold)}
 .cons{display:flex;gap:8px;align-items:flex-start;font-weight:400;font-size:.82rem;color:var(--mut);margin:14px 0}
 .cons input{width:auto;margin:4px 0 0}
-.err{color:#b42318;font-size:.84rem;min-height:1.2em;margin:4px 0}
+.err{color:#b42318;font-size:.86rem;min-height:1.2em;margin:4px 0;font-weight:600}
 .hint{font-size:.78rem;color:var(--mut)}
 
-@media(max-width:960px){.tiles,.pg,.steps{grid-template-columns:repeat(2,1fr)}.hg,.ct,.two{grid-template-columns:1fr}.sz{grid-template-columns:repeat(3,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.stats div:nth-child(2){border-right:0}.stats div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
-@media(max-width:640px){.tiles,.pg,.steps,.sl,.fg{grid-template-columns:1fr}.sz{grid-template-columns:repeat(2,1fr)}.hd{flex-direction:column;align-items:flex-start}nav{width:100%;overflow-x:auto;flex-wrap:nowrap;white-space:nowrap}.bud{grid-template-columns:repeat(2,1fr)}section{padding:44px 0}.hero{padding:34px 0 48px}.md{max-height:100vh;border-radius:14px}.mh{padding:12px 14px}.mb{padding:14px}}
+@media(max-width:1000px){.tiles{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:960px){.pg,.steps,.trust{grid-template-columns:repeat(2,1fr)}.hg,.ct,.two{grid-template-columns:1fr}.sz{grid-template-columns:repeat(3,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.stats div:nth-child(2){border-right:0}.stats div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:640px){.tiles,.pg,.steps,.sl,.fg,.trust{grid-template-columns:1fr}.sz{grid-template-columns:repeat(2,1fr)}.hd{flex-direction:column;align-items:flex-start}nav{width:100%;overflow-x:auto;flex-wrap:nowrap;white-space:nowrap}.bud{grid-template-columns:repeat(2,1fr)}section{padding:44px 0}.hero{padding:34px 0 48px}.md{max-height:100vh;border-radius:14px}.mh{padding:12px 14px}.mb{padding:14px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<noscript><div class="nojs">JavaScript is turned off, so service pop-ups and the enquiry form cannot open. Please call or WhatsApp +91 95412 91967.</div></noscript>
+<noscript><div class="nojs">JavaScript is turned off, so pop-ups and the enquiry form cannot open. Please call or WhatsApp +91 95412 91967.</div></noscript>
 
 <div class="util"><div class="w">
   <span>📍 Boniyar, Baramulla, Jammu &amp; Kashmir</span>
@@ -201,12 +204,12 @@ textarea{min-height:76px;resize:vertical}
 
 <header><div class="w hd">
   <a class="brand" href="#top" aria-label="DSC Mobile Zone home">
-    <img class="logo" src="assets/images/logo.png" alt="" onerror="this.replaceWith(logoSvg())">
+    <span id="logo-slot"></span>
     <span><b>DSC Mobile Zone</b><small>Mobiles · Printing · Gifts · Digital Services</small></span>
   </a>
   <nav aria-label="Main">
     <a href="#services">Services</a><a href="#repair-rates">Repair rates</a><a href="#gifts">Custom gifts</a><a href="#printing">Printing</a><a href="#csc">CSC help</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
-    <a class="cta" href="#" data-wa="general">💬 Enquire</a>
+    <a class="cta" href="#contact">💬 Enquire</a>
   </nav>
 </div></header>
 
@@ -215,14 +218,14 @@ textarea{min-height:76px;resize:vertical}
   <div>
     <span class="kick">Boniyar's mobile &amp; digital service point</span>
     <h1>Repair. Print. Personalise. Apply online.</h1>
-    <p>Phone repair and accessories, photo and document printing, custom mugs, bottles and T-shirts, and help with online applications. One shop, clear process, confirmed price before work begins.</p>
+    <p>Phone repair and accessories, photo and document printing, custom mugs, bottles and T-shirts, and help with online applications. One shop, a clear process, and the price confirmed before work begins.</p>
     <div class="row">
       <a class="btn bg" href="#services">Browse services</a>
       <a class="btn b2" href="tel:+919541291967">📞 Call the shop</a>
-      <a class="btn bw" href="#" data-wa="general">💬 WhatsApp</a>
+      <button class="btn bw" type="button" onclick="DSC.wa()">💬 WhatsApp</button>
     </div>
   </div>
-  <div class="hv"><img src="assets/images/hero/shop.jpg" alt="DSC Mobile Zone shop and work" onerror="this.remove()"><span class="em" aria-hidden="true">📱</span></div>
+  <div class="hv"><span class="em" aria-hidden="true">📱</span><img src="assets/images/hero/shop.jpg" alt="DSC Mobile Zone shop and work" onerror="this.remove()"></div>
 </div></div>
 
 <div class="w">
@@ -230,28 +233,29 @@ textarea{min-height:76px;resize:vertical}
     <div><b>5</b><span>Service divisions</span></div>
     <div><b>₹1,099</b><span>Display repair, starting from*</span></div>
     <div><b>2</b><span>Direct contact numbers</span></div>
-    <div><b>100%</b><span>Price confirmed before work</span></div>
+    <div><b>Price first</b><span>Confirmed before any work</span></div>
   </div>
-  <div class="notice"><span aria-hidden="true">ℹ️</span><span>*Starting prices are indicative. Final price and time are confirmed after the shop checks your device. DSC Mobile Zone is a private business and is not a government office.</span></div>
+  <div class="notice"><span aria-hidden="true">ℹ️</span><span>*Prices marked “Indicative” are estimates. The final price and time are confirmed after the shop checks your device. DSC Mobile Zone is a private business and is not a government office.</span></div>
 </div>
 
 <section id="services"><div class="w">
-  <div class="sh"><div><div class="no">SECTION 01</div><h2>Our services</h2></div><p>Select a service division to see every option with its starting price and expected time, then send an enquiry.</p></div>
+  <div class="sh"><div><div class="no">SECTION 01</div><h2>Our services</h2></div><p>Select a division to see every option with its price guide and expected time, then send an enquiry.</p></div>
   <div class="tiles">
-    <button class="tile" style="--c:#0b6bcb" data-open="repair"><div class="ic">🔧</div><h3>Mobile Repairing</h3><ul><li>Display / folder</li><li>Ringer, mic, back panel</li><li>Battery, charging port</li></ul><span class="go">View repair services →</span></button>
-    <button class="tile" style="--c:#6b46c1" data-open="print"><div class="ic">🎨</div><h3>Custom Print &amp; Designing</h3><ul><li>Photos and documents</li><li>Wedding cards, posters</li><li>Logo and graphic design</li></ul><span class="go">View print &amp; design →</span></button>
-    <button class="tile" style="--c:#c05621" data-open="gifts"><div class="ic">🎁</div><h3>Customized Gifts</h3><ul><li>Mugs, bottles, T-shirts</li><li>Caps, keychains, frames</li><li>Mobile skins</li></ul><span class="go">View custom gifts →</span></button>
-    <button class="tile" style="--c:#b7791f" data-open="acc"><div class="ic">🎧</div><h3>Accessories</h3><ul><li>Covers and screen guards</li><li>Chargers and cables</li><li>Earphones, power banks</li></ul><span class="go">View accessories →</span></button>
-    <button class="tile" style="--c:#17724a" data-open="csc"><div class="ic">💻</div><h3>CSC &amp; Digital Services</h3><ul><li>Online forms and applications</li><li>Resume / CV, FSSAI help</li><li>Scanning and documents</li></ul><span class="go">View digital services →</span></button>
+    <button type="button" class="tile" style="--c:#0b6bcb" onclick="DSC.open('repair')"><div class="ic">🔧</div><h3>Mobile Repairing</h3><ul><li>Display / folder</li><li>Ringer, mic, back panel</li><li>Battery, charging port</li></ul><span class="go">View repair services →</span></button>
+    <button type="button" class="tile" style="--c:#6b46c1" onclick="DSC.open('print')"><div class="ic">🎨</div><h3>Custom Print &amp; Designing</h3><ul><li>Photos and documents</li><li>Wedding cards, posters</li><li>Logo and graphic design</li></ul><span class="go">View print &amp; design →</span></button>
+    <button type="button" class="tile" style="--c:#c05621" onclick="DSC.open('gifts')"><div class="ic">🎁</div><h3>Customized Gifts</h3><ul><li>Mugs, bottles, T-shirts</li><li>Caps, keychains, frames</li><li>Mobile skins</li></ul><span class="go">View custom gifts →</span></button>
+    <button type="button" class="tile" style="--c:#b7791f" onclick="DSC.open('acc')"><div class="ic">🎧</div><h3>Accessories</h3><ul><li>Covers, screen guards</li><li>Chargers and cables</li><li>Earphones, power banks</li></ul><span class="go">View accessories →</span></button>
+    <button type="button" class="tile" style="--c:#17724a" onclick="DSC.open('csc')"><div class="ic">💻</div><h3>CSC &amp; Digital Services</h3><ul><li>Online forms, applications</li><li>Resume / CV, FSSAI help</li><li>Scanning and documents</li></ul><span class="go">View digital services →</span></button>
   </div>
 </div></section>
 
 <section id="repair-rates" class="alt"><div class="w">
-  <div class="sh"><div><div class="no">SECTION 02</div><h2>Repair rate guide</h2></div><p>Indicative only. Click a row to send an enquiry for that repair.</p></div>
+  <div class="sh"><div><div class="no">SECTION 02</div><h2>Repair price guide</h2></div><p>Indicative ranges. Click any row to send an enquiry for that repair.</p></div>
   <div class="tblw"><table class="tbl" id="rate-table">
-    <thead><tr><th>Repair</th><th>Starting from</th><th>Expected time</th><th>Note</th></tr></thead>
+    <thead><tr><th>Repair</th><th>Price guide</th><th>Expected time</th><th>Group</th></tr></thead>
     <tbody></tbody>
   </table></div>
+  <p class="hint" style="margin-top:10px">Price depends on phone model, part quality and availability. You approve the final price before we begin.</p>
 </div></section>
 
 <section id="gifts"><div class="w">
@@ -260,7 +264,7 @@ textarea{min-height:76px;resize:vertical}
 </div></section>
 
 <section id="printing" class="alt"><div class="w">
-  <div class="sh"><div><div class="no">SECTION 04</div><h2>Photo &amp; document printing</h2></div><p>Common sizes we print. Ask about other sizes and paper types.</p></div>
+  <div class="sh"><div><div class="no">SECTION 04</div><h2>Photo, document &amp; design printing</h2></div><p>Common sizes we print. Ask about other sizes and paper types.</p></div>
   <div class="sz">
     <div><div class="box" style="width:52px;height:67px">🪪</div><b>Passport</b><small>35 × 45 mm</small></div>
     <div><div class="box" style="width:62px;height:62px">🖼️</div><b>2 × 2</b><small>Photo</small></div>
@@ -272,21 +276,31 @@ textarea{min-height:76px;resize:vertical}
 </div></section>
 
 <section id="how"><div class="w">
-  <div class="sh"><div><div class="no">SECTION 05</div><h2>How it works</h2></div><p>A simple, transparent process from enquiry to collection.</p></div>
+  <div class="sh"><div><div class="no">SECTION 05</div><h2>How it works</h2></div><p>A simple process from enquiry to collection.</p></div>
   <div class="steps">
-    <div class="st"><h3>Choose a service</h3><p>Open a service division and pick the exact repair, product or task.</p></div>
+    <div class="st"><h3>Choose a service</h3><p>Open a division and pick the exact repair, product or task.</p></div>
     <div class="st"><h3>Send your enquiry</h3><p>Fill in the short form. It opens WhatsApp with your details ready to send.</p></div>
-    <div class="st"><h3>Get a confirmed quote</h3><p>The shop replies with the final price and time before any work starts.</p></div>
+    <div class="st"><h3>Get a confirmed quote</h3><p>The shop replies with the final price and time before work starts.</p></div>
     <div class="st"><h3>Visit and collect</h3><p>Bring your device or files. Collect when ready and pay as agreed.</p></div>
   </div>
 </div></section>
 
-<section id="csc" class="alt"><div class="w">
-  <div class="sh"><div><div class="no">SECTION 06</div><h2>CSC &amp; digital assistance</h2></div><p>Help with online services. Requirements differ for every application, so always confirm first.</p></div>
+<section class="alt"><div class="w">
+  <div class="sh"><div><div class="no">SECTION 06</div><h2>Our commitments</h2></div><p>Keep only the commitments you will truly follow.</p></div>
+  <div class="trust">
+    <div class="tr"><div class="e">💰</div><h3>Price first</h3><p>We confirm the price before work begins.</p></div>
+    <div class="tr"><div class="e">👁️</div><h3>Design preview</h3><p>You see your design before it is printed.</p></div>
+    <div class="tr"><div class="e">🔍</div><h3>Honest inspection</h3><p>We explain the fault before repairing.</p></div>
+    <div class="tr"><div class="e">🔒</div><h3>Privacy</h3><p>Your details and documents are handled with care.</p></div>
+  </div>
+</div></section>
+
+<section id="csc"><div class="w">
+  <div class="sh"><div><div class="no">SECTION 07</div><h2>CSC &amp; digital assistance</h2></div><p>Help with online services. Requirements differ for each application, so confirm first.</p></div>
   <div class="two">
     <div class="box2"><h3>What we can help with</h3>
       <ul class="ck"><li>Online application and form filling</li><li>Government form guidance via official portals</li><li>Resume / CV preparation and printing</li><li>FSSAI-related assistance</li><li>Scanning, PDF preparation and printing</li><li>Photos for forms and applications</li></ul>
-      <p style="margin-top:14px"><button class="btn b1" data-open="csc">Open digital services</button></p>
+      <p style="margin-top:14px"><button type="button" class="btn b1" onclick="DSC.open('csc')">Open digital services</button></p>
     </div>
     <div class="box2"><h3>Documents you may need</h3>
       <ul class="ck"><li>Original identity proof</li><li>Mobile number linked to your records</li><li>Address proof, if the application asks for it</li><li>Recent passport-size photographs</li><li>Any earlier application or reference number</li></ul>
@@ -296,23 +310,23 @@ textarea{min-height:76px;resize:vertical}
   </div>
 </div></section>
 
-<section id="faq"><div class="w" style="max-width:860px">
-  <div class="sh"><div><div class="no">SECTION 07</div><h2>Frequently asked questions</h2></div></div>
+<section id="faq" class="alt"><div class="w" style="max-width:860px">
+  <div class="sh"><div><div class="no">SECTION 08</div><h2>Frequently asked questions</h2></div></div>
   <details><summary>Is this an official government website?</summary><p>No. This is the website of DSC Mobile Zone, a private business. We help customers with some online and CSC-type services, but this site is not run by or endorsed by any government department.</p></details>
-  <details><summary>Is ₹1,099 the final price for a display repair?</summary><p>No, it is an indicative starting price. The final price depends on the phone model, the part and the quality option. You approve the price before we start.</p></details>
+  <details><summary>Is ₹1,099 the final price for a display repair?</summary><p>No. It is an indicative starting price for a basic display. The final price depends on the phone model and the part quality. You approve the price before we start.</p></details>
   <details><summary>How long will my repair take?</summary><p>The times shown are estimates. Some repairs need parts to be ordered. We confirm the time after checking your phone.</p></details>
   <details><summary>What happens when I press Send on the form?</summary><p>WhatsApp opens with your details already typed into a message to the shop. You then press Send in WhatsApp. The website never sends anything by itself.</p></details>
   <details><summary>Can I order a custom design without visiting?</summary><p>Yes. Send your enquiry, then share your photo or name text on WhatsApp. We confirm the design and price before printing.</p></details>
 </div></section>
 
-<section id="contact" class="alt"><div class="w ct">
+<section id="contact"><div class="w ct">
   <div class="cb">
-    <div class="no" style="color:#f0c674;font-weight:800;font-size:.8rem;letter-spacing:.12em">SECTION 08</div>
+    <div style="color:#f0c674;font-weight:800;font-size:.8rem;letter-spacing:.12em">SECTION 09</div>
     <h2>Contact DSC Mobile Zone</h2>
     <p>Call or message to confirm availability, current prices and timing before you visit.</p>
     <div class="row">
       <a class="btn bg" href="tel:+919541291967">📞 Call 95412 91967</a>
-      <a class="btn bw" href="#" data-wa="general">💬 WhatsApp</a>
+      <button class="btn bw" type="button" onclick="DSC.wa()">💬 WhatsApp</button>
       <a class="btn b2" style="background:#fff" href="mailto:mirelectronics06@gmail.com">✉ Email</a>
     </div>
     <dl>
@@ -324,11 +338,10 @@ textarea{min-height:76px;resize:vertical}
     </dl>
   </div>
   <div class="box2">
-    <h3>Quick enquiry</h3>
-    <p style="color:var(--mut)">Not sure which service you need? Describe it and we will guide you.</p>
-    <button class="btn b1" data-open="other">Send a general enquiry</button>
-    <p class="hint" style="margin-top:16px">Tip: add your Google Maps link in the <code>SHOP</code> settings in the code to show a Directions button here.</p>
-    <a id="maplink" class="btn b2" href="#" target="_blank" rel="noopener" hidden>📍 Get directions</a>
+    <h3>Not sure what you need?</h3>
+    <p style="color:var(--mut)">Describe it and we will guide you.</p>
+    <button type="button" class="btn b1" onclick="DSC.open('other')">Send a general enquiry</button>
+    <p style="margin-top:16px"><a id="maplink" class="btn b2" href="#" target="_blank" rel="noopener" hidden>📍 Get directions</a></p>
   </div>
 </div></section>
 </main>
@@ -336,15 +349,14 @@ textarea{min-height:76px;resize:vertical}
 <footer><div class="w">
   <b style="color:#fff">DSC Mobile Zone, Boniyar</b>
   <p>Independent private business. Not affiliated with, or endorsed by, any government body. CSC and online services are assisted via official portals. Prices, availability and timelines are indicative and confirmed by the shop before work begins.</p>
-  <p>Never share OTPs, PINs or passwords. Website © DSC Mobile Zone.</p>
+  <p>Never share OTPs, PINs or passwords. &nbsp;·&nbsp; Build v6</p>
 </div></footer>
 
 <div class="fab">
-  <a href="#" data-wa="general" style="background:#1a8d4e;color:#fff" aria-label="WhatsApp">💬</a>
+  <a href="#contact" style="background:#1a8d4e;color:#fff" aria-label="Contact">💬</a>
   <a href="tel:+919541291967" style="background:#0b2a4a;color:#fff" aria-label="Call">📞</a>
 </div>
 
-<!-- MODAL -->
 <div class="ov" id="ov" role="dialog" aria-modal="true" aria-labelledby="m-title">
   <div class="md" id="md">
     <div class="mh">
@@ -358,257 +370,291 @@ textarea{min-height:76px;resize:vertical}
 </div>
 
 <script>
-(function(){
+(function () {
 "use strict";
 
-/* ====== SHOP SETTINGS: EDIT HERE ====== */
+/* ===================== SETTINGS: EDIT HERE ===================== */
 var SHOP = {
   name: "DSC Mobile Zone",
-  numbers: ["919541291967","919596175562"],   /* enquiries go randomly to one of these */
-  mapUrl: ""                                   /* paste a full https Google Maps link to show Directions */
+  numbers: ["919541291967", "919596175562"],   /* enquiry goes to one of these at random */
+  mapUrl: ""                                    /* paste a full https Google Maps link for a Directions button */
 };
-
-/* ====== SERVICES: EDIT PRICES AND TIMES HERE ======
-   Each item: [emoji, name, description, price text, time text, image file (inside assets/images/)]
-   Prices other than display replacement are NOT confirmed. Change them to your real rates. */
 var IMG = "assets/images/";
+
+/* ===================== SERVICES: EDIT PRICES AND TIMES HERE =====================
+   Item = [emoji, name, description, price text, time text, image file, optional variants]
+   Variants = [[label, price text], ...]
+   Prices marked "Indicative" are market estimates, NOT your rates. Replace with your real prices. */
 var CATS = {
-  repair:{title:"Mobile Repairing",icon:"🔧",color:"#0b6bcb",sub:"Choose the repair. Final price is confirmed after inspection.",
-   groups:{
-    "Display":[
-     ["📱","Display / folder replacement","Cracked, lined or dead screen. Different grades available: standard, better-quality and original where stocked.","Starting from ₹1,099","Est. same day to 2 days","repairs/display.jpg"],
-     ["✨","AMOLED / OLED display","For phones with AMOLED or OLED panels. Model-specific part.","On inspection","Est. 1 to 3 days","repairs/display.jpg"],
-     ["🧩","Touch not working","Touch glitch, ghost touch or dead zones. We check if the display or board is at fault.","On inspection","Est. same day to 2 days","repairs/display.jpg"]],
-    "Audio":[
-     ["🔊","Ringer / loudspeaker","Low, cracked or no sound from the main speaker.","On inspection","Est. same day","repairs/ringer.jpg"],
-     ["🎙️","Microphone","People cannot hear you on calls, or voice notes are faint.","On inspection","Est. same day","repairs/mic.jpg"],
-     ["📞","Earpiece","Cannot hear the caller during calls.","On inspection","Est. same day","repairs/ringer.jpg"]],
-    "Body & power":[
-     ["📲","Back panel / glass","Broken or dented back panel. Model-specific.","On inspection","Est. 1 to 3 days","repairs/backpanel.jpg"],
-     ["🔋","Battery replacement","Fast drain, swelling or shutting down.","On inspection","Est. same day","repairs/battery.jpg"],
-     ["🔌","Charging port / not charging","Loose port, slow or no charging.","On inspection","Est. same day","repairs/charging.jpg"]],
-    "Software":[
-     ["⚙️","Software / hang / update","Slow phone, hanging, app problems, setup.","On inspection","Est. same day","repairs/software.jpg"],
-     ["🛠️","Other fault","Describe the problem and we will check it.","On inspection","After checking","repairs/software.jpg"]]
-   }},
-  print:{title:"Custom Print & Designing",icon:"🎨",color:"#6b46c1",sub:"Printing and design work. Share your requirement in the form.",
-   groups:{
-    "Photos & documents":[
-     ["🪪","Passport / 2×2 photos","Passport, 2×2 and 4×4 photos for forms and IDs.","Ask for rate","Est. while you wait","printing/passport.jpg"],
-     ["🖼️","Photo printing 4×6","Standard 4×6 photo prints and other sizes.","Ask for rate","Est. while you wait","printing/photos.jpg"],
-     ["📄","Document / A4 printing","Black and white or colour A4 documents.","Ask for rate","Est. while you wait","printing/documents.jpg"]],
-    "Design":[
-     ["💌","Wedding / invitation cards","Design and printing. Share event details and quantity.","Ask for quote","Est. 2 to 5 days","printing/wedding-cards.jpg"],
-     ["🎨","Graphic designing","Posters, business cards, social media and product designs.","Ask for quote","Est. 1 to 3 days","printing/design.jpg"],
-     ["📣","Banners / flex / stickers","Shop and event banners, labels and stickers.","Ask for quote","Est. 1 to 3 days","printing/banners.jpg"]]
-   }},
-  gifts:{title:"Customized Gifts",icon:"🎁",color:"#c05621",sub:"Personalised with your name, photo or design. Design preview before printing.",
-   groups:{
-    "Drinkware":[
-     ["☕","Custom mug","Birthday, wedding, photo or name mugs with full-wrap print.","Ask for rate","Est. 1 to 2 days","gifts/mugs/mug-1.jpg"],
-     ["🍼","Custom bottle","Branded bottles with names and artwork.","Ask for rate","Est. 1 to 3 days","gifts/bottles/bottle-1.jpg"]],
-    "Wearables":[
-     ["👕","Custom T-shirt","Your photo, text or design on a T-shirt.","Ask for rate","Est. 1 to 3 days","gifts/tshirts/tshirt-1.jpg"],
-     ["🧢","Custom cap","Printed caps with your design.","Ask for rate","Est. 1 to 3 days","gifts/caps/cap-1.jpg"]],
-    "Keepsakes":[
-     ["🔑","Keychain","Photo or name keychains.","Ask for rate","Est. 1 to 2 days","gifts/keychains/keychain-1.jpg"],
-     ["🖼️","Photo frame","Personalised frames and photo gifts.","Ask for rate","Est. 1 to 2 days","gifts/frames/frame-1.jpg"],
-     ["📱","Mobile skin","Custom skin for your phone model.","Ask for rate","Est. 1 to 2 days","gifts/skins/skin-1.jpg"],
-     ["🎁","Other personalised gift","Tell us your idea.","Ask for quote","After discussion","gifts/mugs/mug-2.jpg"]]
-   }},
-  acc:{title:"Mobile Accessories",icon:"🎧",color:"#b7791f",sub:"Tell us your phone model. Stock and prices change, so we confirm them.",
-   groups:{
-    "Protection":[
-     ["📱","Mobile cover","Covers for popular models.","Ask for rate","In stock items only","accessories/covers.jpg"],
-     ["🛡️","Screen protector","Tempered glass and guards.","Ask for rate","Usually while you wait","accessories/guards.jpg"]],
-    "Charging":[
-     ["🔌","Charger","Options from budget to higher-quality. Ask about warranty.","Ask for rate","In stock items only","accessories/chargers.jpg"],
-     ["🧵","Cable","Type-C, micro-USB and lightning where available.","Ask for rate","In stock items only","accessories/cables.jpg"],
-     ["🔋","Power bank","Portable charging. Ask about capacity.","Ask for rate","In stock items only","accessories/powerbank.jpg"]],
-    "Audio":[
-     ["🎧","Earphones / headset","Wired and wireless, where stocked.","Ask for rate","In stock items only","accessories/earphones.jpg"]]
-   }},
-  csc:{title:"CSC & Digital Services",icon:"💻",color:"#17724a",sub:"Describe the service you need. We confirm what documents to bring.",
-   groups:{
-    "Applications":[
-     ["📝","Online application / form","Help filling and submitting online forms. Mention the application name.","Service charge: ask","Depends on application","csc/forms.jpg"],
-     ["🏛️","Government form guidance","Guidance on using official portals.","Service charge: ask","Depends on application","csc/forms.jpg"],
-     ["🍲","FSSAI-related assistance","Help with FSSAI application steps.","Service charge: ask","Depends on application","csc/fssai.jpg"]],
-    "Documents":[
-     ["💼","Resume / CV","Formatting, design and printing.","Ask for rate","Est. same day","csc/resume.jpg"],
-     ["🖨️","Scanning / PDF","Scan documents, prepare PDFs for upload.","Ask for rate","Est. while you wait","csc/scanning.jpg"],
-     ["📷","Photos for forms","Correct size photos for applications.","Ask for rate","Est. while you wait","printing/passport.jpg"]]
-   }},
-  other:{title:"General Enquiry",icon:"💬",color:"#0b2a4a",sub:"Not sure what you need? Tell us and we will guide you.",
-   groups:{"General":[["💬","General enquiry","Ask us anything about our services.","—","—","hero/shop.jpg"]]}}
+  repair: { title: "Mobile Repairing", icon: "🔧", color: "#0b6bcb",
+    sub: "Choose the repair. Final price and time are confirmed after inspection.",
+    groups: {
+      "Display": [
+        ["📱","Display / folder replacement","Cracked, lined or dead screen. Choose a quality grade below in the form.","From ₹1,099","Est. same day to 2 days","repairs/display.jpg",
+          [["Basic LCD display","From ₹1,099"],["Better-quality display","Indicative ₹1,500 – ₹3,000"],["AMOLED / OLED display","Indicative ₹2,500 – ₹6,000"],["Original / OEM part","On inspection"]]],
+        ["🧩","Touch not working","Touch glitch, ghost touch or dead zones. We check whether the display or the board is at fault.","On inspection","Est. same day to 2 days","repairs/display.jpg"]
+      ],
+      "Audio": [
+        ["🔊","Ringer / loudspeaker","Low, cracked or no sound from the main speaker.","Indicative ₹250 – ₹500","Est. same day","repairs/ringer.jpg"],
+        ["🎙️","Microphone","People cannot hear you on calls, or voice notes are faint.","Indicative ₹200 – ₹400","Est. same day","repairs/mic.jpg"],
+        ["📞","Earpiece","Cannot hear the caller during calls.","Indicative ₹250 – ₹500","Est. same day","repairs/ringer.jpg"]
+      ],
+      "Body & power": [
+        ["📲","Back panel / glass","Broken or dented back panel. Model-specific.","On inspection","Est. 1 to 3 days","repairs/backpanel.jpg"],
+        ["🔋","Battery replacement","Fast drain, swelling or shutting down.","Indicative ₹800 – ₹1,500","Est. same day","repairs/battery.jpg"],
+        ["🔌","Charging port / not charging","Loose port, slow or no charging.","Indicative ₹400 – ₹800","Est. same day","repairs/charging.jpg"]
+      ],
+      "Software": [
+        ["⚙️","Software / hang / update","Slow phone, hanging, app problems, setup.","Ask for price","Est. same day","repairs/software.jpg"],
+        ["🛠️","Other fault","Describe the problem and we will check it.","On inspection","After checking","repairs/software.jpg"]
+      ]
+    } },
+  print: { title: "Custom Print & Designing", icon: "🎨", color: "#6b46c1",
+    sub: "Printing and design work. Share your requirement in the form.",
+    groups: {
+      "Photos & documents": [
+        ["🪪","Passport / 2×2 photos","Passport, 2×2 and 4×4 photos for forms and IDs.","Ask for rate","Est. while you wait","printing/passport.jpg"],
+        ["🖼️","Photo printing 4×6","Standard 4×6 photo prints and other sizes.","Ask for rate","Est. while you wait","printing/photos.jpg"],
+        ["📄","Document / A4 printing","Black and white or colour A4 documents.","Ask for rate","Est. while you wait","printing/documents.jpg"]
+      ],
+      "Design": [
+        ["💌","Wedding / invitation cards","Design and printing. Share event details and quantity.","Ask for quote","Est. 2 to 5 days","printing/wedding-cards.jpg"],
+        ["🎨","Graphic designing","Posters, business cards, social media and product designs.","Ask for quote","Est. 1 to 3 days","printing/design.jpg"],
+        ["📣","Banners / flex / stickers","Shop and event banners, labels and stickers.","Ask for quote","Est. 1 to 3 days","printing/banners.jpg"]
+      ]
+    } },
+  gifts: { title: "Customized Gifts", icon: "🎁", color: "#c05621",
+    sub: "Personalised with your name, photo or design. Design preview before printing.",
+    groups: {
+      "Drinkware": [
+        ["☕","Custom mug","Birthday, wedding, photo or name mugs with full-wrap print.","Ask for rate","Est. 1 to 2 days","gifts/mugs/mug-1.jpg"],
+        ["🍼","Custom bottle","Branded bottles with names and artwork.","Ask for rate","Est. 1 to 3 days","gifts/bottles/bottle-1.jpg"]
+      ],
+      "Wearables": [
+        ["👕","Custom T-shirt","Your photo, text or design on a T-shirt.","Ask for rate","Est. 1 to 3 days","gifts/tshirts/tshirt-1.jpg"],
+        ["🧢","Custom cap","Printed caps with your design.","Ask for rate","Est. 1 to 3 days","gifts/caps/cap-1.jpg"]
+      ],
+      "Keepsakes": [
+        ["🔑","Keychain","Photo or name keychains.","Ask for rate","Est. 1 to 2 days","gifts/keychains/keychain-1.jpg"],
+        ["🖼️","Photo frame","Personalised frames and photo gifts.","Ask for rate","Est. 1 to 2 days","gifts/frames/frame-1.jpg"],
+        ["📱","Mobile skin","Custom skin for your phone model.","Ask for rate","Est. 1 to 2 days","gifts/skins/skin-1.jpg"],
+        ["🎁","Other personalised gift","Tell us your idea.","Ask for quote","After discussion","gifts/mugs/mug-2.jpg"]
+      ]
+    } },
+  acc: { title: "Mobile Accessories", icon: "🎧", color: "#b7791f",
+    sub: "Tell us your phone model. Stock and prices change, so we confirm them.",
+    groups: {
+      "Protection": [
+        ["📱","Mobile cover","Covers for popular models.","Ask for rate","In-stock items","accessories/covers.jpg"],
+        ["🛡️","Screen protector","Tempered glass and guards.","Ask for rate","Usually while you wait","accessories/guards.jpg"]
+      ],
+      "Charging": [
+        ["🔌","Charger","Options from budget to higher quality. Ask about warranty.","Ask for rate","In-stock items","accessories/chargers.jpg"],
+        ["🧵","Cable","Type-C, micro-USB and lightning where available.","Ask for rate","In-stock items","accessories/cables.jpg"],
+        ["🔋","Power bank","Portable charging. Ask about capacity.","Ask for rate","In-stock items","accessories/powerbank.jpg"]
+      ],
+      "Audio": [
+        ["🎧","Earphones / headset","Wired and wireless, where stocked.","Ask for rate","In-stock items","accessories/earphones.jpg"]
+      ]
+    } },
+  csc: { title: "CSC & Digital Services", icon: "💻", color: "#17724a",
+    sub: "Describe the service you need. We confirm which documents to bring.",
+    groups: {
+      "Applications": [
+        ["📝","Online application / form","Help filling and submitting online forms. Mention the application name.","Service charge: ask","Depends on application","csc/forms.jpg"],
+        ["🏛️","Government form guidance","Guidance on using official portals.","Service charge: ask","Depends on application","csc/forms.jpg"],
+        ["🍲","FSSAI-related assistance","Help with FSSAI application steps.","Service charge: ask","Depends on application","csc/fssai.jpg"]
+      ],
+      "Documents": [
+        ["💼","Resume / CV","Formatting, design and printing.","Ask for rate","Est. same day","csc/resume.jpg"],
+        ["🖨️","Scanning / PDF","Scan documents and prepare PDFs for upload.","Ask for rate","Est. while you wait","csc/scanning.jpg"],
+        ["📷","Photos for forms","Correct-size photos for applications.","Ask for rate","Est. while you wait","printing/passport.jpg"]
+      ]
+    } },
+  other: { title: "General Enquiry", icon: "💬", color: "#0b2a4a",
+    sub: "Not sure what you need? Tell us and we will guide you.",
+    groups: { "General": [["💬","General enquiry","Ask us anything about our services.","—","—","hero/shop.jpg"]] } }
 };
 
-/* ====== Helpers ====== */
-function $(id){return [document.getElementById](https://document.getElementById)(id);}
-function el(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e;}
-function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
-function thumb(emoji,file){
-  var t=el("span","th");t.appendChild([document.createTextNode](https://document.createTextNode)(emoji));
-  var i=new Image();i.alt="";i.loading="lazy";i.onload=function(){t.appendChild(i);};i.src=IMG+file;return t;
-}
-function logoSvg(){
-  var d=el("span");d.innerHTML='<svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0b2a4a"/><rect x="20" y="9" width="24" height="40" rx="5" fill="none" stroke="#f0c674" stroke-width="3"/><path d="M34 17l-8 13h6l-2 11 9-14h-6z" fill="#f0c674"/><text x="32" y="59" font-size="9" font-weight="700" text-anchor="middle" fill="#fff" font-family="Arial">DSC</text></svg>';
-  return [d.firstChild](https://d.firstChild);
-}
-[window.logoSvg](https://window.logoSvg)=logoSvg;
+var BUDGETS = ["Under ₹500","₹500 – ₹1,100","₹1,100 – ₹2,500","₹2,500 – ₹5,000","Above ₹5,000","Need advice"];
 
-/* ====== Static page sections built from data ====== */
-function buildPage(){
-  var rows=$("rate-table").querySelector("tbody");
-  var notes={"Display / folder replacement":"Model-specific part"};
-  [Object.keys](https://Object.keys)([CATS.repair.group](https://CATS.repair.group)s).forEach(function(g){
-    [CATS.repair.groups](https://CATS.repair.groups)[g].forEach(function(s){
-      var tr=el("tr");tr.style.cursor="pointer";tr.tabIndex=0;
-      [tr.innerHTML](https://tr.innerHTML)="<td>"+s[0]+" <b>"+esc(s[1])+"</b></td><td><span class='tag'>"+esc(s[3])+"</span></td><td>"+esc(s[4])+"</td><td>"+esc(notes[s[1]]||g)+"</td>";
-      var go=function(){openForm("repair",s);};
-      [tr.addEventListener](https://tr.addEventListener)("click",go);
-      [tr.addEventListener](https://tr.addEventListener)("keydown",function(e){if([e.key](https://e.key)==="Enter")go();});
+/* ===================== HELPERS ===================== */
+function $(id) { return [document.getElementById](https://document.getElementById)(id); }
+function el(tag, cls, html) { var e = [document.createElement](https://document.createElement)(tag); if (cls) [e.className](https://e.className) = cls; if (html != null) [e.innerHTML](https://e.innerHTML) = html; return e; }
+function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]; }); }
+function photo(holder, file, alt) {
+  var i = new Image(); [i.alt](https://i.alt) = alt || ""; [i.onload](https://i.onload) = function () { [holder.appendChild](https://holder.appendChild)(i); }; [i.src](https://i.src) = IMG + file;
+}
+function thumb(emoji, file) { var t = el("span", "th"); [t.appendChild](https://t.appendChild)([document.createTextNode](https://document.createTextNode)(emoji)); photo(t, file); return t; }
+
+/* ===================== LOGO ===================== */
+(function () {
+  var slot = $("logo-slot");
+  [slot.innerHTML](https://slot.innerHTML) = '<svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0b2a4a"/><rect x="20" y="8" width="24" height="38" rx="5" fill="none" stroke="#f0c674" stroke-width="3"/><path d="M34 15l-8 13h6l-2 11 9-14h-6z" fill="#f0c674"/><text x="32" y="59" font-size="9" font-weight="700" text-anchor="middle" fill="#fff" font-family="Arial">DSC</text></svg>';
+  var li = new Image(); [li.className](https://li.className) = "logo"; [li.alt](https://li.alt) = "DSC Mobile Zone logo";
+  [li.onload](https://li.onload) = function () { [slot.innerHTML](https://slot.innerHTML) = ""; [slot.appendChild](https://slot.appendChild)(li); };
+  [li.src](https://li.src) = IMG + "logo.png";
+})();
+
+/* ===================== PAGE SECTIONS ===================== */
+function buildPage() {
+  var rows = $("rate-table").querySelector("tbody");
+  [Object.keys](https://Object.keys)([CATS.repair.group](https://CATS.repair.group)s).forEach(function (g) {
+    [CATS.repair.groups](https://CATS.repair.groups)[g].forEach(function (s) {
+      var tr = el("tr");
+      [tr.tabIndex](https://tr.tabIndex) = 0;
+      [tr.innerHTML](https://tr.innerHTML) = "<td>" + s[0] + " <b>" + esc(s[1]) + "</b></td><td><span class='tag'>" + esc(s[3]) + "</span></td><td>" + esc(s[4]) + "</td><td>" + esc(g) + "</td>";
+      var go = function () { openForm("repair", s); };
+      [tr.addEventListener](https://tr.addEventListener)("click", go);
+      [tr.addEventListener](https://tr.addEventListener)("keydown", function (e) { if ([e.key](https://e.key) === "Enter") go(); });
       [rows.appendChild](https://rows.appendChild)(tr);
     });
   });
-  function cards(gridId,cat,groupNames){
-    var grid=$(gridId);
-    [groupNames.forEach](https://groupNames.forEach)(function(g){
-      CATS[cat].groups[g].forEach(function(s){
-        var c=el("article","pc");
-        var p=el("div","ph");p.appendChild([document.createTextNode](https://document.createTextNode)(s[0]));
-        var i=new Image();i.alt=s[1];i.loading="lazy";i.onload=function(){p.appendChild(i);};i.src=IMG+s[5];
-        var b=el("div","bd","<h3>"+esc(s[1])+"</h3><p>"+esc(s[2])+"</p>");
-        var btn=el("button","btn b2","Enquire →");btn.type="button";
-        [btn.addEventListener](https://btn.addEventListener)("click",function(){openForm(cat,s);});
-        [b.appendChild](https://b.appendChild)(btn);c.appendChild(p);c.appendChild(b);grid.appendChild(c);
+  function cards(gridId, cat, groups) {
+    var grid = $(gridId);
+    [groups.forEach](https://groups.forEach)(function (g) {
+      CATS[cat].groups[g].forEach(function (s) {
+        var c = el("article", "pc");
+        var p = el("div", "ph"); [p.appendChild](https://p.appendChild)([document.createTextNode](https://document.createTextNode)(s[0])); photo(p, s[5], s[1]);
+        var b = el("div", "bd", "<h3>" + esc(s[1]) + "</h3><p>" + esc(s[2]) + "</p>");
+        var btn = el("button", "btn b2", "Enquire →"); [btn.type](https://btn.type) = "button";
+        [btn.addEventListener](https://btn.addEventListener)("click", function () { openForm(cat, s); });
+        [b.appendChild](https://b.appendChild)(btn); [c.appendChild](https://c.appendChild)(p); [c.appendChild](https://c.appendChild)(b); [grid.appendChild](https://grid.appendChild)(c);
       });
     });
   }
-  cards("gift-grid","gifts",[Object.keys](https://Object.keys)([CATS.gifts.group](https://CATS.gifts.group)s));
-  cards("print-grid","print",["Design"]);
-  if([SHOP.mapUrl](https://SHOP.mapUrl)&&/^https:\/\//.test([SHOP.mapUr](https://SHOP.mapUr)l)){var m=$("maplink");m.href=SHOP.mapUrl;m.hidden=false;}
+  cards("gift-grid", "gifts", [Object.keys](https://Object.keys)([CATS.gifts.group](https://CATS.gifts.group)s));
+  cards("print-grid", "print", ["Design"]);
+  if ([SHOP.mapUrl](https://SHOP.mapUrl) && /^https:\/\//.test([SHOP.mapUr](https://SHOP.mapUr)l)) { var m = $("maplink"); [m.href](https://m.href) = [SHOP.mapUrl](https://SHOP.mapUrl); [m.hidden](https://m.hidden) = false; }
 }
 
-/* ====== Modal ====== */
-var ov=$("ov"),body=$("m-body"),lastFocus=null,current=null;
-function openModal(){lastFocus=document.activeElement;ov.classList.add("on");document.body.classList.add("lock");$("m-x").focus();}
-function closeModal(){ov.classList.remove("on");document.body.classList.remove("lock");if(lastFocus&&lastFocus.focus)lastFocus.focus();}
-function setHead(cat){
-  var c=CATS[cat];current=cat;
-  $("md").style.setProperty("--c",[c.colo](https://c.colo)r);
-  $("m-ic").textContent=c.icon;$("m-title").textContent=c.title;$("m-sub").textContent=c.sub;
+/* ===================== MODAL ===================== */
+var ov = $("ov"), body = $("m-body"), lastFocus = null;
+function openModal() { if (!ov.classList.contains("on")) { lastFocus = [document.activeElement](https://document.activeElement); [ov.classList.add](https://ov.classList.add)("on"); [document.body.classList.add](https://document.body.classList.add)("lock"); } $("m-x").focus(); }
+function closeModal() { [ov.classList.remove](https://ov.classList.remove)("on"); [document.body.classList.remove](https://document.body.classList.remove)("lock"); if (lastFocus && [lastFocus.focu](https://lastFocus.focu)s) [lastFocus.focus](https://lastFocus.focus)(); }
+function setHead(cat) {
+  var c = CATS[cat];
+  $("md").style.setProperty("--c", [c.colo](https://c.colo)r);
+  $("m-ic").textContent = [c.icon](https://c.icon); $("m-title").textContent = [c.title](https://c.title); $("m-sub").textContent = [c.sub](https://c.sub);
 }
-function openList(cat){
-  setHead(cat);body.innerHTML="";
-  var c=CATS[cat],names=Object.keys([c.group](https://c.group)s);
-  var chips=el("div","chips");
-  var lists=el("div");
-  function show(filter){
-    [lists.innerHTML](https://lists.innerHTML)="";var n=0;
-    [names.forEach](https://names.forEach)(function(g){
-      if(filter!=="All"&&filter!==g)return;
-      if([names.length](https://names.length)>1){var h=el("h3",null,esc(g));h.style.cssText="margin:16px 0 8px;color:#0b2a4a;font-size:1rem";lists.appendChild(h);}
-      var grid=el("div","sl");
-      [c.groups](https://c.groups)[g].forEach(function(s){
-        var b=el("button","sv");b.type="button";b.style.setProperty("--c",[c.colo](https://c.colo)r);b.style.animationDelay=(n++*45)+"ms";
-        [b.appendChild](https://b.appendChild)(thumb(s[0],s[5]));
-        var t=el("span",null,"<h4>"+esc(s[1])+"</h4><p>"+esc(s[2])+"</p><span class='meta'><b>"+esc(s[3])+"</b><span>⏱ "+esc(s[4])+"</span></span>");
-        [t.style.display](https://t.style.display)="block";b.appendChild(t);
-        [b.addEventListener](https://b.addEventListener)("click",function(){openForm(cat,s);});
+
+function openList(cat) {
+  var c = CATS[cat]; if (!c) return;
+  setHead(cat); [body.innerHTML](https://body.innerHTML) = "";
+  var names = [Object.keys](https://Object.keys)([c.group](https://c.group)s), chips = el("div", "chips"), lists = el("div");
+  function show(filter) {
+    [lists.innerHTML](https://lists.innerHTML) = ""; var n = 0;
+    [names.forEach](https://names.forEach)(function (g) {
+      if (filter !== "All" && filter !== g) return;
+      if ([names.length](https://names.length) > 1) [lists.appendChild](https://lists.appendChild)(el("h3", "gh", esc(g)));
+      var grid = el("div", "sl");
+      [c.groups](https://c.groups)[g].forEach(function (s) {
+        var b = el("button", "sv"); [b.type](https://b.type) = "button"; [b.style.setProperty](https://b.style.setProperty)("--c", [c.colo](https://c.colo)r); [b.style.animationDelay](https://b.style.animationDelay) = (n++ * 45) + "ms";
+        [b.appendChild](https://b.appendChild)(thumb(s[0], s[5]));
+        var t = el("span", null, "<h4>" + esc(s[1]) + "</h4><p>" + esc(s[2]) + "</p><span class='meta'><b>" + esc(s[3]) + "</b><i>⏱ " + esc(s[4]) + "</i></span>");
+        [t.style.display](https://t.style.display) = "block"; [b.appendChild](https://b.appendChild)(t);
+        [b.addEventListener](https://b.addEventListener)("click", function () { openForm(cat, s); });
         [grid.appendChild](https://grid.appendChild)(b);
       });
       [lists.appendChild](https://lists.appendChild)(grid);
     });
   }
-  if([names.length](https://names.length)>1){
-    ["All"].concat(names).forEach(function(n,i){
-      var ch=el("button","chip"+(i===0?" on":""),esc(n));ch.type="button";
-      [ch.addEventListener](https://ch.addEventListener)("click",function(){
-        [chips.querySelectorAll](https://chips.querySelectorAll)(".chip").forEach(function(x){x.classList.remove("on");});
-        [ch.classList.add](https://ch.classList.add)("on");show(n);
+  if ([names.length](https://names.length) > 1) {
+    ["All"].concat(names).forEach(function (nm, i) {
+      var ch = el("button", "chip" + (i === 0 ? " on" : ""), esc(nm)); [ch.type](https://ch.type) = "button";
+      [ch.addEventListener](https://ch.addEventListener)("click", function () {
+        [chips.querySelectorAll](https://chips.querySelectorAll)(".chip").forEach(function (x) { [x.classList.remove](https://x.classList.remove)("on"); });
+        [ch.classList.add](https://ch.classList.add)("on"); show(nm);
       });
       [chips.appendChild](https://chips.appendChild)(ch);
     });
     [body.appendChild](https://body.appendChild)(chips);
   }
-  [body.appendChild](https://body.appendChild)(lists);show("All");
-  [body.appendChild](https://body.appendChild)(el("p","hint","Prices marked “Starting from” are indicative. All times are estimates. The shop confirms the final price and time before work begins."));
-  [body.scrollTop](https://body.scrollTop)=0;openModal();
-}
-function openForm(cat,s){
-  setHead(cat);body.innerHTML="";
-  if(!ov.classList.contains("on"))openModal();
-  var back=el("button","back","← Back to all "+esc(CATS[cat].title)+" services");back.type="button";
-  [back.addEventListener](https://back.addEventListener)("click",function(){openList(cat);});
-  [body.appendChild](https://body.appendChild)(back);
-  [body.appendChild](https://body.appendChild)(el("div","sel","<b>"+s[0]+" "+esc(s[1])+"</b><br><span style='color:#5a6878'>"+esc(s[3])+" · ⏱ "+esc(s[4])+"</span>"));
-  var f=el("form");f.noValidate=false;f.setAttribute("autocomplete","on");
-  [f.innerHTML](https://f.innerHTML)=
-   '<div class="fg">'+
-   '<label>Your name<input name="name" required maxlength="80" autocomplete="name"></label>'+
-   '<label>Your phone number<input name="phone" required type="tel" inputmode="tel" maxlength="18" pattern="[0-9+ ()\\-]{8,18}" autocomplete="tel" placeholder="e.g. 95XXXXXXXX"></label>'+
-   '<label class="f">Address / village<input name="address" required maxlength="160" autocomplete="street-address" placeholder="Village or area in Boniyar / nearby"></label>'+
-   '<label class="f">Phone model or product <span class="hint">(if relevant)</span><input name="model" maxlength="100" placeholder="e.g. Redmi Note 10, or 350 ml mug"></label>'+
-   '<div class="f"><label>Your budget range</label><div class="bud" id="bud"></div></div>'+
-   '<label class="f">More details<textarea name="details" maxlength="500" placeholder="Describe the problem, name text, size, quantity or requirement"></textarea></label>'+
-   '</div>'+
-   '<label class="cons"><input type="checkbox" name="consent" required><span>I agree to open WhatsApp and share these details with DSC Mobile Zone. I will press Send in WhatsApp. I have not typed any OTP, password or PIN.</span></label>'+
-   '<div class="err" id="err" role="alert"></div>'+
-   '<button class="btn bw" type="submit" style="width:100%">💬 Send enquiry on WhatsApp</button>'+
-   '<p class="hint" style="margin-top:8px">The final price and time are confirmed by the shop before any work starts.</p>';
-  var budgets=["Under ₹500","₹500 – ₹1,100","₹1,100 – ₹2,500","₹2,500 – ₹5,000","Above ₹5,000","Need advice"];
-  var bud=f.querySelector("#bud");
-  [budgets.forEach](https://budgets.forEach)(function(b,i){
-    var l=el("label");l.innerHTML='<input type="radio" name="budget" value="'+esc(b)+'"'+(i===0?" required":"")+'><span>'+esc(b)+'</span>';bud.appendChild(l);
-  });
-  [f.addEventListener](https://f.addEventListener)("submit",function(e){
-    [e.preventDefault](https://e.preventDefault)();
-    var err=f.querySelector("#err");err.textContent="";
-    if(!f.reportValidity())return;
-    var d=new FormData(f);
-    var msg=["*New enquiry – "+SHOP.name+"*","",
-      "Category: "+CATS[cat].title,
-      "Service: "+s[1],
-      "Shown price: "+s[3],
-      "Name: "+d.get("name"),
-      "Phone: "+d.get("phone"),
-      "Address: "+d.get("address"),
-      "Budget: "+d.get("budget"),
-      "Model/Product: "+([d.get](https://d.get)("model")||"Not given"),
-      "Details: "+([d.get](https://d.get)("details")||"None"),
-      "","Please confirm the final price and time."].join("\n");
-    sendWA(msg);
-    [body.innerHTML](https://body.innerHTML)="";
-    [body.appendChild](https://body.appendChild)(el("div","sel","<b>✅ WhatsApp should now be open.</b><br>Press <b>Send</b> inside WhatsApp to deliver your enquiry. If nothing opened, tap the button below."));
-    var again=el("a","btn bw","💬 Open WhatsApp again");again.href="#";
-    [again.addEventListener](https://again.addEventListener)("click",function(ev){ev.preventDefault();sendWA(msg);});
-    [body.appendChild](https://body.appendChild)(again);
-    var cl=el("button","btn b2","Close");cl.type="button";cl.style.marginLeft="8px";cl.addEventListener("click",closeModal);
-    [body.appendChild](https://body.appendChild)(cl);
-  });
-  [body.appendChild](https://body.appendChild)(f);body.scrollTop=0;
-  var first=f.querySelector("input");if(first)first.focus({preventScroll:true});
-}
-function pickNumber(){return [SHOP.numbers](https://SHOP.numbers)[Math.floor([Math.random](https://Math.random)()*SHOP.numbers.length)];}
-function sendWA(text){
-  var url="https://wa.me/"+pickNumber()+"?text="+encodeURIComponent(text);
-  var w=window.open(url,"_blank","noopener");
-  if(!w)window.location.href=url;
+  [body.appendChild](https://body.appendChild)(lists); show("All");
+  [body.appendChild](https://body.appendChild)(el("p", "hint", "“Indicative” prices are estimates and “From” prices are starting prices. The shop confirms the final price and time before work begins."));
+  [body.scrollTop](https://body.scrollTop) = 0; openModal();
 }
 
-/* ====== Events (delegated, so every button works) ====== */
-[document.addEventListener](https://document.addEventListener)("click",function(e){
-  var o=e.target.closest("[data-open]");
-  if(o){e.preventDefault();openList([o.getAttribute](https://o.getAttribute)("data-open"));return;}
-  var w=e.target.closest("[data-wa]");
-  if(w){e.preventDefault();sendWA("Hello DSC Mobile Zone, I would like to ask about your services.");return;}
-  if([e.target](https://e.target)===ov)closeModal();
-});
-$("m-x").addEventListener("click",closeModal);
-[document.addEventListener](https://document.addEventListener)("keydown",function(e){if([e.key](https://e.key)==="Escape"&&ov.classList.contains("on"))closeModal();});
+function openForm(cat, s) {
+  setHead(cat); [body.innerHTML](https://body.innerHTML) = ""; openModal();
+  var back = el("button", "back", "← Back to all " + esc(CATS[cat].title) + " services"); [back.type](https://back.type) = "button";
+  [back.addEventListener](https://back.addEventListener)("click", function () { openList(cat); });
+  [body.appendChild](https://body.appendChild)(back);
+  [body.appendChild](https://body.appendChild)(el("div", "sel", "<b>" + s[0] + " " + esc(s[1]) + "</b><br><span style='color:#5a6878'>" + esc(s[3]) + " · ⏱ " + esc(s[4]) + "</span>"));
+
+  var variantHtml = "";
+  if (s[6] && s[6].length) {
+    variantHtml = '<label class="f">Choose a type / quality<select name="variant" required><option value="">Select…</option>';
+    s[6].forEach(function (v) { variantHtml += '<option value="' + esc(v[0] + " (" + v[1] + ")") + '">' + esc(v[0]) + " – " + esc(v[1]) + "</option>"; });
+    variantHtml += "</select></label>";
+  }
+
+  var f = el("form"); [f.setAttribute](https://f.setAttribute)("autocomplete", "on");
+  [f.innerHTML](https://f.innerHTML) =
+    '<div class="fg">' + variantHtml +
+    '<label>Your name<input name="name" required maxlength="80" autocomplete="name"></label>' +
+    '<label>Your phone number<input name="phone" required type="tel" inputmode="tel" maxlength="18" autocomplete="tel" placeholder="e.g. 95XXXXXXXX"></label>' +
+    '<label class="f">Address / village<input name="address" required maxlength="160" autocomplete="street-address" placeholder="Village or area"></label>' +
+    '<label class="f">Phone model or product <span class="hint">(if relevant)</span><input name="model" maxlength="100" placeholder="e.g. Redmi Note 10, or 350 ml mug"></label>' +
+    '<div class="f"><label>Your budget range</label><div class="bud" id="bud"></div></div>' +
+    '<label class="f">More details<textarea name="details" maxlength="500" placeholder="Describe the problem, name text, size, quantity or requirement"></textarea></label>' +
+    '</div>' +
+    '<label class="cons"><input type="checkbox" name="consent" required><span>I agree to open WhatsApp and share these details with DSC Mobile Zone. I will press Send in WhatsApp. I have not typed any OTP, password or PIN.</span></label>' +
+    '<div class="err" id="err" role="alert"></div>' +
+    '<button class="btn bw" type="submit" style="width:100%">💬 Send enquiry on WhatsApp</button>' +
+    '<p class="hint" style="margin-top:8px">The final price and time are confirmed by the shop before any work starts.</p>';
+
+  var bud = [f.querySelector](https://f.querySelector)("#bud");
+  [BUDGETS.forEach](https://BUDGETS.forEach)(function (b, i) {
+    var l = el("label"); [l.innerHTML](https://l.innerHTML) = '<input type="radio" name="budget" value="' + esc(b) + '"' + (i === 0 ? " required" : "") + "><span>" + esc(b) + "</span>"; [bud.appendChild](https://bud.appendChild)(l);
+  });
+
+  [f.addEventListener](https://f.addEventListener)("submit", function (e) {
+    [e.preventDefault](https://e.preventDefault)();
+    var err = [f.querySelector](https://f.querySelector)("#err"); [err.textContent](https://err.textContent) = "";
+    var d = new FormData(f);
+    var digits = String([d.get](https://d.get)("phone") || "").replace(/\D/g, "");
+    if ([digits.length](https://digits.length) < 10) { [err.textContent](https://err.textContent) = "Please enter a valid phone number (at least 10 digits)."; return; }
+    if (!f.reportValidity()) return;
+    var lines = ["*New enquiry – " + [SHOP.name](https://SHOP.name) + "*", "",
+      "Category: " + CATS[cat].title,
+      "Service: " + s[1],
+      "Price shown: " + s[3]];
+    if ([d.get](https://d.get)("variant")) [lines.push](https://lines.push)("Type / quality: " + [d.get](https://d.get)("variant"));
+    [lines.push](https://lines.push)("Name: " + [d.get](https://d.get)("name"), "Phone: " + [d.get](https://d.get)("phone"), "Address: " + [d.get](https://d.get)("address"),
+      "Budget: " + [d.get](https://d.get)("budget"), "Model / product: " + ([d.get](https://d.get)("model") || "Not given"),
+      "Details: " + ([d.get](https://d.get)("details") || "None"), "", "Please confirm the final price and time.");
+    var msg = [lines.join](https://lines.join)("\n");
+    sendWA(msg);
+    [body.innerHTML](https://body.innerHTML) = "";
+    [body.appendChild](https://body.appendChild)(el("div", "sel", "<b>✅ WhatsApp should now be open.</b><br>Press <b>Send</b> inside WhatsApp to deliver your enquiry. If nothing opened, tap the green button below."));
+    var again = el("button", "btn bw", "💬 Open WhatsApp again"); [again.type](https://again.type) = "button";
+    [again.addEventListener](https://again.addEventListener)("click", function () { sendWA(msg); });
+    var cl = el("button", "btn b2", "Close"); [cl.type](https://cl.type) = "button"; [cl.style.marginLeft](https://cl.style.marginLeft) = "8px";
+    [cl.addEventListener](https://cl.addEventListener)("click", closeModal);
+    [body.appendChild](https://body.appendChild)(again); [body.appendChild](https://body.appendChild)(cl);
+  });
+  [body.appendChild](https://body.appendChild)(f); [body.scrollTop](https://body.scrollTop) = 0;
+}
+
+function pickNumber() { return [SHOP.numbers](https://SHOP.numbers)[Math.floor([Math.random](https://Math.random)() * [SHOP.numbers.lengt](https://SHOP.numbers.lengt)h)]; }
+function sendWA(text) {
+  var url = "https://wa.me/" + pickNumber() + "?text=" + encodeURIComponent(text);
+  var w = [window.open](https://window.open)(url, "_blank", "noopener");
+  if (!w) [window.location.href](https://window.location.href) = url;
+}
+
+$("m-x").addEventListener("click", closeModal);
+[ov.addEventListener](https://ov.addEventListener)("click", function (e) { if ([e.target](https://e.target) === ov) closeModal(); });
+[document.addEventListener](https://document.addEventListener)("keydown", function (e) { if ([e.key](https://e.key) === "Escape" && [ov.classList.contains](https://ov.classList.contains)("on")) closeModal(); });
 
 buildPage();
+
+/* Public actions used by the buttons on the page */
+[window.DSC](https://window.DSC) = {
+  open: openList,
+  wa: function () { sendWA("Hello DSC Mobile Zone, I would like to ask about your services."); }
+};
 })();
 </script>
 </body>
