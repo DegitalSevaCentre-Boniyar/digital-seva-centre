@@ -1,660 +1,1222 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0b2a4a">
-<title>DSC Mobile Zone | Mobile Repair, Printing, Custom Gifts &amp; CSC Services | Boniyar</title>
-<meta name="description" content="DSC Mobile Zone, Boniyar, Baramulla: mobile repair, accessories, photo and document printing, custom mugs, bottles and T-shirts, and CSC digital assistance.">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"DSC Mobile Zone","telephone":["+919541291967","+919596175562"],"email":"[mirelectronics06@gmail.com](mailto:mirelectronics06@gmail.com)","address":{"@type":"PostalAddress","addressLocality":"Boniyar","addressRegion":"Jammu and Kashmir","addressCountry":"IN"}}
-</script>
+  <!-- DSC-RELIABLE-7 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173e50">
+  <title>DSC Mobile Zone | Boniyar</title>
+  <meta name="description" content="DSC Mobile Zone, Boniyar: mobile repair, accessories, printing, design, personalised gifts and digital assistance.">
 
-<!-- Error catcher + safety stub: runs first so problems are visible -->
-<script>
-[window.DSC](https://window.DSC) = { open: function(){ alert("The page script did not finish loading. Press Ctrl+F5. If this repeats, send a screenshot of the red message at the top of the page."); } };
-[window.addEventListener](https://window.addEventListener)("error", function (e) {
-  var b = [document.getElementById](https://document.getElementById)("errbar");
-  if (!b) { b = [document.createElement](https://document.createElement)("div"); [b.id](https://b.id) = "errbar";
-    [b.style.cssText](https://b.style.cssText) = "position:fixed;top:0;left:0;right:0;z-index:9999;background:#b42318;color:#fff;padding:10px 14px;font:14px Arial";
-    ([document.body](https://document.body) || [document.documentElemen](https://document.documentElemen)t).appendChild(b); }
-  [b.textContent](https://b.textContent) = "Page error: " + ([e.message](https://e.message) || "unknown") + " (line " + ([e.lineno](https://e.lineno) || "?") + ")";
-});
-</script>
+  <style>
+    :root {
+      --ink: #183443;
+      --muted: #576b73;
+      --navy: #173e50;
+      --green: #246747;
+      --paper: #faf9f5;
+      --white: #ffffff;
+      --line: #dbe3e1;
+      --gold: #996320;
+      --soft: #edf3ef;
+      --radius: 18px;
+    }
 
-<style>
-:root{--navy:#0b2a4a;--navy2:#143d6b;--gold:#b7791f;--bg:#f4f6f9;--ink:#17222e;--mut:#5a6878;--line:#d9e0e8;--ok:#17724a;--r:12px}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:110px}
-body{margin:0;font:16px/1.6 "Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--bg)}
-[body.lock](https://body.lock){overflow:hidden}
-a{color:inherit}img{max-width:100%}
-button,input,select,textarea{font:inherit}
-.w{width:min(1180px,calc(100% - 32px));margin:0 auto}
-:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-[hidden]{display:none!important}
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+    }
 
-.util{background:#07192e;color:#cfd9e6;font-size:.8rem}
-.util .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 18px;padding:6px 0}
-.util a{text-decoration:none}.util a:hover{text-decoration:underline}
-.nojs{background:#fff3cd;color:#664d03;text-align:center;padding:8px;font-size:.9rem}
+    [hidden] { display: none !important; }
+    a { color: inherit; }
+    button, input, textarea, select { font: inherit; }
+    img, svg { max-width: 100%; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { line-height: 1.17; }
+    button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid #a15c15; outline-offset: 4px; }
 
-header{background:#fff;border-bottom:4px solid var(--navy);position:sticky;top:0;z-index:50}
-.hd{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo{width:54px;height:54px;flex:none;border-radius:12px}
-.brand b{display:block;font-size:1.25rem;line-height:1.15;color:var(--navy)}
-.brand small{color:var(--mut);font-size:.78rem}
-nav{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
-nav a{text-decoration:none;font-size:.88rem;font-weight:600;padding:9px 12px;border-radius:6px;color:var(--navy)}
-nav a:hover{background:#e8eef5}
-nav [a.cta](https://a.cta){background:var(--navy);color:#fff}
+    .wrap { width: min(1160px, calc(100% - 36px)); margin-inline: auto; }
+    .section { padding: 70px 0; }
+    .muted { color: var(--muted); }
+    .small { font-size: .83rem; }
+    .eyebrow {
+      color: var(--green);
+      text-transform: uppercase;
+      font-size: .73rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+    }
 
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:10px 20px;border-radius:8px;border:2px solid transparent;font-weight:700;text-decoration:none;cursor:pointer;background:none;transition:transform .15s,background .15s}
-.btn:hover{transform:translateY(-2px)}
-.b1{background:var(--navy);color:#fff}.b1:hover{background:var(--navy2)}
-.b2{border-color:var(--navy);color:var(--navy);background:#fff}
-.bw{background:#1a8d4e;color:#fff}.bw:hover{background:#15753f}
-.bg{background:var(--gold);color:#fff}
+    .skip {
+      position: fixed;
+      top: -100px;
+      left: 14px;
+      z-index: 200;
+      background: white;
+      padding: 12px;
+    }
+    .skip:focus { top: 12px; }
 
-.hero{background:linear-gradient(135deg,#0b2a4a,#174a7c);color:#fff;padding:54px 0 64px}
-.hg{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
-.kick{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:4px 12px;border-radius:999px;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-.hero h1{font-size:clamp(2rem,4.4vw,3.3rem);line-height:1.12;margin:14px 0;letter-spacing:-.02em}
-.hero p{color:#d6e2f0;max-width:580px}
-.hero .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-.hero .b2{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
-.hv{position:relative;border-radius:16px;overflow:hidden;background:#0d355e;border:1px solid rgba(255,255,255,.2);min-height:280px;display:grid;place-items:center}
-.hv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hv .em{font-size:5rem}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border:1px solid var(--line);border-radius:var(--r);margin-top:-30px;position:relative;box-shadow:0 10px 30px rgba(11,42,74,.12)}
-.stats div{padding:16px 14px;text-align:center;border-right:1px solid var(--line)}
-.stats div:last-child{border:0}
-.stats b{display:block;color:var(--navy);font-size:1.4rem}
-.stats span{font-size:.8rem;color:var(--mut)}
-.notice{display:flex;gap:10px;align-items:center;background:#fff8e6;border:1px solid #efd9a0;border-left:5px solid var(--gold);padding:10px 14px;border-radius:8px;font-size:.9rem;margin-top:22px}
+    .utility {
+      background: var(--navy);
+      color: white;
+      padding: 8px 0;
+      font-size: .79rem;
+    }
+    .utility .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      justify-content: space-between;
+    }
 
-section{padding:60px 0}
-.alt{background:#fff;border-block:1px solid var(--line)}
-.sh{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px;border-bottom:2px solid var(--line);padding-bottom:12px}
-.sh .no{color:var(--gold);font-weight:800;font-size:.8rem;letter-spacing:.12em}
-.sh h2{margin:2px 0 0;font-size:clamp(1.5rem,2.6vw,2.1rem);color:var(--navy);line-height:1.2}
-.sh p{margin:0;color:var(--mut);max-width:460px;font-size:.92rem}
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: white;
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 15px 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 49px;
+      height: 49px;
+      border-radius: 13px;
+      background: var(--navy);
+      color: white;
+      font-weight: 850;
+      font-size: 1rem;
+      flex-shrink: 0;
+      border-bottom: 4px solid #d8ae62;
+    }
+    .brand strong { display: block; font-size: 1.06rem; }
+    .brand small { display: block; color: var(--muted); font-size: .75rem; }
+    nav { display: flex; align-items: center; gap: 23px; }
+    nav a { font-size: .88rem; text-decoration: none; font-weight: 650; }
+    nav a:hover { text-decoration: underline; }
 
-.tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.tile{background:#fff;border:1px solid var(--line);border-top:4px solid var(--c,var(--navy));border-radius:var(--r);padding:20px;text-align:left;cursor:pointer;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
-.tile:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(11,42,74,.14)}
-.tile .ic{font-size:2.1rem;width:60px;height:60px;display:grid;place-items:center;background:#eef3f8;border-radius:14px;margin-bottom:12px}
-.tile h3{margin:0 0 6px;color:var(--navy);font-size:1.08rem}
-.tile ul{margin:0 0 12px;padding-left:18px;color:var(--mut);font-size:.84rem;flex:1}
-.tile .go{font-weight:700;color:var(--c);font-size:.88rem}
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 11px 19px;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: 750;
+      cursor: pointer;
+      transition: transform .18s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .primary { color: white; background: var(--navy); }
+    .secondary { color: var(--navy); border-color: #91a5a6; background: white; }
+    .whatsapp { color: white; background: var(--green); }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
 
-.tblw{overflow-x:auto}
-.tbl{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);font-size:.92rem}
-.tbl th{background:var(--navy);color:#fff;text-align:left;padding:11px 14px;font-size:.82rem;letter-spacing:.04em}
-.tbl td{padding:11px 14px;border-top:1px solid var(--line)}
-.tbl tr:nth-child(even) td{background:#f8fafc}
-.tbl tbody tr{cursor:pointer}.tbl tbody tr:hover td{background:#eaf1f8}
-.tag{display:inline-block;background:#e4f3ea;color:var(--ok);font-size:.78rem;font-weight:700;padding:2px 9px;border-radius:999px}
+    .hero {
+      padding: 65px 0 55px;
+      background: linear-gradient(110deg, #edf3ed, #faf9f5 65%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 48px;
+    }
+    h1 {
+      font-size: clamp(2.35rem, 5vw, 4.2rem);
+      letter-spacing: -.045em;
+      margin: 14px 0 22px;
+    }
+    h1 span { color: var(--green); }
+    .lead { max-width: 560px; font-size: 1.07rem; color: var(--muted); }
+    .hero-note { margin: 18px 0 0; font-size: .82rem; color: var(--muted); }
 
-.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.pc{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
-.ph{position:relative;height:170px;background:linear-gradient(135deg,#e7eef6,#f6ecd8);display:grid;place-items:center;font-size:3.4rem;overflow:hidden}
-.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.pc .bd{padding:14px 16px;display:flex;flex-direction:column;flex:1}
-.pc h3{margin:0 0 4px;font-size:1.02rem;color:var(--navy)}
-.pc p{margin:0 0 10px;color:var(--mut);font-size:.86rem;flex:1}
-.pc .btn{min-height:40px;padding:6px 14px;font-size:.88rem}
+    .media {
+      position: relative;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background: #eaf0e9;
+      isolation: isolate;
+    }
+    .media > svg { width: 70%; height: 70%; }
+    .media > .photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+    .hero-art {
+      aspect-ratio: 1.15;
+      border-radius: 28px;
+      background: linear-gradient(145deg, #dceae2, #f1e4cc);
+      border: 1px solid #d0dfd4;
+    }
+    .hero-art > svg { width: 95%; height: 95%; }
 
-.sz{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.sz div{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px;text-align:center}
-.sz .box{margin:0 auto 10px;border:2px solid var(--navy);background:#eaf1f8;border-radius:4px;display:grid;place-items:center;font-size:1.3rem}
-.sz b{color:var(--navy)}.sz small{display:block;color:var(--mut)}
+    .strip { border-block: 1px solid var(--line); background: white; }
+    .strip .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px 24px;
+      padding-block: 17px;
+      color: var(--muted);
+      font-size: .85rem;
+    }
 
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
-.st{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px}
-.st:before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;margin-bottom:10px}
-.st h3{margin:0 0 4px;font-size:1.02rem;color:var(--navy)}.st p{margin:0;color:var(--mut);font-size:.88rem}
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+    .section-head h2 {
+      margin: 9px 0 0;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      letter-spacing: -.03em;
+    }
+    .section-head p { color: var(--muted); max-width: 410px; margin: 0; }
 
-.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.tr{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;text-align:center}
-.tr .e{font-size:2rem}.tr h3{margin:6px 0 4px;color:var(--navy);font-size:1rem}.tr p{margin:0;color:var(--mut);font-size:.86rem}
+    .zones { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .zone {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      padding: 24px;
+      background: white;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--accent, var(--navy));
+      border-radius: var(--radius);
+      transition: transform .2s;
+    }
+    .zone:hover { transform: translateY(-5px); }
+    .zone .icon {
+      display: grid;
+      place-items: center;
+      width: 65px;
+      height: 65px;
+      background: var(--soft);
+      border-radius: 15px;
+      margin-bottom: 19px;
+    }
+    .zone .icon svg { width: 48px; height: 48px; }
+    .zone h3 { font-size: 1.15rem; margin-bottom: 10px; }
+    .zone p { color: var(--muted); font-size: .9rem; flex-grow: 1; }
+    .zone .more { color: var(--green); font-weight: 750; font-size: .88rem; }
 
-.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.box2{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px}
-.box2 h3{margin-top:0;color:var(--navy)}
-.ck{list-style:none;padding:0;margin:0}
-.ck li{padding:7px 0 7px 28px;position:relative;border-top:1px solid #edf1f5;font-size:.92rem}
-.ck li:before{content:"\2714";position:absolute;left:0;color:var(--ok);font-weight:800}
-.trustimg{margin-top:14px;border:1px dashed var(--line);border-radius:10px;overflow:hidden}
-.trustimg img{display:block;width:100%}
+    .work-section { background: #eef2ec; border-block: 1px solid var(--line); }
+    .products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 19px; }
+    .product {
+      text-decoration: none;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform .2s;
+    }
+    .product:hover { transform: translateY(-4px); }
+    .product .media { height: 205px; }
+    .product-copy { padding: 19px; }
+    .product h3 { font-size: 1.1rem; margin-bottom: 6px; }
+    .product p { font-size: .87rem; color: var(--muted); margin-bottom: 10px; }
+    .product small { color: var(--green); font-weight: 750; }
 
-details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:0 18px;margin-bottom:10px}
-summary{padding:14px 0;font-weight:700;cursor:pointer;color:var(--navy)}
-details p{margin:0 0 14px;color:var(--mut)}
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .step { border: 1px solid var(--line); background: white; padding: 25px; border-radius: 15px; }
+    .step-number { display: block; color: var(--gold); font-weight: 850; margin-bottom: 15px; }
+    .step h3 { font-size: 1.12rem; }
+    .step p { color: var(--muted); font-size: .91rem; margin: 0; }
+    .advice {
+      margin-top: 22px;
+      padding: 17px 20px;
+      border-radius: 12px;
+      background: #fff6e5;
+      border: 1px solid #e6d4ad;
+      color: #654b21;
+      font-size: .87rem;
+    }
 
-.ct{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
-.cb{background:var(--navy);color:#fff;border-radius:var(--r);padding:28px}
-.cb h2{margin-top:0}.cb a{color:#fff}
-.cb dl{margin:16px 0 0}.cb dt{color:#f0c674;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-top:12px}.cb dd{margin:2px 0 0}
-.cb .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .faq { max-width: 810px; margin: auto; }
+    .faq details { background: white; border: 1px solid var(--line); border-radius: 12px; margin-bottom: 10px; }
+    .faq summary { cursor: pointer; padding: 17px 20px; font-weight: 700; }
+    .faq details p { margin: 0; padding: 0 20px 20px; color: var(--muted); font-size: .91rem; }
 
-footer{background:#07192e;color:#b9c6d6;font-size:.82rem;padding:28px 0 90px}
-footer p{max-width:900px;margin:8px 0 0}
-.fab{position:fixed;right:14px;bottom:14px;z-index:60;display:flex;flex-direction:column;gap:10px}
-.fab a{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-size:1.5rem;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      border: 1px solid var(--line);
+      border-radius: 23px;
+      padding: 35px;
+      background: white;
+    }
+    .contact h2 { font-size: 2.1rem; margin: 10px 0 15px; }
+    .contact dl { margin: 0; }
+    .contact dl div { padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .contact dt { font-size: .77rem; color: var(--muted); font-weight: 750; }
+    .contact dd { margin: 4px 0 0; overflow-wrap: anywhere; }
 
-.ov{position:fixed;inset:0;z-index:100;background:rgba(7,25,46,.7);display:none;align-items:center;justify-content:center;padding:12px}
-.ov.on{display:flex;animation:fade .25s}
-.md{background:#fff;width:min(940px,100%);max-height:calc(100vh - 24px);display:flex;flex-direction:column;border-radius:16px;overflow:hidden;animation:pop .32s cubic-bezier(.2,.8,.2,1);border-top:6px solid var(--c,var(--navy))}
-@keyframes fade{from{opacity:0}to{opacity:1}}
-@keyframes pop{from{opacity:0;transform:translateY(28px) scale(.97)}to{opacity:1;transform:none}}
-@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.mh{display:flex;align-items:center;gap:14px;padding:16px 20px;border-bottom:1px solid var(--line)}
-.mh .ic{font-size:2rem}
-.mh h2{margin:0;font-size:1.3rem;color:var(--navy)}
-.mh p{margin:0;color:var(--mut);font-size:.86rem}
-.mh .sp{flex:1}
-.x{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#f4f6f9;font-size:1.2rem;cursor:pointer}
-.mb{overflow-y:auto;padding:18px 20px;overscroll-behavior:contain}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
-.chip{border:1px solid var(--line);background:#f4f6f9;padding:6px 14px;border-radius:999px;font-size:.84rem;font-weight:600;cursor:pointer}
-.chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
-.gh{margin:16px 0 8px;color:var(--navy);font-size:1rem}
-.sl{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.sv{display:flex;gap:14px;border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff;text-align:left;cursor:pointer;width:100%;animation:up .4s both;transition:border-color .15s,box-shadow .15s}
-.sv:hover{border-color:var(--c,var(--navy));box-shadow:0 6px 16px rgba(11,42,74,.1)}
-.th{position:relative;flex:none;width:76px;height:76px;border-radius:10px;background:linear-gradient(135deg,#e7eef6,#f6ecd8);display:grid;place-items:center;font-size:2.2rem;overflow:hidden}
-.th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.sv h4{margin:0 0 2px;color:var(--navy);font-size:1rem}
-.sv p{margin:0 0 6px;color:var(--mut);font-size:.82rem;line-height:1.4}
-.meta{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.8rem}
-.meta b{color:var(--ok)}.meta i{color:var(--mut);font-style:normal}
-.back{border:0;background:none;color:var(--navy);font-weight:700;cursor:pointer;padding:0;margin-bottom:12px}
-.sel{background:#eef4fa;border:1px solid #cfdeee;border-radius:10px;padding:12px 14px;margin-bottom:14px;font-size:.92rem}
-.fg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.fg .f{grid-column:1/-1}
-label{display:block;font-weight:700;font-size:.84rem}
-input,select,textarea{width:100%;margin-top:4px;padding:11px 12px;border:1px solid #b7c4d2;border-radius:8px;background:#fff;color:var(--ink)}
-textarea{min-height:76px;resize:vertical}
-.bud{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px}
-.bud label{font-weight:600;margin:0;position:relative}
-.bud input{position:absolute;opacity:0;width:100%;height:100%;left:0;top:0;margin:0;cursor:pointer}
-.bud span{display:block;text-align:center;border:1px solid #b7c4d2;border-radius:8px;padding:9px 6px;font-size:.84rem;background:#fff}
-.bud input:checked+span{background:var(--navy);color:#fff;border-color:var(--navy)}
-.bud input:focus-visible+span{outline:3px solid var(--gold)}
-.cons{display:flex;gap:8px;align-items:flex-start;font-weight:400;font-size:.82rem;color:var(--mut);margin:14px 0}
-.cons input{width:auto;margin:4px 0 0}
-.err{color:#b42318;font-size:.86rem;min-height:1.2em;margin:4px 0;font-weight:600}
-.hint{font-size:.78rem;color:var(--mut)}
+    footer { padding: 30px 0; border-top: 1px solid var(--line); background: #edf1ed; }
+    footer p { color: var(--muted); font-size: .8rem; max-width: 820px; margin: 8px 0; }
 
-@media(max-width:1000px){.tiles{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:960px){.pg,.steps,.trust{grid-template-columns:repeat(2,1fr)}.hg,.ct,.two{grid-template-columns:1fr}.sz{grid-template-columns:repeat(3,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.stats div:nth-child(2){border-right:0}.stats div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
-@media(max-width:640px){.tiles,.pg,.steps,.sl,.fg,.trust{grid-template-columns:1fr}.sz{grid-template-columns:repeat(2,1fr)}.hd{flex-direction:column;align-items:flex-start}nav{width:100%;overflow-x:auto;flex-wrap:nowrap;white-space:nowrap}.bud{grid-template-columns:repeat(2,1fr)}section{padding:44px 0}.hero{padding:34px 0 48px}.md{max-height:100vh;border-radius:14px}.mh{padding:12px 14px}.mb{padding:14px}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
-</style>
+    /*
+      NO JAVASCRIPT REQUIRED FOR THESE PANELS.
+      Ordinary links change the URL fragment.
+      CSS :target displays the matching panel.
+    */
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      padding: 16px;
+      align-items: center;
+      justify-content: center;
+    }
+    .overlay:target { display: flex; }
+    .backdrop { position: absolute; inset: 0; background: rgba(18, 39, 48, .7); }
+    .sheet {
+      position: relative;
+      z-index: 1;
+      width: min(970px, 100%);
+      max-height: calc(100vh - 32px);
+      max-height: calc(100dvh - 32px);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 24px 75px #0003;
+    }
+    .overlay:target .sheet { animation: open-panel .23s ease-out; }
+    @keyframes open-panel {
+      from { opacity: 0; transform: translateY(16px) scale(.985); }
+      to { opacity: 1; transform: none; }
+    }
+    .sheet-head {
+      position: sticky;
+      top: 0;
+      z-index: 3;
+      background: white;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 24px;
+    }
+    .sheet-head h2 { margin: 3px 0 0; font-size: 1.5rem; }
+    .close {
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      min-width: 44px;
+      min-height: 44px;
+      border-radius: 9px;
+      border: 1px solid var(--line);
+      background: #f3f5f2;
+      font-size: 1.4rem;
+      text-decoration: none;
+    }
+    .sheet-body { padding: 24px; }
+    .sheet-body > h3 { margin: 25px 0 12px; font-size: 1.08rem; }
+    .sheet-note { color: var(--muted); font-size: .89rem; }
+    .services { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .service {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      text-decoration: none;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      padding: 16px;
+      background: white;
+    }
+    .service:hover { border-color: var(--green); }
+    .service .thumb {
+      width: 61px;
+      height: 66px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      font-size: 1.7rem;
+    }
+    .service strong { display: block; margin-bottom: 4px; line-height: 1.3; }
+    .service .description { display: block; font-size: .85rem; color: var(--muted); }
+    .service .choose { display: block; color: var(--green); font-weight: 750; font-size: .8rem; margin-top: 8px; }
+
+    .form-sheet { max-width: 730px; }
+    fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .full { grid-column: 1 / -1; }
+    label { display: block; font-size: .86rem; font-weight: 700; }
+    input, select, textarea {
+      display: block;
+      width: 100%;
+      margin-top: 6px;
+      padding: 11px 12px;
+      border: 1px solid #a4b4b7;
+      border-radius: 8px;
+      background: white;
+      color: var(--ink);
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .consent { display: flex; align-items: flex-start; gap: 9px; margin: 19px 0; font-weight: 400; font-size: .83rem; }
+    .consent input { width: 18px; height: 18px; margin: 3px 0 0; flex-shrink: 0; }
+    .form-back { display: inline-block; margin-bottom: 17px; color: var(--green); font-weight: 750; }
+    .error { color: #aa2727; font-size: .87rem; }
+    .dialog-open { overflow: hidden; }
+
+    @supports selector(body:has(.overlay:target)) {
+      body:has(.overlay:target) { overflow: hidden; }
+    }
+    @media (max-width: 960px) {
+      .zones { grid-template-columns: 1fr 1fr; }
+      .products { grid-template-columns: 1fr 1fr; }
+      .hero-grid { gap: 25px; }
+    }
+    @media (max-width: 740px) {
+      .header-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+      nav { width: 100%; justify-content: space-between; gap: 12px; }
+      nav a { font-size: .81rem; }
+      .hero-grid, .contact { grid-template-columns: 1fr; }
+      .hero-art { max-width: 450px; width: 100%; margin-inline: auto; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 15px; }
+      .steps { grid-template-columns: 1fr; }
+      .section { padding: 48px 0; }
+      .hero { padding: 35px 0; }
+      .services { grid-template-columns: 1fr; }
+      .sheet-head { padding: 14px 17px; }
+      .sheet-body { padding: 18px; }
+    }
+    @media (max-width: 480px) {
+      .zones, .products, .form-grid { grid-template-columns: 1fr; }
+      .overlay { padding: 8px; }
+      .sheet { max-height: calc(100dvh - 16px); border-radius: 14px; }
+      .contact { padding: 23px; }
+      .utility { font-size: .74rem; }
+      .sheet-head h2 { font-size: 1.25rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
 </head>
+
 <body>
-<noscript><div class="nojs">JavaScript is turned off, so pop-ups and the enquiry form cannot open. Please call or WhatsApp +91 95412 91967.</div></noscript>
 
-<div class="util"><div class="w">
-  <span>📍 Boniyar, Baramulla, Jammu &amp; Kashmir</span>
-  <span><a href="tel:+919541291967">📞 +91 95412 91967</a> &nbsp;|&nbsp; <a href="tel:+919596175562">+91 95961 75562</a> &nbsp;|&nbsp; <a href="mailto:mirelectronics06@gmail.com">✉ [mirelectronics06@gmail.com](mailto:mirelectronics06@gmail.com)</a></span>
-</div></div>
+<!-- Built-in illustrations: they do not need downloads or JavaScript. -->
+<svg width="0" height="0" aria-hidden="true" style="position:absolute;overflow:hidden">
+  <defs>
+    <symbol id="art-phone" viewBox="0 0 120 120">
+      <rect x="33" y="8" width="54" height="104" rx="11" fill="#173e50"/>
+      <rect x="39" y="19" width="42" height="76" rx="5" fill="#b8d8c5"/>
+      <rect x="49" y="12" width="22" height="3" rx="1.5" fill="#e9eee9"/>
+      <circle cx="60" cy="103" r="3" fill="#d5b16b"/>
+      <path d="M65 35L48 62h13l-7 23 22-32H62z" fill="#996320"/>
+    </symbol>
+    <symbol id="art-mug" viewBox="0 0 120 120">
+      <path d="M84 37h11c23 0 23 43 0 43H84" fill="none" stroke="#b07b48" stroke-width="10"/>
+      <path d="M20 28h64v62c0 9-8 16-16 16H36c-9 0-16-7-16-16z" fill="#c89360"/>
+      <ellipse cx="52" cy="28" rx="32" ry="6" fill="#e7c79d"/>
+      <rect x="30" y="47" width="44" height="37" rx="5" fill="#faf5e9"/>
+      <path d="M51 59c-8-9-17 2-8 10l9 8 9-8c9-8 0-19-9-10z" fill="#a4544e"/>
+    </symbol>
+    <symbol id="art-shirt" viewBox="0 0 120 120">
+      <path d="M38 16L10 33l12 24 15-8v58h46V49l15 8 12-24-28-17c-5 13-38 13-44 0z" fill="#467266"/>
+      <path d="M44 17c3 12 29 12 32 0" fill="none" stroke="#d6e7d9" stroke-width="5"/>
+      <rect x="46" y="51" width="28" height="28" rx="7" fill="#f2dfb8"/>
+      <path d="M51 69l7-10 6 7 5-4" fill="none" stroke="#467266" stroke-width="3"/>
+    </symbol>
+    <symbol id="art-bottle" viewBox="0 0 120 120">
+      <rect x="47" y="5" width="26" height="15" rx="4" fill="#173e50"/>
+      <path d="M47 20h26v15c10 6 15 15 15 27v38c0 8-6 13-13 13H45c-7 0-13-5-13-13V62c0-12 5-21 15-27z" fill="#a1bba4"/>
+      <rect x="39" y="57" width="42" height="35" rx="4" fill="#fff7e5"/>
+      <path d="M47 68h26M47 76h19M47 83h23" stroke="#996320" stroke-width="3"/>
+    </symbol>
+    <symbol id="art-print" viewBox="0 0 120 120">
+      <rect x="29" y="8" width="62" height="38" rx="4" fill="#e5e8dc" stroke="#173e50" stroke-width="3"/>
+      <rect x="13" y="39" width="94" height="48" rx="10" fill="#173e50"/>
+      <circle cx="94" cy="52" r="4" fill="#d9bd7b"/>
+      <rect x="29" y="68" width="62" height="44" rx="3" fill="#fff"/>
+      <path d="M39 80h42M39 91h35M39 101h23" stroke="#628475" stroke-width="4"/>
+    </symbol>
+    <symbol id="art-doc" viewBox="0 0 120 120">
+      <path d="M27 8h47l22 22v81H27z" fill="#fff" stroke="#173e50" stroke-width="3"/>
+      <path d="M74 8v22h22" fill="#d7e5dc" stroke="#173e50" stroke-width="3"/>
+      <path d="M40 48h42M40 61h42M40 74h25" stroke="#668978" stroke-width="5"/>
+      <circle cx="75" cy="94" r="12" fill="#d2b16c"/>
+      <path d="M69 94l4 4 8-9" fill="none" stroke="#173e50" stroke-width="3"/>
+    </symbol>
+    <symbol id="art-headphones" viewBox="0 0 120 120">
+      <path d="M22 68V52a38 38 0 0 1 76 0v16" fill="none" stroke="#173e50" stroke-width="11"/>
+      <rect x="14" y="56" width="24" height="43" rx="10" fill="#a88652"/>
+      <rect x="82" y="56" width="24" height="43" rx="10" fill="#a88652"/>
+      <path d="M96 97c-4 13-20 17-35 14" fill="none" stroke="#173e50" stroke-width="5"/>
+    </symbol>
+    <symbol id="art-frame" viewBox="0 0 120 120">
+      <rect x="11" y="16" width="98" height="88" rx="4" fill="#a47b49"/>
+      <rect x="21" y="26" width="78" height="68" fill="#e3eddf"/>
+      <circle cx="43" cy="44" r="10" fill="#d2b16c"/>
+      <path d="M22 94l24-29 17 19 15-28 21 38z" fill="#467266"/>
+    </symbol>
+  </defs>
+</svg>
 
-<header><div class="w hd">
-  <a class="brand" href="#top" aria-label="DSC Mobile Zone home">
-    <span id="logo-slot"></span>
-    <span><b>DSC Mobile Zone</b><small>Mobiles · Printing · Gifts · Digital Services</small></span>
-  </a>
-  <nav aria-label="Main">
-    <a href="#services">Services</a><a href="#repair-rates">Repair rates</a><a href="#gifts">Custom gifts</a><a href="#printing">Printing</a><a href="#csc">CSC help</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
-    <a class="cta" href="#contact">💬 Enquire</a>
-  </nav>
-</div></header>
+<div id="site-page">
+  <a class="skip" href="#main">Skip to content</a>
 
-<main id="top">
-<div class="hero"><div class="w hg">
-  <div>
-    <span class="kick">Boniyar's mobile &amp; digital service point</span>
-    <h1>Repair. Print. Personalise. Apply online.</h1>
-    <p>Phone repair and accessories, photo and document printing, custom mugs, bottles and T-shirts, and help with online applications. One shop, a clear process, and the price confirmed before work begins.</p>
-    <div class="row">
-      <a class="btn bg" href="#services">Browse services</a>
-      <a class="btn b2" href="tel:+919541291967">📞 Call the shop</a>
-      <button class="btn bw" type="button" onclick="DSC.wa()">💬 WhatsApp</button>
+  <div class="utility">
+    <div class="wrap">
+      <span>Boniyar · Baramulla · Jammu &amp; Kashmir</span>
+      <span><a href="tel:+919541291967">95412 91967</a> &nbsp; / &nbsp; <a href="tel:+919596175562">95961 75562</a></span>
     </div>
   </div>
-  <div class="hv"><span class="em" aria-hidden="true">📱</span><img src="assets/images/hero/shop.jpg" alt="DSC Mobile Zone shop and work" onerror="this.remove()"></div>
-</div></div>
 
-<div class="w">
-  <div class="stats">
-    <div><b>5</b><span>Service divisions</span></div>
-    <div><b>₹1,099</b><span>Display repair, starting from*</span></div>
-    <div><b>2</b><span>Direct contact numbers</span></div>
-    <div><b>Price first</b><span>Confirmed before any work</span></div>
-  </div>
-  <div class="notice"><span aria-hidden="true">ℹ️</span><span>*Prices marked “Indicative” are estimates. The final price and time are confirmed after the shop checks your device. DSC Mobile Zone is a private business and is not a government office.</span></div>
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#home" aria-label="DSC Mobile Zone home">
+        <span class="brand-mark" aria-hidden="true">DSC</span>
+        <span><strong>DSC Mobile Zone</strong><small>Mobile care. Print studio. Digital help.</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#work">Custom gifts</a>
+        <a href="#visit">Your visit</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">DSC Mobile Zone · Boniyar</div>
+          <h1>Your phone desk.<br>Your <span>print &amp; gift studio.</span></h1>
+          <p class="lead">Repair a phone, find an accessory, print your documents or turn a photo into a personalised gift. Explore our services before visiting the shop.</p>
+          <div class="actions">
+            <a class="button primary" href="#services">Explore the four service sections</a>
+            <a class="button secondary" href="tel:+919541291967">Call the shop</a>
+          </div>
+          <p class="hero-note">For repair prices, parts availability and opening hours, please confirm with the shop.</p>
+        </div>
+
+        <div class="media hero-art" data-photo="assets/images/hero/shop.jpg">
+          <svg viewBox="0 0 420 330" role="img" aria-label="Illustrations of mobile repair, personalised mugs, printing and T-shirts">
+            <circle cx="214" cy="164" r="135" fill="#f8f5e9"/>
+            <rect x="130" y="48" width="157" height="240" rx="23" fill="#173e50" opacity=".07"/>
+            <use href="#art-phone" x="116" y="37" width="184" height="255"/>
+            <use href="#art-mug" x="4" y="132" width="143" height="143"/>
+            <use href="#art-shirt" x="280" y="40" width="126" height="126"/>
+            <use href="#art-print" x="288" y="199" width="109" height="109"/>
+            <circle cx="79" cy="66" r="15" fill="#d4b777"/>
+            <circle cx="317" cy="172" r="7" fill="#89aa93"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <div class="strip">
+      <div class="wrap">
+        <span>Mobile repair &amp; troubleshooting</span>
+        <span>Printing, design &amp; custom gifts</span>
+        <span>Accessories &amp; digital assistance</span>
+      </div>
+    </div>
+
+    <section class="section" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">01 / Service directory</div><h2>What brings you in?</h2></div>
+          <p>Open a section, choose the exact service and send an enquiry to the shop.</p>
+        </div>
+
+        <div class="zones">
+          <a class="zone" href="#repair-panel" style="--accent:#315d73">
+            <span class="icon"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#art-phone"/></svg></span>
+            <h3>Repairing</h3>
+            <p>Display/folder, ringer, microphone, back panel, battery and charging problems.</p>
+            <span class="more">Open repair options →</span>
+          </a>
+
+          <a class="zone" href="#print-panel" style="--accent:#866237">
+            <span class="icon"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#art-print"/></svg></span>
+            <h3>Custom Print &amp; Designing</h3>
+            <p>Documents, photos, wedding cards, graphic design, mugs, bottles and personalised gifts.</p>
+            <span class="more">Open printing &amp; gifts →</span>
+          </a>
+
+          <a class="zone" href="#accessories-panel" style="--accent:#47745b">
+            <span class="icon"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#art-headphones"/></svg></span>
+            <h3>Accessories</h3>
+            <p>Mobile covers, chargers, cables and other phone accessories. Ask about your model.</p>
+            <span class="more">Open accessory options →</span>
+          </a>
+
+          <a class="zone" href="#csc-panel" style="--accent:#6a607b">
+            <span class="icon"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#art-doc"/></svg></span>
+            <h3>CSC Services</h3>
+            <p>Online applications, document assistance, resumes, scanning and FSSAI-related help.</p>
+            <span class="more">Open digital services →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section work-section" id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">02 / Personalised products</div><h2>A name. A photo. Your idea.</h2></div>
+          <p>Choose a product and tell us what you want to make. Design, availability and price are discussed before an order is agreed.</p>
+        </div>
+
+        <div class="products">
+          <a class="product" href="#enquiry" data-service="mug" data-back="print-panel">
+            <div class="media" data-photo="assets/images/gifts/mugs/mug-1.jpg">
+              <svg viewBox="0 0 120 120" aria-hidden="true"><use href="#art-mug"/></svg>
+            </div>
+            <div class="product-copy"><h3>Custom mugs</h3><p>Photo, name, birthday and wedding designs.</p><small>Ask about a mug →</small></div>
+          </a>
+
+          <a class="product" href="#enquiry" data-service="tshirt" data-back="print-panel">
+            <div class="media" data-photo="assets/images/gifts/tshirts/tshirt-1.jpg">
+              <svg viewBox="0 0 120 120" aria-hidden="true"><use href="#art-shirt"/></svg>
+            </div>
+            <div class="product-copy"><h3>Custom T-shirts</h3><p>Your artwork or message on a wearable gift.</p><small>Ask about a T-shirt →</small></div>
+          </a>
+
+          <a class="product" href="#enquiry" data-service="bottle" data-back="print-panel">
+            <div class="media" data-photo="assets/images/gifts/bottles/bottle-1.jpg">
+              <svg viewBox="0 0 120 120" aria-hidden="true"><use href="#art-bottle"/></svg>
+            </div>
+            <div class="product-copy"><h3>Personalised bottles</h3><p>Names and artwork for gifts or personal use.</p><small>Ask about a bottle →</small></div>
+          </a>
+
+          <a class="product" href="#enquiry" data-service="frame" data-back="print-panel">
+            <div class="media" data-photo="assets/images/gifts/frames/frame-1.jpg">
+              <svg viewBox="0 0 120 120" aria-hidden="true"><use href="#art-frame"/></svg>
+            </div>
+            <div class="product-copy"><h3>Photo frames</h3><p>Printed memories and personalised photo gifts.</p><small>Ask about a frame →</small></div>
+          </a>
+
+          <a class="product" href="#enquiry" data-service="invitation" data-back="print-panel">
+            <div class="media" data-photo="assets/images/printing/wedding-cards.jpg">
+              <svg viewBox="0 0 120 120" aria-hidden="true"><use href="#art-doc"/></svg>
+            </div>
+            <div class="product-copy"><h3>Wedding &amp; invitation cards</h3><p>Share your event details, style and quantity.</p><small>Ask about invitations →</small></div>
+          </a>
+
+          <a class="product" href="#enquiry" data-service="skin" data-back="print-panel">
+            <div class="media" data-photo="assets/images/gifts/skins/skin-1.jpg">
+              <svg viewBox="0 0 120 120" aria-hidden="true"><use href="#art-phone"/></svg>
+            </div>
+            <div class="product-copy"><h3>Custom mobile skins</h3><p>Ask about artwork and compatibility for your phone.</p><small>Ask about a skin →</small></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="visit">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">03 / Plan your visit</div><h2>A clear next step.</h2></div>
+          <p>No automatic booking or payment is taken on this website. Start with an enquiry.</p>
+        </div>
+
+        <div class="steps">
+          <article class="step"><span class="step-number">01</span><h3>Choose the service</h3><p>Select the repair, product or digital task you need. Add your phone model or product requirements.</p></article>
+          <article class="step"><span class="step-number">02</span><h3>Confirm the details</h3><p>Ask for the price, parts availability, expected completion time and any documents required.</p></article>
+          <article class="step"><span class="step-number">03</span><h3>Arrange your visit</h3><p>Confirm opening hours and the shop location before travelling. Approve the agreed work directly with the shop.</p></article>
+        </div>
+
+        <div class="advice"><strong>Keep your information safe:</strong> Never enter OTPs, passwords, payment PINs or identity-document numbers in the enquiry form.</div>
+      </div>
+    </section>
+
+    <section class="section work-section">
+      <div class="wrap faq">
+        <div class="section-head"><div><div class="eyebrow">04 / Helpful answers</div><h2>Before you enquire</h2></div></div>
+
+        <details><summary>Is display replacement always ₹1,099?</summary><p>No. ₹1,099 is a starting price for eligible models, subject to confirmation. Your phone model, compatible panel, part quality and stock determine the final quote.</p></details>
+        <details><summary>How long does a repair take?</summary><p>The shop needs to check the fault and parts availability before confirming a completion estimate. The website does not promise same-day repairs.</p></details>
+        <details><summary>Can I request a particular display type?</summary><p>Yes. Select your preference in the enquiry form. LCD, OLED and AMOLED are not interchangeable on every phone; the shop must check compatibility.</p></details>
+        <details><summary>Does this website send my message automatically?</summary><p>No. Continuing opens WhatsApp with the enquiry. You review it and press Send inside WhatsApp.</p></details>
+        <details><summary>Is this a government website?</summary><p>No. This is the business website of DSC Mobile Zone. It provides information about the shop's services and does not claim government endorsement.</p></details>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap contact">
+        <div>
+          <div class="eyebrow">05 / Contact the shop</div>
+          <h2>DSC Mobile Zone</h2>
+          <p class="muted">Tell us what you need. Confirm availability, price and timing before your visit.</p>
+          <div class="actions">
+            <a class="button primary" href="tel:+919541291967">Call 95412 91967</a>
+            <a class="button secondary" href="tel:+919596175562">Call 95961 75562</a>
+            <a class="button whatsapp" href="https://wa.me/919541291967">WhatsApp</a>
+            <a class="button secondary" href="#enquiry">General enquiry</a>
+          </div>
+        </div>
+        <dl>
+          <div><dt>Area</dt><dd>Boniyar, Baramulla, Jammu &amp; Kashmir</dd></div>
+          <div><dt>Opening hours</dt><dd>Please call or message to confirm.</dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:mirelectronics06@gmail.com">[mirelectronics06@gmail.com](mailto:mirelectronics06@gmail.com)</a></dd></div>
+          <div><dt>Directions</dt><dd>Ask the shop for its exact location before travelling.</dd></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <strong>DSC Mobile Zone · Boniyar</strong>
+      <p>Private business website, not an official government portal. Service availability, pricing and timelines must be confirmed directly with the shop.</p>
+      <p>This page does not store enquiry submissions in a website database. Continuing to WhatsApp shares the message with WhatsApp; you must press Send there to deliver it.</p>
+      <p>Build R7 · Reliable link-based navigation</p>
+    </div>
+  </footer>
 </div>
 
-<section id="services"><div class="w">
-  <div class="sh"><div><div class="no">SECTION 01</div><h2>Our services</h2></div><p>Select a division to see every option with its price guide and expected time, then send an enquiry.</p></div>
-  <div class="tiles">
-    <button type="button" class="tile" style="--c:#0b6bcb" onclick="DSC.open('repair')"><div class="ic">🔧</div><h3>Mobile Repairing</h3><ul><li>Display / folder</li><li>Ringer, mic, back panel</li><li>Battery, charging port</li></ul><span class="go">View repair services →</span></button>
-    <button type="button" class="tile" style="--c:#6b46c1" onclick="DSC.open('print')"><div class="ic">🎨</div><h3>Custom Print &amp; Designing</h3><ul><li>Photos and documents</li><li>Wedding cards, posters</li><li>Logo and graphic design</li></ul><span class="go">View print &amp; design →</span></button>
-    <button type="button" class="tile" style="--c:#c05621" onclick="DSC.open('gifts')"><div class="ic">🎁</div><h3>Customized Gifts</h3><ul><li>Mugs, bottles, T-shirts</li><li>Caps, keychains, frames</li><li>Mobile skins</li></ul><span class="go">View custom gifts →</span></button>
-    <button type="button" class="tile" style="--c:#b7791f" onclick="DSC.open('acc')"><div class="ic">🎧</div><h3>Accessories</h3><ul><li>Covers, screen guards</li><li>Chargers and cables</li><li>Earphones, power banks</li></ul><span class="go">View accessories →</span></button>
-    <button type="button" class="tile" style="--c:#17724a" onclick="DSC.open('csc')"><div class="ic">💻</div><h3>CSC &amp; Digital Services</h3><ul><li>Online forms, applications</li><li>Resume / CV, FSSAI help</li><li>Scanning and documents</li></ul><span class="go">View digital services →</span></button>
-  </div>
-</div></section>
-
-<section id="repair-rates" class="alt"><div class="w">
-  <div class="sh"><div><div class="no">SECTION 02</div><h2>Repair price guide</h2></div><p>Indicative ranges. Click any row to send an enquiry for that repair.</p></div>
-  <div class="tblw"><table class="tbl" id="rate-table">
-    <thead><tr><th>Repair</th><th>Price guide</th><th>Expected time</th><th>Group</th></tr></thead>
-    <tbody></tbody>
-  </table></div>
-  <p class="hint" style="margin-top:10px">Price depends on phone model, part quality and availability. You approve the final price before we begin.</p>
-</div></section>
-
-<section id="gifts"><div class="w">
-  <div class="sh"><div><div class="no">SECTION 03</div><h2>Customized gifts</h2></div><p>Mugs, bottles, T-shirts and more, made with your name, photo or design.</p></div>
-  <div class="pg" id="gift-grid"></div>
-</div></section>
-
-<section id="printing" class="alt"><div class="w">
-  <div class="sh"><div><div class="no">SECTION 04</div><h2>Photo, document &amp; design printing</h2></div><p>Common sizes we print. Ask about other sizes and paper types.</p></div>
-  <div class="sz">
-    <div><div class="box" style="width:52px;height:67px">🪪</div><b>Passport</b><small>35 × 45 mm</small></div>
-    <div><div class="box" style="width:62px;height:62px">🖼️</div><b>2 × 2</b><small>Photo</small></div>
-    <div><div class="box" style="width:70px;height:70px">🖼️</div><b>4 × 4</b><small>Photo</small></div>
-    <div><div class="box" style="width:56px;height:84px">🖼️</div><b>4 × 6</b><small>Photo</small></div>
-    <div><div class="box" style="width:64px;height:90px">📄</div><b>A4</b><small>Documents</small></div>
-  </div>
-  <div class="pg" id="print-grid" style="margin-top:20px"></div>
-</div></section>
-
-<section id="how"><div class="w">
-  <div class="sh"><div><div class="no">SECTION 05</div><h2>How it works</h2></div><p>A simple process from enquiry to collection.</p></div>
-  <div class="steps">
-    <div class="st"><h3>Choose a service</h3><p>Open a division and pick the exact repair, product or task.</p></div>
-    <div class="st"><h3>Send your enquiry</h3><p>Fill in the short form. It opens WhatsApp with your details ready to send.</p></div>
-    <div class="st"><h3>Get a confirmed quote</h3><p>The shop replies with the final price and time before work starts.</p></div>
-    <div class="st"><h3>Visit and collect</h3><p>Bring your device or files. Collect when ready and pay as agreed.</p></div>
-  </div>
-</div></section>
-
-<section class="alt"><div class="w">
-  <div class="sh"><div><div class="no">SECTION 06</div><h2>Our commitments</h2></div><p>Keep only the commitments you will truly follow.</p></div>
-  <div class="trust">
-    <div class="tr"><div class="e">💰</div><h3>Price first</h3><p>We confirm the price before work begins.</p></div>
-    <div class="tr"><div class="e">👁️</div><h3>Design preview</h3><p>You see your design before it is printed.</p></div>
-    <div class="tr"><div class="e">🔍</div><h3>Honest inspection</h3><p>We explain the fault before repairing.</p></div>
-    <div class="tr"><div class="e">🔒</div><h3>Privacy</h3><p>Your details and documents are handled with care.</p></div>
-  </div>
-</div></section>
-
-<section id="csc"><div class="w">
-  <div class="sh"><div><div class="no">SECTION 07</div><h2>CSC &amp; digital assistance</h2></div><p>Help with online services. Requirements differ for each application, so confirm first.</p></div>
-  <div class="two">
-    <div class="box2"><h3>What we can help with</h3>
-      <ul class="ck"><li>Online application and form filling</li><li>Government form guidance via official portals</li><li>Resume / CV preparation and printing</li><li>FSSAI-related assistance</li><li>Scanning, PDF preparation and printing</li><li>Photos for forms and applications</li></ul>
-      <p style="margin-top:14px"><button type="button" class="btn b1" onclick="DSC.open('csc')">Open digital services</button></p>
+<!-- =====================================================
+     REPAIR OPTIONS — STATIC HTML, NOT GENERATED BY SCRIPT
+====================================================== -->
+<section class="overlay" id="repair-panel" aria-labelledby="repair-title">
+  <a class="backdrop" href="#services" aria-label="Close repair options" tabindex="-1"></a>
+  <div class="sheet" tabindex="-1">
+    <div class="sheet-head">
+      <div><div class="eyebrow">Mobile care</div><h2 id="repair-title">Repairing</h2></div>
+      <a class="close" href="#services" aria-label="Close repair options">×</a>
     </div>
-    <div class="box2"><h3>Documents you may need</h3>
-      <ul class="ck"><li>Original identity proof</li><li>Mobile number linked to your records</li><li>Address proof, if the application asks for it</li><li>Recent passport-size photographs</li><li>Any earlier application or reference number</li></ul>
-      <p class="hint" style="margin-top:12px">⚠ Never share your OTP, PIN or password with anyone, including staff. Ask what each document is for before handing it over.</p>
-      <div class="trustimg" id="csc-cert" hidden><img src="assets/images/trust/csc-id.jpg" alt="CSC registration certificate" onload="document.getElementById('csc-cert').hidden=false"></div>
+    <div class="sheet-body">
+      <p class="sheet-note">Select your problem to open the enquiry form. Final price and waiting time are confirmed after diagnosis and a parts-availability check.</p>
+      <div class="advice" style="margin:0 0 20px"><strong>Display/folder replacement: from ₹1,099</strong> for eligible models. This is not a universal price for all displays.</div>
+      <div class="services">
+        <a class="service" href="#enquiry" data-service="display" data-back="repair-panel">
+          <span class="media thumb" data-photo="assets/images/repairs/display.jpg">📱</span>
+          <span><strong>Display / folder replacement</strong><span class="description">Broken screen, lines or no display. Choose a panel preference in the form; compatibility must be checked.</span><span class="choose">Choose display service →</span></span>
+        </a>
+        <a class="service" href="#enquiry" data-service="ringer" data-back="repair-panel">
+          <span class="media thumb" data-photo="assets/images/repairs/ringer.jpg">🔊</span>
+          <span><strong>Ringer / loudspeaker</strong><span class="description">Low, distorted or missing ringtone and media sound.</span><span class="choose">Ask for an estimate →</span></span>
+        </a>
+        <a class="service" href="#enquiry" data-service="mic" data-back="repair-panel">
+          <span class="media thumb" data-photo="assets/images/repairs/mic.jpg">🎙️</span>
+          <span><strong>Microphone</strong><span class="description">Callers cannot hear you, or recordings are unclear.</span><span class="choose">Ask for an estimate →</span></span>
+        </a>
+        <a class="service" href="#enquiry" data-service="earpiece" data-back="repair-panel">
+          <span class="media thumb">📞</span>
+          <span><strong>Earpiece / call audio</strong><span class="description">Trouble hearing the person on a call.</span><span class="choose">Ask for an estimate →</span></span>
+        </a>
+        <a class="service" href="#enquiry" data-service="backpanel" data-back="repair-panel">
+          <span class="media thumb" data-photo="assets/images/repairs/backpanel.jpg">📲</span>
+          <span><strong>Back panel / back glass</strong><span class="description">Share the phone model and damage details to check part availability.</span><span class="choose">Check your model →</span></span>
+        </a>
+        <a class="service" href="#enquiry" data-service="battery" data-back="repair-panel">
+          <span class="media thumb" data-photo="assets/images/repairs/battery.jpg">🔋</span>
+          <span><strong>Battery problem</strong><span class="description">Fast drain or shutdowns. If the battery is swollen, stop using and charging the device.</span><span class="choose">Request inspection →</span></span>
+        </a>
+        <a class="service" href="#enquiry" data-service="charging" data-back="repair-panel">
+          <span class="media thumb" data-photo="assets/images/repairs/charging.jpg">🔌</span>
+          <span><strong>Charging port / charging issue</strong><span class="description">Loose connection, slow charging or a phone that will not charge.</span><span class="choose">Request inspection →</span></span>
+        </a>
+        <a class="service" href="#enquiry" data-service="software" data-back="repair-panel">
+          <span class="media thumb" data-photo="assets/images/repairs/software.jpg">⚙️</span>
+          <span><strong>Software &amp; troubleshooting</strong><span class="description">Hanging, settings, updates and other mobile problems.</span><span class="choose">Describe the problem →</span></span>
+        </a>
+      </div>
     </div>
   </div>
-</div></section>
+</section>
 
-<section id="faq" class="alt"><div class="w" style="max-width:860px">
-  <div class="sh"><div><div class="no">SECTION 08</div><h2>Frequently asked questions</h2></div></div>
-  <details><summary>Is this an official government website?</summary><p>No. This is the website of DSC Mobile Zone, a private business. We help customers with some online and CSC-type services, but this site is not run by or endorsed by any government department.</p></details>
-  <details><summary>Is ₹1,099 the final price for a display repair?</summary><p>No. It is an indicative starting price for a basic display. The final price depends on the phone model and the part quality. You approve the price before we start.</p></details>
-  <details><summary>How long will my repair take?</summary><p>The times shown are estimates. Some repairs need parts to be ordered. We confirm the time after checking your phone.</p></details>
-  <details><summary>What happens when I press Send on the form?</summary><p>WhatsApp opens with your details already typed into a message to the shop. You then press Send in WhatsApp. The website never sends anything by itself.</p></details>
-  <details><summary>Can I order a custom design without visiting?</summary><p>Yes. Send your enquiry, then share your photo or name text on WhatsApp. We confirm the design and price before printing.</p></details>
-</div></section>
-
-<section id="contact"><div class="w ct">
-  <div class="cb">
-    <div style="color:#f0c674;font-weight:800;font-size:.8rem;letter-spacing:.12em">SECTION 09</div>
-    <h2>Contact DSC Mobile Zone</h2>
-    <p>Call or message to confirm availability, current prices and timing before you visit.</p>
-    <div class="row">
-      <a class="btn bg" href="tel:+919541291967">📞 Call 95412 91967</a>
-      <button class="btn bw" type="button" onclick="DSC.wa()">💬 WhatsApp</button>
-      <a class="btn b2" style="background:#fff" href="mailto:mirelectronics06@gmail.com">✉ Email</a>
+<!-- PRINTING, DESIGN AND GIFTS -->
+<section class="overlay" id="print-panel" aria-labelledby="print-title">
+  <a class="backdrop" href="#services" aria-label="Close printing options" tabindex="-1"></a>
+  <div class="sheet" tabindex="-1">
+    <div class="sheet-head">
+      <div><div class="eyebrow">Print &amp; gift studio</div><h2 id="print-title">Custom Print &amp; Designing</h2></div>
+      <a class="close" href="#services" aria-label="Close printing options">×</a>
     </div>
-    <dl>
-      <dt>Business</dt><dd>DSC Mobile Zone</dd>
-      <dt>Location</dt><dd>Boniyar, Baramulla, Jammu &amp; Kashmir</dd>
-      <dt>Phone</dt><dd><a href="tel:+919541291967">+91 95412 91967</a> · <a href="tel:+919596175562">+91 95961 75562</a></dd>
-      <dt>Email</dt><dd><a href="mailto:mirelectronics06@gmail.com">[mirelectronics06@gmail.com](mailto:mirelectronics06@gmail.com)</a></dd>
-      <dt>Opening hours</dt><dd>Please call or WhatsApp to confirm</dd>
-    </dl>
-  </div>
-  <div class="box2">
-    <h3>Not sure what you need?</h3>
-    <p style="color:var(--mut)">Describe it and we will guide you.</p>
-    <button type="button" class="btn b1" onclick="DSC.open('other')">Send a general enquiry</button>
-    <p style="margin-top:16px"><a id="maplink" class="btn b2" href="#" target="_blank" rel="noopener" hidden>📍 Get directions</a></p>
-  </div>
-</div></section>
-</main>
+    <div class="sheet-body">
+      <p class="sheet-note">Tell us the size, quantity and idea. Prices and completion times are quoted for your requirements.</p>
+      <h3>Photos, documents and design</h3>
+      <div class="services">
+        <a class="service" href="#enquiry" data-service="documents" data-back="print-panel"><span class="media thumb" data-photo="assets/images/printing/documents.jpg">📄</span><span><strong>Document / A4 printing</strong><span class="description">Tell us the page count and colour or black-and-white requirements.</span><span class="choose">Enquire →</span></span></a>
+        <a class="service" href="#enquiry" data-service="photos" data-back="print-panel"><span class="media thumb" data-photo="assets/images/printing/photos.jpg">🖼️</span><span><strong>Photo printing</strong><span class="description">2×2, 4×4 and 4×6 photo enquiries. Confirm units and required dimensions with the shop.</span><span class="choose">Enquire →</span></span></a>
+        <a class="service" href="#enquiry" data-service="passport" data-back="print-panel"><span class="media thumb" data-photo="assets/images/printing/passport.jpg">🪪</span><span><strong>Passport / application photos</strong><span class="description">Provide the application's exact photo specifications.</span><span class="choose">Enquire →</span></span></a>
+        <a class="service" href="#enquiry" data-service="invitation" data-back="print-panel"><span class="media thumb" data-photo="assets/images/printing/wedding-cards.jpg">💌</span><span><strong>Wedding &amp; invitation cards</strong><span class="description">Share event details, preferred design and quantity.</span><span class="choose">Enquire →</span></span></a>
+        <a class="service" href="#enquiry" data-service="design" data-back="print-panel"><span class="media thumb" data-photo="assets/images/printing/design.jpg">🎨</span><span><strong>Graphic designing</strong><span class="description">Posters, business materials, social-media and product artwork.</span><span class="choose">Enquire →</span></span></a>
+      </div>
 
-<footer><div class="w">
-  <b style="color:#fff">DSC Mobile Zone, Boniyar</b>
-  <p>Independent private business. Not affiliated with, or endorsed by, any government body. CSC and online services are assisted via official portals. Prices, availability and timelines are indicative and confirmed by the shop before work begins.</p>
-  <p>Never share OTPs, PINs or passwords. &nbsp;·&nbsp; Build v6</p>
-</div></footer>
-
-<div class="fab">
-  <a href="#contact" style="background:#1a8d4e;color:#fff" aria-label="Contact">💬</a>
-  <a href="tel:+919541291967" style="background:#0b2a4a;color:#fff" aria-label="Call">📞</a>
-</div>
-
-<div class="ov" id="ov" role="dialog" aria-modal="true" aria-labelledby="m-title">
-  <div class="md" id="md">
-    <div class="mh">
-      <span class="ic" id="m-ic" aria-hidden="true"></span>
-      <div><h2 id="m-title"></h2><p id="m-sub"></p></div>
-      <span class="sp"></span>
-      <button class="x" type="button" id="m-x" aria-label="Close">✕</button>
+      <h3>Personalised products</h3>
+      <div class="services">
+        <a class="service" href="#enquiry" data-service="mug" data-back="print-panel"><span class="media thumb" data-photo="assets/images/gifts/mugs/mug-1.jpg">☕</span><span><strong>Custom mugs</strong><span class="description">Photo, name, birthday, wedding and full-wrap designs.</span><span class="choose">Enquire →</span></span></a>
+        <a class="service" href="#enquiry" data-service="tshirt" data-back="print-panel"><span class="media thumb" data-photo="assets/images/gifts/tshirts/tshirt-1.jpg">👕</span><span><strong>Custom T-shirts</strong><span class="description">Share size, quantity, colour preference and design.</span><span class="choose">Enquire →</span></span></a>
+        <a class="service" href="#enquiry" data-service="bottle" data-back="print-panel"><span class="media thumb" data-photo="assets/images/gifts/bottles/bottle-1.jpg">🎁</span><span><strong>Custom bottles</strong><span class="description">Names, personalised artwork and gifting designs.</span><span class="choose">Enquire →</span></span></a>
+        <a class="service" href="#enquiry" data-service="cap" data-back="print-panel"><span class="media thumb" data-photo="assets/images/gifts/caps/cap-1.jpg">🧢</span><span><strong>Printed caps</strong><span class="description">Ask about cap styles, designs and availability.</span><span class="choose">Enquire →</span></span></a>
+        <a class="service" href="#enquiry" data-service="keychain" data-back="print-panel"><span class="media thumb" data-photo="assets/images/gifts/keychains/keychain-1.jpg">🔑</span><span><strong>Custom keychains</strong><span class="description">Name and photo gift enquiries.</span><span class="choose">Enquire →</span></span></a>
+        <a class="service" href="#enquiry" data-service="frame" data-back="print-panel"><span class="media thumb" data-photo="assets/images/gifts/frames/frame-1.jpg">🖼️</span><span><strong>Photo frames</strong><span class="description">Share your preferred size and style.</span><span class="choose">Enquire →</span></span></a>
+        <a class="service" href="#enquiry" data-service="skin" data-back="print-panel"><span class="media thumb" data-photo="assets/images/gifts/skins/skin-1.jpg">📱</span><span><strong>Mobile skins</strong><span class="description">Provide the exact phone model and artwork idea.</span><span class="choose">Enquire →</span></span></a>
+      </div>
     </div>
-    <div class="mb" id="m-body"></div>
   </div>
-</div>
+</section>
+
+<!-- ACCESSORIES -->
+<section class="overlay" id="accessories-panel" aria-labelledby="accessories-title">
+  <a class="backdrop" href="#services" aria-label="Close accessories" tabindex="-1"></a>
+  <div class="sheet" tabindex="-1">
+    <div class="sheet-head">
+      <div><div class="eyebrow">Mobile essentials</div><h2 id="accessories-title">Accessories</h2></div>
+      <a class="close" href="#services" aria-label="Close accessories">×</a>
+    </div>
+    <div class="sheet-body">
+      <p class="sheet-note">Stock, compatibility, price and any warranty must be confirmed for the specific product.</p>
+      <div class="services">
+        <a class="service" href="#enquiry" data-service="cover" data-back="accessories-panel"><span class="media thumb" data-photo="assets/images/accessories/covers.jpg">📲</span><span><strong>Mobile covers</strong><span class="description">Share your exact phone model and preferred style.</span><span class="choose">Check availability →</span></span></a>
+        <a class="service" href="#enquiry" data-service="charger" data-back="accessories-panel"><span class="media thumb" data-photo="assets/images/accessories/chargers.jpg">🔌</span><span><strong>Chargers</strong><span class="description">Ask about compatible options across different budgets.</span><span class="choose">Check availability →</span></span></a>
+        <a class="service" href="#enquiry" data-service="cable" data-back="accessories-panel"><span class="media thumb" data-photo="assets/images/accessories/cables.jpg">🔋</span><span><strong>Cables &amp; charging accessories</strong><span class="description">Mention your phone model or required connector.</span><span class="choose">Check availability →</span></span></a>
+        <a class="service" href="#enquiry" data-service="other-accessory" data-back="accessories-panel"><span class="media thumb" data-photo="assets/images/accessories/earphones.jpg">🎧</span><span><strong>Other mobile accessories</strong><span class="description">Describe the item you want; the shop will confirm current stock.</span><span class="choose">Ask about an item →</span></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CSC -->
+<section class="overlay" id="csc-panel" aria-labelledby="csc-title">
+  <a class="backdrop" href="#services" aria-label="Close digital services" tabindex="-1"></a>
+  <div class="sheet" tabindex="-1">
+    <div class="sheet-head">
+      <div><div class="eyebrow">Digital assistance</div><h2 id="csc-title">CSC Services</h2></div>
+      <a class="close" href="#services" aria-label="Close digital services">×</a>
+    </div>
+    <div class="sheet-body">
+      <p class="sheet-note">Requirements vary by application. Confirm availability, official charges and the shop's assistance fee separately. Approval decisions are made by the relevant authority.</p>
+      <div class="services">
+        <a class="service" href="#enquiry" data-service="application" data-back="csc-panel"><span class="media thumb" data-photo="assets/images/csc/forms.jpg">📝</span><span><strong>Online applications</strong><span class="description">Tell us the application or form name.</span><span class="choose">Ask about assistance →</span></span></a>
+        <a class="service" href="#enquiry" data-service="government-form" data-back="csc-panel"><span class="media thumb">🏛️</span><span><strong>Government form guidance</strong><span class="description">Enquire about help using an official application portal.</span><span class="choose">Ask about assistance →</span></span></a>
+        <a class="service" href="#enquiry" data-service="fssai" data-back="csc-panel"><span class="media thumb" data-photo="assets/images/csc/fssai.jpg">📋</span><span><strong>FSSAI-related assistance</strong><span class="description">Describe the business and application help required. Do not submit sensitive documents here.</span><span class="choose">Ask about assistance →</span></span></a>
+        <a class="service" href="#enquiry" data-service="resume" data-back="csc-panel"><span class="media thumb" data-photo="assets/images/csc/resume.jpg">💼</span><span><strong>Resume / CV preparation</strong><span class="description">Formatting, design and printing enquiries.</span><span class="choose">Enquire →</span></span></a>
+        <a class="service" href="#enquiry" data-service="scanning" data-back="csc-panel"><span class="media thumb" data-photo="assets/images/csc/scanning.jpg">🖨️</span><span><strong>Scanning &amp; PDF preparation</strong><span class="description">Ask about scanning or preparing documents for an application.</span><span class="choose">Enquire →</span></span></a>
+        <a class="service" href="#enquiry" data-service="digital-help" data-back="csc-panel"><span class="media thumb">💻</span><span><strong>Other digital help</strong><span class="description">Describe the computer-based task you need assistance with.</span><span class="choose">Enquire →</span></span></a>
+      </div>
+      <div class="advice">This is not a government portal. Never enter identity-document numbers, OTPs or passwords in an enquiry.</div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     ENQUIRY
+     Native HTML form works without JavaScript:
+     it sends the "text" field to the WhatsApp click-to-chat URL.
+====================================================== -->
+<section class="overlay" id="enquiry" aria-labelledby="enquiry-title">
+  <a class="backdrop" href="#services" aria-label="Close enquiry" tabindex="-1"></a>
+  <div class="sheet form-sheet" tabindex="-1">
+    <div class="sheet-head">
+      <div><div class="eyebrow">Contact DSC Mobile Zone</div><h2 id="enquiry-title">Service enquiry</h2></div>
+      <a class="close" href="#services" aria-label="Close enquiry">×</a>
+    </div>
+    <div class="sheet-body">
+      <a class="form-back" id="form-back" href="#services">← Back to services</a>
+      <p class="sheet-note">This sends an enquiry, not a confirmed booking. Review the message in WhatsApp and press Send there.</p>
+
+      <form id="enquiry-form" action="https://wa.me/919541291967" method="get">
+        <!-- Disabled until enhancement is ready. -->
+        <fieldset id="guided-fields" disabled hidden>
+          <div class="form-grid">
+            <label class="full" for="service-choice">Service *</label>
+            <select id="service-choice" class="full" required>
+              <option value="">Select a service</option>
+              <optgroup label="Repairing">
+                <option value="display">Display / folder replacement</option>
+                <option value="ringer">Ringer / loudspeaker</option>
+                <option value="mic">Microphone</option>
+                <option value="earpiece">Earpiece / call audio</option>
+                <option value="backpanel">Back panel / back glass</option>
+                <option value="battery">Battery problem</option>
+                <option value="charging">Charging issue</option>
+                <option value="software">Software / troubleshooting</option>
+              </optgroup>
+              <optgroup label="Printing, designing and gifts">
+                <option value="documents">Document / A4 printing</option>
+                <option value="photos">Photo printing</option>
+                <option value="passport">Passport / application photos</option>
+                <option value="invitation">Wedding / invitation cards</option>
+                <option value="design">Graphic designing</option>
+                <option value="mug">Custom mug</option>
+                <option value="tshirt">Custom T-shirt</option>
+                <option value="bottle">Custom bottle</option>
+                <option value="cap">Custom cap</option>
+                <option value="keychain">Custom keychain</option>
+                <option value="frame">Photo frame</option>
+                <option value="skin">Mobile skin</option>
+              </optgroup>
+              <optgroup label="Accessories">
+                <option value="cover">Mobile cover</option>
+                <option value="charger">Charger</option>
+                <option value="cable">Cable / charging accessory</option>
+                <option value="other-accessory">Other mobile accessory</option>
+              </optgroup>
+              <optgroup label="CSC and digital help">
+                <option value="application">Online application</option>
+                <option value="government-form">Government form guidance</option>
+                <option value="fssai">FSSAI-related assistance</option>
+                <option value="resume">Resume / CV</option>
+                <option value="scanning">Scanning / PDF</option>
+                <option value="digital-help">Other digital assistance</option>
+              </optgroup>
+              <option value="general">General enquiry</option>
+            </select>
+
+            <div class="full" id="display-options" hidden>
+              <label for="display-type">Display preference</label>
+              <select id="display-type">
+                <option>Not sure - please advise</option>
+                <option>Budget-compatible LCD - ask for quote</option>
+                <option>Higher-grade compatible LCD - ask for quote</option>
+                <option>OLED / AMOLED - subject to compatibility</option>
+                <option>Original / OEM - ask about availability and evidence</option>
+              </select>
+              <p class="small muted">From ₹1,099 applies only to eligible models. Types are not interchangeable on every phone. Compatibility, final price and timing must be confirmed.</p>
+            </div>
+
+            <label for="customer-name">Your name *
+              <input id="customer-name" autocomplete="name" maxlength="80" required>
+            </label>
+            <label for="customer-phone">Phone number *
+              <input id="customer-phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="22" required placeholder="10-digit mobile or country code">
+            </label>
+            <label class="full" for="customer-area">Address / village / area *
+              <input id="customer-area" autocomplete="address-level2" maxlength="140" required placeholder="Your village or area is sufficient for an enquiry">
+            </label>
+            <label for="customer-model">Phone model / product
+              <input id="customer-model" maxlength="100" placeholder="Exact phone model or product">
+            </label>
+            <label for="customer-budget">Budget range *
+              <select id="customer-budget" required>
+                <option value="">Choose a budget</option>
+                <option>Below ₹1,000</option>
+                <option>₹1,000–₹1,500</option>
+                <option>₹1,501–₹3,000</option>
+                <option>₹3,001–₹6,000</option>
+                <option>Above ₹6,000</option>
+                <option>Please advise / send a quote</option>
+              </select>
+            </label>
+            <label class="full" for="customer-details">More details
+              <textarea id="customer-details" maxlength="600" placeholder="Fault, size, quantity, colour, design idea or application name"></textarea>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Reliable no-script alternative, hidden only after setup succeeds. -->
+        <div id="manual-fields">
+          <label for="wa-message">Your enquiry message *</label>
+          <p class="small muted">Fill in the message below, then continue to WhatsApp.</p>
+          <textarea id="wa-message" name="text" required rows="10">Hello DSC Mobile Zone,
+Service:
+Name:
+Phone:
+Village / area:
+Phone model / product:
+Budget:
+Details:
+
+Please confirm the price, availability and expected time.</textarea>
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" required>
+          <span>I agree to share these enquiry details with DSC Mobile Zone through WhatsApp. I understand that I must press Send in WhatsApp.</span>
+        </label>
+
+        <p class="small muted" id="routing-note">This opens the shop's WhatsApp. Do not enter OTPs, passwords, payment PINs or identity-document numbers.</p>
+        <p id="form-error" class="error" role="alert"></p>
+
+        <button class="button whatsapp" type="submit">Continue to WhatsApp →</button>
+
+        <p class="small muted" style="margin-top:17px">
+          Prefer to call?
+          <a href="tel:+919541291967">95412 91967</a> /
+          <a href="tel:+919596175562">95961 75562</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
 
 <script>
 (function () {
-"use strict";
+  "use strict";
 
-/* ===================== SETTINGS: EDIT HERE ===================== */
-var SHOP = {
-  name: "DSC Mobile Zone",
-  numbers: ["919541291967", "919596175562"],   /* enquiry goes to one of these at random */
-  mapUrl: ""                                    /* paste a full https Google Maps link for a Directions button */
-};
-var IMG = "assets/images/";
+  /*
+    Enquiry routing:
+    Keep only numbers the business actually uses for WhatsApp.
+    Numbers include country code without the + sign.
+  */
+  var businessNumbers = ["919541291967", "919596175562"];
 
-/* ===================== SERVICES: EDIT PRICES AND TIMES HERE =====================
-   Item = [emoji, name, description, price text, time text, image file, optional variants]
-   Variants = [[label, price text], ...]
-   Prices marked "Indicative" are market estimates, NOT your rates. Replace with your real prices. */
-var CATS = {
-  repair: { title: "Mobile Repairing", icon: "🔧", color: "#0b6bcb",
-    sub: "Choose the repair. Final price and time are confirmed after inspection.",
-    groups: {
-      "Display": [
-        ["📱","Display / folder replacement","Cracked, lined or dead screen. Choose a quality grade below in the form.","From ₹1,099","Est. same day to 2 days","repairs/display.jpg",
-          [["Basic LCD display","From ₹1,099"],["Better-quality display","Indicative ₹1,500 – ₹3,000"],["AMOLED / OLED display","Indicative ₹2,500 – ₹6,000"],["Original / OEM part","On inspection"]]],
-        ["🧩","Touch not working","Touch glitch, ghost touch or dead zones. We check whether the display or the board is at fault.","On inspection","Est. same day to 2 days","repairs/display.jpg"]
-      ],
-      "Audio": [
-        ["🔊","Ringer / loudspeaker","Low, cracked or no sound from the main speaker.","Indicative ₹250 – ₹500","Est. same day","repairs/ringer.jpg"],
-        ["🎙️","Microphone","People cannot hear you on calls, or voice notes are faint.","Indicative ₹200 – ₹400","Est. same day","repairs/mic.jpg"],
-        ["📞","Earpiece","Cannot hear the caller during calls.","Indicative ₹250 – ₹500","Est. same day","repairs/ringer.jpg"]
-      ],
-      "Body & power": [
-        ["📲","Back panel / glass","Broken or dented back panel. Model-specific.","On inspection","Est. 1 to 3 days","repairs/backpanel.jpg"],
-        ["🔋","Battery replacement","Fast drain, swelling or shutting down.","Indicative ₹800 – ₹1,500","Est. same day","repairs/battery.jpg"],
-        ["🔌","Charging port / not charging","Loose port, slow or no charging.","Indicative ₹400 – ₹800","Est. same day","repairs/charging.jpg"]
-      ],
-      "Software": [
-        ["⚙️","Software / hang / update","Slow phone, hanging, app problems, setup.","Ask for price","Est. same day","repairs/software.jpg"],
-        ["🛠️","Other fault","Describe the problem and we will check it.","On inspection","After checking","repairs/software.jpg"]
-      ]
-    } },
-  print: { title: "Custom Print & Designing", icon: "🎨", color: "#6b46c1",
-    sub: "Printing and design work. Share your requirement in the form.",
-    groups: {
-      "Photos & documents": [
-        ["🪪","Passport / 2×2 photos","Passport, 2×2 and 4×4 photos for forms and IDs.","Ask for rate","Est. while you wait","printing/passport.jpg"],
-        ["🖼️","Photo printing 4×6","Standard 4×6 photo prints and other sizes.","Ask for rate","Est. while you wait","printing/photos.jpg"],
-        ["📄","Document / A4 printing","Black and white or colour A4 documents.","Ask for rate","Est. while you wait","printing/documents.jpg"]
-      ],
-      "Design": [
-        ["💌","Wedding / invitation cards","Design and printing. Share event details and quantity.","Ask for quote","Est. 2 to 5 days","printing/wedding-cards.jpg"],
-        ["🎨","Graphic designing","Posters, business cards, social media and product designs.","Ask for quote","Est. 1 to 3 days","printing/design.jpg"],
-        ["📣","Banners / flex / stickers","Shop and event banners, labels and stickers.","Ask for quote","Est. 1 to 3 days","printing/banners.jpg"]
-      ]
-    } },
-  gifts: { title: "Customized Gifts", icon: "🎁", color: "#c05621",
-    sub: "Personalised with your name, photo or design. Design preview before printing.",
-    groups: {
-      "Drinkware": [
-        ["☕","Custom mug","Birthday, wedding, photo or name mugs with full-wrap print.","Ask for rate","Est. 1 to 2 days","gifts/mugs/mug-1.jpg"],
-        ["🍼","Custom bottle","Branded bottles with names and artwork.","Ask for rate","Est. 1 to 3 days","gifts/bottles/bottle-1.jpg"]
-      ],
-      "Wearables": [
-        ["👕","Custom T-shirt","Your photo, text or design on a T-shirt.","Ask for rate","Est. 1 to 3 days","gifts/tshirts/tshirt-1.jpg"],
-        ["🧢","Custom cap","Printed caps with your design.","Ask for rate","Est. 1 to 3 days","gifts/caps/cap-1.jpg"]
-      ],
-      "Keepsakes": [
-        ["🔑","Keychain","Photo or name keychains.","Ask for rate","Est. 1 to 2 days","gifts/keychains/keychain-1.jpg"],
-        ["🖼️","Photo frame","Personalised frames and photo gifts.","Ask for rate","Est. 1 to 2 days","gifts/frames/frame-1.jpg"],
-        ["📱","Mobile skin","Custom skin for your phone model.","Ask for rate","Est. 1 to 2 days","gifts/skins/skin-1.jpg"],
-        ["🎁","Other personalised gift","Tell us your idea.","Ask for quote","After discussion","gifts/mugs/mug-2.jpg"]
-      ]
-    } },
-  acc: { title: "Mobile Accessories", icon: "🎧", color: "#b7791f",
-    sub: "Tell us your phone model. Stock and prices change, so we confirm them.",
-    groups: {
-      "Protection": [
-        ["📱","Mobile cover","Covers for popular models.","Ask for rate","In-stock items","accessories/covers.jpg"],
-        ["🛡️","Screen protector","Tempered glass and guards.","Ask for rate","Usually while you wait","accessories/guards.jpg"]
-      ],
-      "Charging": [
-        ["🔌","Charger","Options from budget to higher quality. Ask about warranty.","Ask for rate","In-stock items","accessories/chargers.jpg"],
-        ["🧵","Cable","Type-C, micro-USB and lightning where available.","Ask for rate","In-stock items","accessories/cables.jpg"],
-        ["🔋","Power bank","Portable charging. Ask about capacity.","Ask for rate","In-stock items","accessories/powerbank.jpg"]
-      ],
-      "Audio": [
-        ["🎧","Earphones / headset","Wired and wireless, where stocked.","Ask for rate","In-stock items","accessories/earphones.jpg"]
-      ]
-    } },
-  csc: { title: "CSC & Digital Services", icon: "💻", color: "#17724a",
-    sub: "Describe the service you need. We confirm which documents to bring.",
-    groups: {
-      "Applications": [
-        ["📝","Online application / form","Help filling and submitting online forms. Mention the application name.","Service charge: ask","Depends on application","csc/forms.jpg"],
-        ["🏛️","Government form guidance","Guidance on using official portals.","Service charge: ask","Depends on application","csc/forms.jpg"],
-        ["🍲","FSSAI-related assistance","Help with FSSAI application steps.","Service charge: ask","Depends on application","csc/fssai.jpg"]
-      ],
-      "Documents": [
-        ["💼","Resume / CV","Formatting, design and printing.","Ask for rate","Est. same day","csc/resume.jpg"],
-        ["🖨️","Scanning / PDF","Scan documents and prepare PDFs for upload.","Ask for rate","Est. while you wait","csc/scanning.jpg"],
-        ["📷","Photos for forms","Correct-size photos for applications.","Ask for rate","Est. while you wait","printing/passport.jpg"]
-      ]
-    } },
-  other: { title: "General Enquiry", icon: "💬", color: "#0b2a4a",
-    sub: "Not sure what you need? Tell us and we will guide you.",
-    groups: { "General": [["💬","General enquiry","Ask us anything about our services.","—","—","hero/shop.jpg"]] } }
-};
+  var form = [document.getElementById](https://document.getElementById)("enquiry-form");
+  var guided = [document.getElementById](https://document.getElementById)("guided-fields");
+  var manual = [document.getElementById](https://document.getElementById)("manual-fields");
+  var message = [document.getElementById](https://document.getElementById)("wa-message");
+  var service = [document.getElementById](https://document.getElementById)("service-choice");
+  var displayOptions = [document.getElementById](https://document.getElementById)("display-options");
+  var phone = [document.getElementById](https://document.getElementById)("customer-phone");
+  var errorBox = [document.getElementById](https://document.getElementById)("form-error");
 
-var BUDGETS = ["Under ₹500","₹500 – ₹1,100","₹1,100 – ₹2,500","₹2,500 – ₹5,000","Above ₹5,000","Need advice"];
-
-/* ===================== HELPERS ===================== */
-function $(id) { return [document.getElementById](https://document.getElementById)(id); }
-function el(tag, cls, html) { var e = [document.createElement](https://document.createElement)(tag); if (cls) [e.className](https://e.className) = cls; if (html != null) [e.innerHTML](https://e.innerHTML) = html; return e; }
-function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]; }); }
-function photo(holder, file, alt) {
-  var i = new Image(); [i.alt](https://i.alt) = alt || ""; [i.onload](https://i.onload) = function () { [holder.appendChild](https://holder.appendChild)(i); }; [i.src](https://i.src) = IMG + file;
-}
-function thumb(emoji, file) { var t = el("span", "th"); [t.appendChild](https://t.appendChild)([document.createTextNode](https://document.createTextNode)(emoji)); photo(t, file); return t; }
-
-/* ===================== LOGO ===================== */
-(function () {
-  var slot = $("logo-slot");
-  [slot.innerHTML](https://slot.innerHTML) = '<svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0b2a4a"/><rect x="20" y="8" width="24" height="38" rx="5" fill="none" stroke="#f0c674" stroke-width="3"/><path d="M34 15l-8 13h6l-2 11 9-14h-6z" fill="#f0c674"/><text x="32" y="59" font-size="9" font-weight="700" text-anchor="middle" fill="#fff" font-family="Arial">DSC</text></svg>';
-  var li = new Image(); [li.className](https://li.className) = "logo"; [li.alt](https://li.alt) = "DSC Mobile Zone logo";
-  [li.onload](https://li.onload) = function () { [slot.innerHTML](https://slot.innerHTML) = ""; [slot.appendChild](https://slot.appendChild)(li); };
-  [li.src](https://li.src) = IMG + "logo.png";
-})();
-
-/* ===================== PAGE SECTIONS ===================== */
-function buildPage() {
-  var rows = $("rate-table").querySelector("tbody");
-  [Object.keys](https://Object.keys)([CATS.repair.group](https://CATS.repair.group)s).forEach(function (g) {
-    [CATS.repair.groups](https://CATS.repair.groups)[g].forEach(function (s) {
-      var tr = el("tr");
-      [tr.tabIndex](https://tr.tabIndex) = 0;
-      [tr.innerHTML](https://tr.innerHTML) = "<td>" + s[0] + " <b>" + esc(s[1]) + "</b></td><td><span class='tag'>" + esc(s[3]) + "</span></td><td>" + esc(s[4]) + "</td><td>" + esc(g) + "</td>";
-      var go = function () { openForm("repair", s); };
-      [tr.addEventListener](https://tr.addEventListener)("click", go);
-      [tr.addEventListener](https://tr.addEventListener)("keydown", function (e) { if ([e.key](https://e.key) === "Enter") go(); });
-      [rows.appendChild](https://rows.appendChild)(tr);
-    });
-  });
-  function cards(gridId, cat, groups) {
-    var grid = $(gridId);
-    [groups.forEach](https://groups.forEach)(function (g) {
-      CATS[cat].groups[g].forEach(function (s) {
-        var c = el("article", "pc");
-        var p = el("div", "ph"); [p.appendChild](https://p.appendChild)([document.createTextNode](https://document.createTextNode)(s[0])); photo(p, s[5], s[1]);
-        var b = el("div", "bd", "<h3>" + esc(s[1]) + "</h3><p>" + esc(s[2]) + "</p>");
-        var btn = el("button", "btn b2", "Enquire →"); [btn.type](https://btn.type) = "button";
-        [btn.addEventListener](https://btn.addEventListener)("click", function () { openForm(cat, s); });
-        [b.appendChild](https://b.appendChild)(btn); [c.appendChild](https://c.appendChild)(p); [c.appendChild](https://c.appendChild)(b); [grid.appendChild](https://grid.appendChild)(c);
-      });
-    });
-  }
-  cards("gift-grid", "gifts", [Object.keys](https://Object.keys)([CATS.gifts.group](https://CATS.gifts.group)s));
-  cards("print-grid", "print", ["Design"]);
-  if ([SHOP.mapUrl](https://SHOP.mapUrl) && /^https:\/\//.test([SHOP.mapUr](https://SHOP.mapUr)l)) { var m = $("maplink"); [m.href](https://m.href) = [SHOP.mapUrl](https://SHOP.mapUrl); [m.hidden](https://m.hidden) = false; }
-}
-
-/* ===================== MODAL ===================== */
-var ov = $("ov"), body = $("m-body"), lastFocus = null;
-function openModal() { if (!ov.classList.contains("on")) { lastFocus = [document.activeElement](https://document.activeElement); [ov.classList.add](https://ov.classList.add)("on"); [document.body.classList.add](https://document.body.classList.add)("lock"); } $("m-x").focus(); }
-function closeModal() { [ov.classList.remove](https://ov.classList.remove)("on"); [document.body.classList.remove](https://document.body.classList.remove)("lock"); if (lastFocus && [lastFocus.focu](https://lastFocus.focu)s) [lastFocus.focus](https://lastFocus.focus)(); }
-function setHead(cat) {
-  var c = CATS[cat];
-  $("md").style.setProperty("--c", [c.colo](https://c.colo)r);
-  $("m-ic").textContent = [c.icon](https://c.icon); $("m-title").textContent = [c.title](https://c.title); $("m-sub").textContent = [c.sub](https://c.sub);
-}
-
-function openList(cat) {
-  var c = CATS[cat]; if (!c) return;
-  setHead(cat); [body.innerHTML](https://body.innerHTML) = "";
-  var names = [Object.keys](https://Object.keys)([c.group](https://c.group)s), chips = el("div", "chips"), lists = el("div");
-  function show(filter) {
-    [lists.innerHTML](https://lists.innerHTML) = ""; var n = 0;
-    [names.forEach](https://names.forEach)(function (g) {
-      if (filter !== "All" && filter !== g) return;
-      if ([names.length](https://names.length) > 1) [lists.appendChild](https://lists.appendChild)(el("h3", "gh", esc(g)));
-      var grid = el("div", "sl");
-      [c.groups](https://c.groups)[g].forEach(function (s) {
-        var b = el("button", "sv"); [b.type](https://b.type) = "button"; [b.style.setProperty](https://b.style.setProperty)("--c", [c.colo](https://c.colo)r); [b.style.animationDelay](https://b.style.animationDelay) = (n++ * 45) + "ms";
-        [b.appendChild](https://b.appendChild)(thumb(s[0], s[5]));
-        var t = el("span", null, "<h4>" + esc(s[1]) + "</h4><p>" + esc(s[2]) + "</p><span class='meta'><b>" + esc(s[3]) + "</b><i>⏱ " + esc(s[4]) + "</i></span>");
-        [t.style.display](https://t.style.display) = "block"; [b.appendChild](https://b.appendChild)(t);
-        [b.addEventListener](https://b.addEventListener)("click", function () { openForm(cat, s); });
-        [grid.appendChild](https://grid.appendChild)(b);
-      });
-      [lists.appendChild](https://lists.appendChild)(grid);
-    });
-  }
-  if ([names.length](https://names.length) > 1) {
-    ["All"].concat(names).forEach(function (nm, i) {
-      var ch = el("button", "chip" + (i === 0 ? " on" : ""), esc(nm)); [ch.type](https://ch.type) = "button";
-      [ch.addEventListener](https://ch.addEventListener)("click", function () {
-        [chips.querySelectorAll](https://chips.querySelectorAll)(".chip").forEach(function (x) { [x.classList.remove](https://x.classList.remove)("on"); });
-        [ch.classList.add](https://ch.classList.add)("on"); show(nm);
-      });
-      [chips.appendChild](https://chips.appendChild)(ch);
-    });
-    [body.appendChild](https://body.appendChild)(chips);
-  }
-  [body.appendChild](https://body.appendChild)(lists); show("All");
-  [body.appendChild](https://body.appendChild)(el("p", "hint", "“Indicative” prices are estimates and “From” prices are starting prices. The shop confirms the final price and time before work begins."));
-  [body.scrollTop](https://body.scrollTop) = 0; openModal();
-}
-
-function openForm(cat, s) {
-  setHead(cat); [body.innerHTML](https://body.innerHTML) = ""; openModal();
-  var back = el("button", "back", "← Back to all " + esc(CATS[cat].title) + " services"); [back.type](https://back.type) = "button";
-  [back.addEventListener](https://back.addEventListener)("click", function () { openList(cat); });
-  [body.appendChild](https://body.appendChild)(back);
-  [body.appendChild](https://body.appendChild)(el("div", "sel", "<b>" + s[0] + " " + esc(s[1]) + "</b><br><span style='color:#5a6878'>" + esc(s[3]) + " · ⏱ " + esc(s[4]) + "</span>"));
-
-  var variantHtml = "";
-  if (s[6] && s[6].length) {
-    variantHtml = '<label class="f">Choose a type / quality<select name="variant" required><option value="">Select…</option>';
-    s[6].forEach(function (v) { variantHtml += '<option value="' + esc(v[0] + " (" + v[1] + ")") + '">' + esc(v[0]) + " – " + esc(v[1]) + "</option>"; });
-    variantHtml += "</select></label>";
+  function updateDisplayOptions() {
+    [displayOptions.hidden](https://displayOptions.hidden) = [service.value](https://service.value) !== "display";
   }
 
-  var f = el("form"); [f.setAttribute](https://f.setAttribute)("autocomplete", "on");
-  [f.innerHTML](https://f.innerHTML) =
-    '<div class="fg">' + variantHtml +
-    '<label>Your name<input name="name" required maxlength="80" autocomplete="name"></label>' +
-    '<label>Your phone number<input name="phone" required type="tel" inputmode="tel" maxlength="18" autocomplete="tel" placeholder="e.g. 95XXXXXXXX"></label>' +
-    '<label class="f">Address / village<input name="address" required maxlength="160" autocomplete="street-address" placeholder="Village or area"></label>' +
-    '<label class="f">Phone model or product <span class="hint">(if relevant)</span><input name="model" maxlength="100" placeholder="e.g. Redmi Note 10, or 350 ml mug"></label>' +
-    '<div class="f"><label>Your budget range</label><div class="bud" id="bud"></div></div>' +
-    '<label class="f">More details<textarea name="details" maxlength="500" placeholder="Describe the problem, name text, size, quantity or requirement"></textarea></label>' +
-    '</div>' +
-    '<label class="cons"><input type="checkbox" name="consent" required><span>I agree to open WhatsApp and share these details with DSC Mobile Zone. I will press Send in WhatsApp. I have not typed any OTP, password or PIN.</span></label>' +
-    '<div class="err" id="err" role="alert"></div>' +
-    '<button class="btn bw" type="submit" style="width:100%">💬 Send enquiry on WhatsApp</button>' +
-    '<p class="hint" style="margin-top:8px">The final price and time are confirmed by the shop before any work starts.</p>';
+  function validatePhone() {
+    var digits = [phone.value.replace](https://phone.value.replace)(/\D/g, "");
+    var valid = [digits.length](https://digits.length) >= 10 && [digits.length](https://digits.length) <= 15;
+    [phone.setCustomValidity](https://phone.setCustomValidity)(
+      valid ? "" : "Enter a phone number containing 10 to 15 digits."
+    );
+  }
 
-  var bud = [f.querySelector](https://f.querySelector)("#bud");
-  [BUDGETS.forEach](https://BUDGETS.forEach)(function (b, i) {
-    var l = el("label"); [l.innerHTML](https://l.innerHTML) = '<input type="radio" name="budget" value="' + esc(b) + '"' + (i === 0 ? " required" : "") + "><span>" + esc(b) + "</span>"; [bud.appendChild](https://bud.appendChild)(l);
+  /*
+    Nothing below controls whether service panels open.
+    The links and CSS :target handle that independently.
+  */
+  try {
+    [service.addEventListener](https://service.addEventListener)("change", updateDisplayOptions);
+
+    [phone.addEventListener](https://phone.addEventListener)("input", function () {
+      [phone.setCustomValidity](https://phone.setCustomValidity)("");
+    });
+    [phone.addEventListener](https://phone.addEventListener)("blur", validatePhone);
+
+    [form.addEventListener](https://form.addEventListener)("submit", function (event) {
+      if ([guided.disable](https://guided.disable)d) return;
+
+      try {
+        [errorBox.textContent](https://errorBox.textContent) = "";
+        validatePhone();
+
+        if (!form.reportValidity()) {
+          [event.preventDefault](https://event.preventDefault)();
+          return;
+        }
+
+        var selectedOption = [service.options](https://service.options)[service.selectedIndex];
+        var lines = [
+          "DSC Mobile Zone - website enquiry",
+          "",
+          "Service: " + [selectedOption.text](https://selectedOption.text),
+          "Name: " + [document.getElementById](https://document.getElementById)("customer-name").value.trim(),
+          "Phone: " + [phone.value.trim](https://phone.value.trim)(),
+          "Village / area: " + [document.getElementById](https://document.getElementById)("customer-area").value.trim(),
+          "Phone model / product: " +
+            ([document.getElementById](https://document.getElementById)("customer-model").value.trim() || "Not provided"),
+          "Budget: " + [document.getElementById](https://document.getElementById)("customer-budget").value
+        ];
+
+        if ([service.value](https://service.value) === "display") {
+          [lines.push](https://lines.push)(
+            "Display preference: " + [document.getElementById](https://document.getElementById)("display-type").value,
+            "Starting price shown: from INR 1,099 for eligible models; final quote required."
+          );
+        }
+
+        [lines.push](https://lines.push)(
+          "Details: " +
+            ([document.getElementById](https://document.getElementById)("customer-details").value.trim() || "Not provided"),
+          "",
+          "Please confirm availability, the final price and expected completion time."
+        );
+
+        [message.value](https://message.value) = [lines.join](https://lines.join)("\n");
+
+        var chosenNumber =
+          businessNumbers[Math.floor([Math.random](https://Math.random)() * [businessNumbers.lengt](https://businessNumbers.lengt)h)];
+
+        [form.action](https://form.action) = "https://wa.me/" + chosenNumber;
+
+        /*
+          Allow the browser's normal form submission.
+          The textarea named "text" is encoded automatically.
+          No [window.open](https://window.open), popup, API key or backend is needed.
+        */
+      } catch (error) {
+        [event.preventDefault](https://event.preventDefault)();
+        [guided.disabled](https://guided.disabled) = true;
+        [guided.hidden](https://guided.hidden) = true;
+        [manual.hidden](https://manual.hidden) = false;
+        [message.required](https://message.required) = true;
+        [errorBox.textContent](https://errorBox.textContent) =
+          "Please use the message box below to complete your enquiry, then continue to WhatsApp.";
+      }
+    });
+
+    [document.addEventListener](https://document.addEventListener)("click", function (event) {
+      var link = [event.target.closest](https://event.target.closest)("a[data-service]");
+      if (!link) return;
+
+      [service.value](https://service.value) = [link.getAttribute](https://link.getAttribute)("data-service");
+      updateDisplayOptions();
+
+      var back = [link.getAttribute](https://link.getAttribute)("data-back");
+      if (back) {
+        [document.getElementById](https://document.getElementById)("form-back").href = "#" + back;
+      }
+      // Do not prevent the normal HTML link from opening the enquiry panel.
+    });
+
+    [guided.disabled](https://guided.disabled) = false;
+    [guided.hidden](https://guided.hidden) = false;
+    [manual.hidden](https://manual.hidden) = true;
+    [message.required](https://message.required) = false;
+
+    [document.getElementById](https://document.getElementById)("routing-note").textContent =
+      "Continuing opens one of our two business WhatsApp numbers, selected at random. Review the message and press Send in WhatsApp. No payment or booking is made here.";
+  } catch (error) {
+    [guided.disabled](https://guided.disabled) = true;
+    [guided.hidden](https://guided.hidden) = true;
+    [manual.hidden](https://manual.hidden) = false;
+  }
+
+  /* Keyboard and focus improvements for the CSS panels. */
+  var page = [document.getElementById](https://document.getElementById)("site-page");
+  var activePanel = null;
+  var lastOpener = null;
+
+  function syncPanel() {
+    var id = [window.location.hash.slice](https://window.location.hash.slice)(1);
+    var candidate = [document.getElementById](https://document.getElementById)(id);
+
+    activePanel =
+      candidate && [candidate.classList.contains](https://candidate.classList.contains)("overlay") ? candidate : null;
+
+    [document.body.classList.toggle](https://document.body.classList.toggle)("dialog-open", Boolean(activePanel));
+
+    if ("inert" in page) {
+      [page.inert](https://page.inert) = Boolean(activePanel);
+    }
+
+    if (activePanel) {
+      var sheet = [activePanel.querySelector](https://activePanel.querySelector)(".sheet");
+      [sheet.setAttribute](https://sheet.setAttribute)("role", "dialog");
+      [sheet.setAttribute](https://sheet.setAttribute)("aria-modal", "true");
+      [sheet.setAttribute](https://sheet.setAttribute)(
+        "aria-labelledby",
+        [activePanel.getAttribute](https://activePanel.getAttribute)("aria-labelledby")
+      );
+      [activePanel.querySelector](https://activePanel.querySelector)(".close").focus({ preventScroll: true });
+    } else if (lastOpener) {
+      [lastOpener.focus](https://lastOpener.focus)({ preventScroll: true });
+      lastOpener = null;
+    }
+  }
+
+  [document.addEventListener](https://document.addEventListener)("click", function (event) {
+    var link = [event.target.closest](https://event.target.closest)("a");
+    if (!link || [link.closest](https://link.closest)(".overlay")) return;
+
+    var href = [link.getAttribute](https://link.getAttribute)("href") || "";
+    if ([href.charAt](https://href.charAt)(0) !== "#") return;
+
+    var target = [document.getElementById](https://document.getElementById)([href.slice](https://href.slice)(1));
+    if (target && [target.classList.contains](https://target.classList.contains)("overlay")) {
+      lastOpener = link;
+    }
   });
 
-  [f.addEventListener](https://f.addEventListener)("submit", function (e) {
-    [e.preventDefault](https://e.preventDefault)();
-    var err = [f.querySelector](https://f.querySelector)("#err"); [err.textContent](https://err.textContent) = "";
-    var d = new FormData(f);
-    var digits = String([d.get](https://d.get)("phone") || "").replace(/\D/g, "");
-    if ([digits.length](https://digits.length) < 10) { [err.textContent](https://err.textContent) = "Please enter a valid phone number (at least 10 digits)."; return; }
-    if (!f.reportValidity()) return;
-    var lines = ["*New enquiry – " + [SHOP.name](https://SHOP.name) + "*", "",
-      "Category: " + CATS[cat].title,
-      "Service: " + s[1],
-      "Price shown: " + s[3]];
-    if ([d.get](https://d.get)("variant")) [lines.push](https://lines.push)("Type / quality: " + [d.get](https://d.get)("variant"));
-    [lines.push](https://lines.push)("Name: " + [d.get](https://d.get)("name"), "Phone: " + [d.get](https://d.get)("phone"), "Address: " + [d.get](https://d.get)("address"),
-      "Budget: " + [d.get](https://d.get)("budget"), "Model / product: " + ([d.get](https://d.get)("model") || "Not given"),
-      "Details: " + ([d.get](https://d.get)("details") || "None"), "", "Please confirm the final price and time.");
-    var msg = [lines.join](https://lines.join)("\n");
-    sendWA(msg);
-    [body.innerHTML](https://body.innerHTML) = "";
-    [body.appendChild](https://body.appendChild)(el("div", "sel", "<b>✅ WhatsApp should now be open.</b><br>Press <b>Send</b> inside WhatsApp to deliver your enquiry. If nothing opened, tap the green button below."));
-    var again = el("button", "btn bw", "💬 Open WhatsApp again"); [again.type](https://again.type) = "button";
-    [again.addEventListener](https://again.addEventListener)("click", function () { sendWA(msg); });
-    var cl = el("button", "btn b2", "Close"); [cl.type](https://cl.type) = "button"; [cl.style.marginLeft](https://cl.style.marginLeft) = "8px";
-    [cl.addEventListener](https://cl.addEventListener)("click", closeModal);
-    [body.appendChild](https://body.appendChild)(again); [body.appendChild](https://body.appendChild)(cl);
+  [window.addEventListener](https://window.addEventListener)("hashchange", syncPanel);
+
+  [document.addEventListener](https://document.addEventListener)("keydown", function (event) {
+    if (!activePanel) return;
+
+    if ([event.key](https://event.key) === "Escape") {
+      [event.preventDefault](https://event.preventDefault)();
+      [window.location.hash](https://window.location.hash) = "services";
+      return;
+    }
+
+    if ([event.key](https://event.key) !== "Tab") return;
+
+    var nodes = [activePanel.querySelectorAll](https://activePanel.querySelectorAll)(
+      ".sheet a[href], .sheet button, .sheet input, .sheet select, .sheet textarea"
+    );
+
+    var focusable = [Array.prototype.filter.call](https://Array.prototype.filter.call)(nodes, function (element) {
+      return !element.matches(":disabled") && [element.getClientRects](https://element.getClientRects)().length > 0;
+    });
+
+    if (!focusable.length) return;
+
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+
+    if ([event.shiftKey](https://event.shiftKey) && [document.activeElement](https://document.activeElement) === first) {
+      [event.preventDefault](https://event.preventDefault)();
+      [last.focus](https://last.focus)();
+    } else if (!event.shiftKey && [document.activeElement](https://document.activeElement) === last) {
+      [event.preventDefault](https://event.preventDefault)();
+      [first.focus](https://first.focus)();
+    }
   });
-  [body.appendChild](https://body.appendChild)(f); [body.scrollTop](https://body.scrollTop) = 0;
-}
 
-function pickNumber() { return [SHOP.numbers](https://SHOP.numbers)[Math.floor([Math.random](https://Math.random)() * [SHOP.numbers.lengt](https://SHOP.numbers.lengt)h)]; }
-function sendWA(text) {
-  var url = "https://wa.me/" + pickNumber() + "?text=" + encodeURIComponent(text);
-  var w = [window.open](https://window.open)(url, "_blank", "noopener");
-  if (!w) [window.location.href](https://window.location.href) = url;
-}
+  syncPanel();
 
-$("m-x").addEventListener("click", closeModal);
-[ov.addEventListener](https://ov.addEventListener)("click", function (e) { if ([e.target](https://e.target) === ov) closeModal(); });
-[document.addEventListener](https://document.addEventListener)("keydown", function (e) { if ([e.key](https://e.key) === "Escape" && [ov.classList.contains](https://ov.classList.contains)("on")) closeModal(); });
+  /*
+    Optional real photographs.
+    Missing files leave the built-in illustration visible.
+    Image failures do not affect links, panels or the enquiry form.
+  */
+  var mediaBlocks = [document.querySelectorAll](https://document.querySelectorAll)("[data-photo]");
 
-buildPage();
+  function loadPhoto(block) {
+    var path = [block.getAttribute](https://block.getAttribute)("data-photo");
+    if (!path) return;
 
-/* Public actions used by the buttons on the page */
-[window.DSC](https://window.DSC) = {
-  open: openList,
-  wa: function () { sendWA("Hello DSC Mobile Zone, I would like to ask about your services."); }
-};
+    var image = new Image();
+    [image.className](https://image.className) = "photo";
+    [image.alt](https://image.alt) = "";
+    [image.decoding](https://image.decoding) = "async";
+
+    [image.onload](https://image.onload) = function () {
+      [block.appendChild](https://block.appendChild)(image);
+    };
+    [image.onerror](https://image.onerror) = function () {
+      // Keep the built-in illustration; no broken-image box.
+    };
+    [image.src](https://image.src) = path;
+  }
+
+  [Array.prototype.forEach.call](https://Array.prototype.forEach.call)(mediaBlocks, loadPhoto);
 })();
 </script>
 </body>
