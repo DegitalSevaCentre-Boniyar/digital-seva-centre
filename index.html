@@ -1,1075 +1,718 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- DSC-RELIABLE-7 -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#173e50">
-  <title>DSC Mobile Zone | Boniyar</title>
-  <meta name="description" content="DSC Mobile Zone, Boniyar: mobile repair, accessories, printing, design, personalised gifts and digital assistance.">
+& {
+    $ErrorActionPreference = "Stop"
 
-  <style>
-    :root {
-      --ink: #183443;
-      --muted: #576b73;
-      --navy: #173e50;
-      --green: #246747;
-      --paper: #faf9f5;
-      --white: #ffffff;
-      --line: #dbe3e1;
-      --gold: #996320;
-      --soft: #edf3ef;
-      --radius: 18px;
+    $root = Join-Path $HOME "DSC-Mobile-Zone"
+    $file = Join-Path $root ("index" + ".html")
+
+    if (-not (Test-Path -LiteralPath $file)) {
+        throw "Website file not found in $root. No files were changed."
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 110px; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--paper);
-      font-family: "Segoe UI", Arial, sans-serif;
-      line-height: 1.6;
+    $html = Get-Content -LiteralPath $file -Raw -Encoding UTF8
+
+    if (-not $html.Contains("DSC-RELIABLE-7")) {
+        throw "This update is for Build R7. The selected file is a different version, so nothing was changed."
     }
 
-    [hidden] { display: none !important; }
-    a { color: inherit; }
-    button, input, textarea, select { font: inherit; }
-    img, svg { max-width: 100%; }
-    h1, h2, h3, p { margin-top: 0; }
-    h1, h2, h3 { line-height: 1.17; }
-    button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
-    :focus-visible { outline: 3px solid #a15c15; outline-offset: 4px; }
+    $start = $html.LastIndexOf("<script>")
+    $finish = $html.IndexOf("</script>", $start)
 
-    .wrap { width: min(1160px, calc(100% - 36px)); margin-inline: auto; }
-    .section { padding: 70px 0; }
-    .muted { color: var(--muted); }
-    .small { font-size: .83rem; }
-    .eyebrow {
-      color: var(--green);
-      text-transform: uppercase;
-      font-size: .73rem;
-      font-weight: 800;
-      letter-spacing: .13em;
+    if ($start -lt 0 -or $finish -lt 0) {
+        throw "Could not locate the website script. Nothing was changed."
     }
 
-    .skip {
-      position: fixed;
-      top: -100px;
-      left: 14px;
-      z-index: 200;
-      background: white;
-      padding: 12px;
-    }
-    .skip:focus { top: 12px; }
-
-    .utility {
-      background: var(--navy);
-      color: white;
-      padding: 8px 0;
-      font-size: .79rem;
-    }
-    .utility .wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 20px;
-      justify-content: space-between;
-    }
-
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: white;
-      border-bottom: 1px solid var(--line);
-    }
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      padding: 15px 0;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-    .brand-mark {
-      display: grid;
-      place-items: center;
-      width: 49px;
-      height: 49px;
-      border-radius: 13px;
-      background: var(--navy);
-      color: white;
-      font-weight: 850;
-      font-size: 1rem;
-      flex-shrink: 0;
-      border-bottom: 4px solid #d8ae62;
-    }
-    .brand strong { display: block; font-size: 1.06rem; }
-    .brand small { display: block; color: var(--muted); font-size: .75rem; }
-    nav { display: flex; align-items: center; gap: 23px; }
-    nav a { font-size: .88rem; text-decoration: none; font-weight: 650; }
-    nav a:hover { text-decoration: underline; }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      min-height: 46px;
-      padding: 11px 19px;
-      border: 1px solid transparent;
-      border-radius: 9px;
-      text-decoration: none;
-      font-weight: 750;
-      cursor: pointer;
-      transition: transform .18s ease;
-    }
-    .button:hover { transform: translateY(-2px); }
-    .primary { color: white; background: var(--navy); }
-    .secondary { color: var(--navy); border-color: #91a5a6; background: white; }
-    .whatsapp { color: white; background: var(--green); }
-    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
-
-    .hero {
-      padding: 65px 0 55px;
-      background: linear-gradient(110deg, #edf3ed, #faf9f5 65%);
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      align-items: center;
-      gap: 48px;
-    }
-    h1 {
-      font-size: clamp(2.35rem, 5vw, 4.2rem);
-      letter-spacing: -.045em;
-      margin: 14px 0 22px;
-    }
-    h1 span { color: var(--green); }
-    .lead { max-width: 560px; font-size: 1.07rem; color: var(--muted); }
-    .hero-note { margin: 18px 0 0; font-size: .82rem; color: var(--muted); }
-
-    .media {
-      position: relative;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      background: #eaf0e9;
-      isolation: isolate;
-    }
-    .media > svg { width: 70%; height: 70%; }
-    .media > .photo {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 1;
-    }
-    .hero-art {
-      aspect-ratio: 1.15;
-      border-radius: 28px;
-      background: linear-gradient(145deg, #dceae2, #f1e4cc);
-      border: 1px solid #d0dfd4;
-    }
-    .hero-art > svg { width: 95%; height: 95%; }
-
-    .strip { border-block: 1px solid var(--line); background: white; }
-    .strip .wrap {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 12px 24px;
-      padding-block: 17px;
-      color: var(--muted);
-      font-size: .85rem;
-    }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 24px;
-      margin-bottom: 28px;
-    }
-    .section-head h2 {
-      margin: 9px 0 0;
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      letter-spacing: -.03em;
-    }
-    .section-head p { color: var(--muted); max-width: 410px; margin: 0; }
-
-    .zones { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .zone {
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      padding: 24px;
-      background: white;
-      border: 1px solid var(--line);
-      border-top: 4px solid var(--accent, var(--navy));
-      border-radius: var(--radius);
-      transition: transform .2s;
-    }
-    .zone:hover { transform: translateY(-5px); }
-    .zone .icon {
-      display: grid;
-      place-items: center;
-      width: 65px;
-      height: 65px;
-      background: var(--soft);
-      border-radius: 15px;
-      margin-bottom: 19px;
-    }
-    .zone .icon svg { width: 48px; height: 48px; }
-    .zone h3 { font-size: 1.15rem; margin-bottom: 10px; }
-    .zone p { color: var(--muted); font-size: .9rem; flex-grow: 1; }
-    .zone .more { color: var(--green); font-weight: 750; font-size: .88rem; }
-
-    .work-section { background: #eef2ec; border-block: 1px solid var(--line); }
-    .products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 19px; }
-    .product {
-      text-decoration: none;
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: transform .2s;
-    }
-    .product:hover { transform: translateY(-4px); }
-    .product .media { height: 205px; }
-    .product-copy { padding: 19px; }
-    .product h3 { font-size: 1.1rem; margin-bottom: 6px; }
-    .product p { font-size: .87rem; color: var(--muted); margin-bottom: 10px; }
-    .product small { color: var(--green); font-weight: 750; }
-
-    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .step { border: 1px solid var(--line); background: white; padding: 25px; border-radius: 15px; }
-    .step-number { display: block; color: var(--gold); font-weight: 850; margin-bottom: 15px; }
-    .step h3 { font-size: 1.12rem; }
-    .step p { color: var(--muted); font-size: .91rem; margin: 0; }
-    .advice {
-      margin-top: 22px;
-      padding: 17px 20px;
-      border-radius: 12px;
-      background: #fff6e5;
-      border: 1px solid #e6d4ad;
-      color: #654b21;
-      font-size: .87rem;
-    }
-
-    .faq { max-width: 810px; margin: auto; }
-    .faq details { background: white; border: 1px solid var(--line); border-radius: 12px; margin-bottom: 10px; }
-    .faq summary { cursor: pointer; padding: 17px 20px; font-weight: 700; }
-    .faq details p { margin: 0; padding: 0 20px 20px; color: var(--muted); font-size: .91rem; }
-
-    .contact {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      border: 1px solid var(--line);
-      border-radius: 23px;
-      padding: 35px;
-      background: white;
-    }
-    .contact h2 { font-size: 2.1rem; margin: 10px 0 15px; }
-    .contact dl { margin: 0; }
-    .contact dl div { padding: 12px 0; border-bottom: 1px solid var(--line); }
-    .contact dt { font-size: .77rem; color: var(--muted); font-weight: 750; }
-    .contact dd { margin: 4px 0 0; overflow-wrap: anywhere; }
-
-    footer { padding: 30px 0; border-top: 1px solid var(--line); background: #edf1ed; }
-    footer p { color: var(--muted); font-size: .8rem; max-width: 820px; margin: 8px 0; }
-
-    /*
-      NO JAVASCRIPT REQUIRED FOR THESE PANELS.
-      Ordinary links change the URL fragment.
-      CSS :target displays the matching panel.
-    */
-    .overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 100;
-      padding: 16px;
-      align-items: center;
-      justify-content: center;
-    }
-    .overlay:target { display: flex; }
-    .backdrop { position: absolute; inset: 0; background: rgba(18, 39, 48, .7); }
-    .sheet {
-      position: relative;
-      z-index: 1;
-      width: min(970px, 100%);
-      max-height: calc(100vh - 32px);
-      max-height: calc(100dvh - 32px);
-      overflow-y: auto;
-      overscroll-behavior: contain;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      box-shadow: 0 24px 75px #0003;
-    }
-    .overlay:target .sheet { animation: open-panel .23s ease-out; }
-    @keyframes open-panel {
-      from { opacity: 0; transform: translateY(16px) scale(.985); }
-      to { opacity: 1; transform: none; }
-    }
-    .sheet-head {
-      position: sticky;
-      top: 0;
-      z-index: 3;
-      background: white;
-      border-bottom: 1px solid var(--line);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 18px 24px;
-    }
-    .sheet-head h2 { margin: 3px 0 0; font-size: 1.5rem; }
-    .close {
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-      min-width: 44px;
-      min-height: 44px;
-      border-radius: 9px;
-      border: 1px solid var(--line);
-      background: #f3f5f2;
-      font-size: 1.4rem;
-      text-decoration: none;
-    }
-    .sheet-body { padding: 24px; }
-    .sheet-body > h3 { margin: 25px 0 12px; font-size: 1.08rem; }
-    .sheet-note { color: var(--muted); font-size: .89rem; }
-    .services { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .service {
-      display: flex;
-      gap: 15px;
-      align-items: flex-start;
-      text-decoration: none;
-      border: 1px solid var(--line);
-      border-radius: 13px;
-      padding: 16px;
-      background: white;
-    }
-    .service:hover { border-color: var(--green); }
-    .service .thumb {
-      width: 61px;
-      height: 66px;
-      border-radius: 10px;
-      flex-shrink: 0;
-      font-size: 1.7rem;
-    }
-    .service strong { display: block; margin-bottom: 4px; line-height: 1.3; }
-    .service .description { display: block; font-size: .85rem; color: var(--muted); }
-    .service .choose { display: block; color: var(--green); font-weight: 750; font-size: .8rem; margin-top: 8px; }
-
-    .form-sheet { max-width: 730px; }
-    fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
-    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .full { grid-column: 1 / -1; }
-    label { display: block; font-size: .86rem; font-weight: 700; }
-    input, select, textarea {
-      display: block;
-      width: 100%;
-      margin-top: 6px;
-      padding: 11px 12px;
-      border: 1px solid #a4b4b7;
-      border-radius: 8px;
-      background: white;
-      color: var(--ink);
-    }
-    textarea { min-height: 110px; resize: vertical; }
-    .consent { display: flex; align-items: flex-start; gap: 9px; margin: 19px 0; font-weight: 400; font-size: .83rem; }
-    .consent input { width: 18px; height: 18px; margin: 3px 0 0; flex-shrink: 0; }
-    .form-back { display: inline-block; margin-bottom: 17px; color: var(--green); font-weight: 750; }
-    .error { color: #aa2727; font-size: .87rem; }
-    .dialog-open { overflow: hidden; }
-
-    @supports selector(body:has(.overlay:target)) {
-      body:has(.overlay:target) { overflow: hidden; }
-    }
-    @media (max-width: 960px) {
-      .zones { grid-template-columns: 1fr 1fr; }
-      .products { grid-template-columns: 1fr 1fr; }
-      .hero-grid { gap: 25px; }
-    }
-    @media (max-width: 740px) {
-      .header-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
-      nav { width: 100%; justify-content: space-between; gap: 12px; }
-      nav a { font-size: .81rem; }
-      .hero-grid, .contact { grid-template-columns: 1fr; }
-      .hero-art { max-width: 450px; width: 100%; margin-inline: auto; }
-      .section-head { display: block; }
-      .section-head p { margin-top: 15px; }
-      .steps { grid-template-columns: 1fr; }
-      .section { padding: 48px 0; }
-      .hero { padding: 35px 0; }
-      .services { grid-template-columns: 1fr; }
-      .sheet-head { padding: 14px 17px; }
-      .sheet-body { padding: 18px; }
-    }
-    @media (max-width: 480px) {
-      .zones, .products, .form-grid { grid-template-columns: 1fr; }
-      .overlay { padding: 8px; }
-      .sheet { max-height: calc(100dvh - 16px); border-radius: 14px; }
-      .contact { padding: 23px; }
-      .utility { font-size: .74rem; }
-      .sheet-head h2 { font-size: 1.25rem; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { animation: none !important; transition: none !important; }
-    }
-  </style>
-</head>
-
-<body>
-
-<!-- Built-in illustrations: they do not need downloads or JavaScript. -->
-<svg width="0" height="0" aria-hidden="true" style="position:absolute;overflow:hidden">
-  <defs>
-    <symbol id="art-phone" viewBox="0 0 120 120">
-      <rect x="33" y="8" width="54" height="104" rx="11" fill="#173e50"/>
-      <rect x="39" y="19" width="42" height="76" rx="5" fill="#b8d8c5"/>
-      <rect x="49" y="12" width="22" height="3" rx="1.5" fill="#e9eee9"/>
-      <circle cx="60" cy="103" r="3" fill="#d5b16b"/>
-      <path d="M65 35L48 62h13l-7 23 22-32H62z" fill="#996320"/>
-    </symbol>
-    <symbol id="art-mug" viewBox="0 0 120 120">
-      <path d="M84 37h11c23 0 23 43 0 43H84" fill="none" stroke="#b07b48" stroke-width="10"/>
-      <path d="M20 28h64v62c0 9-8 16-16 16H36c-9 0-16-7-16-16z" fill="#c89360"/>
-      <ellipse cx="52" cy="28" rx="32" ry="6" fill="#e7c79d"/>
-      <rect x="30" y="47" width="44" height="37" rx="5" fill="#faf5e9"/>
-      <path d="M51 59c-8-9-17 2-8 10l9 8 9-8c9-8 0-19-9-10z" fill="#a4544e"/>
-    </symbol>
-    <symbol id="art-shirt" viewBox="0 0 120 120">
-      <path d="M38 16L10 33l12 24 15-8v58h46V49l15 8 12-24-28-17c-5 13-38 13-44 0z" fill="#467266"/>
-      <path d="M44 17c3 12 29 12 32 0" fill="none" stroke="#d6e7d9" stroke-width="5"/>
-      <rect x="46" y="51" width="28" height="28" rx="7" fill="#f2dfb8"/>
-      <path d="M51 69l7-10 6 7 5-4" fill="none" stroke="#467266" stroke-width="3"/>
-    </symbol>
-    <symbol id="art-bottle" viewBox="0 0 120 120">
-      <rect x="47" y="5" width="26" height="15" rx="4" fill="#173e50"/>
-      <path d="M47 20h26v15c10 6 15 15 15 27v38c0 8-6 13-13 13H45c-7 0-13-5-13-13V62c0-12 5-21 15-27z" fill="#a1bba4"/>
-      <rect x="39" y="57" width="42" height="35" rx="4" fill="#fff7e5"/>
-      <path d="M47 68h26M47 76h19M47 83h23" stroke="#996320" stroke-width="3"/>
-    </symbol>
-    <symbol id="art-print" viewBox="0 0 120 120">
-      <rect x="29" y="8" width="62" height="38" rx="4" fill="#e5e8dc" stroke="#173e50" stroke-width="3"/>
-      <rect x="13" y="39" width="94" height="48" rx="10" fill="#173e50"/>
-      <circle cx="94" cy="52" r="4" fill="#d9bd7b"/>
-      <rect x="29" y="68" width="62" height="44" rx="3" fill="#fff"/>
-      <path d="M39 80h42M39 91h35M39 101h23" stroke="#628475" stroke-width="4"/>
-    </symbol>
-    <symbol id="art-doc" viewBox="0 0 120 120">
-      <path d="M27 8h47l22 22v81H27z" fill="#fff" stroke="#173e50" stroke-width="3"/>
-      <path d="M74 8v22h22" fill="#d7e5dc" stroke="#173e50" stroke-width="3"/>
-      <path d="M40 48h42M40 61h42M40 74h25" stroke="#668978" stroke-width="5"/>
-      <circle cx="75" cy="94" r="12" fill="#d2b16c"/>
-      <path d="M69 94l4 4 8-9" fill="none" stroke="#173e50" stroke-width="3"/>
-    </symbol>
-    <symbol id="art-headphones" viewBox="0 0 120 120">
-      <path d="M22 68V52a38 38 0 0 1 76 0v16" fill="none" stroke="#173e50" stroke-width="11"/>
-      <rect x="14" y="56" width="24" height="43" rx="10" fill="#a88652"/>
-      <rect x="82" y="56" width="24" height="43" rx="10" fill="#a88652"/>
-      <path d="M96 97c-4 13-20 17-35 14" fill="none" stroke="#173e50" stroke-width="5"/>
-    </symbol>
-    <symbol id="art-frame" viewBox="0 0 120 120">
-      <rect x="11" y="16" width="98" height="88" rx="4" fill="#a47b49"/>
-      <rect x="21" y="26" width="78" height="68" fill="#e3eddf"/>
-      <circle cx="43" cy="44" r="10" fill="#d2b16c"/>
-      <path d="M22 94l24-29 17 19 15-28 21 38z" fill="#467266"/>
-    </symbol>
-  </defs>
-</svg>
-
-<div id="site-page">
-  <a class="skip" href="#main">Skip to content</a>
-
-  <div class="utility">
-    <div class="wrap">
-      <span>Boniyar · Baramulla · Jammu &amp; Kashmir</span>
-      <span><a href="tel:+919541291967">95412 91967</a> &nbsp; / &nbsp; <a href="tel:+919596175562">95961 75562</a></span>
-    </div>
-  </div>
-
-  <header class="header">
-    <div class="wrap header-inner">
-      <a class="brand" href="#home" aria-label="DSC Mobile Zone home">
-        <span class="brand-mark" aria-hidden="true">DSC</span>
-        <span><strong>DSC Mobile Zone</strong><small>Mobile care. Print studio. Digital help.</small></span>
-      </a>
-      <nav aria-label="Main navigation">
-        <a href="#services">Services</a>
-        <a href="#work">Custom gifts</a>
-        <a href="#visit">Your visit</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="hero" id="home">
-      <div class="wrap hero-grid">
-        <div>
-          <div class="eyebrow">DSC Mobile Zone · Boniyar</div>
-          <h1>Your phone desk.<br>Your <span>print &amp; gift studio.</span></h1>
-          <p class="lead">Repair a phone, find an accessory, print your documents or turn a photo into a personalised gift. Explore our services before visiting the shop.</p>
-          <div class="actions">
-            <a class="button primary" href="#services">Explore the four service sections</a>
-            <a class="button secondary" href="tel:+919541291967">Call the shop</a>
-          </div>
-          <p class="hero-note">For repair prices, parts availability and opening hours, please confirm with the shop.</p>
-        </div>
-
-        <div class="media hero-art" data-photo="assets/images/hero/shop.jpg">
-          <svg viewBox="0 0 420 330" role="img" aria-label="Illustrations of mobile repair, personalised mugs, printing and T-shirts">
-            <circle cx="214" cy="164" r="135" fill="#f8f5e9"/>
-            <rect x="130" y="48" width="157" height="240" rx="23" fill="#173e50" opacity=".07"/>
-            <use href="#art-phone" x="116" y="37" width="184" height="255"/>
-            <use href="#art-mug" x="4" y="132" width="143" height="143"/>
-            <use href="#art-shirt" x="280" y="40" width="126" height="126"/>
-            <use href="#art-print" x="288" y="199" width="109" height="109"/>
-            <circle cx="79" cy="66" r="15" fill="#d4b777"/>
-            <circle cx="317" cy="172" r="7" fill="#89aa93"/>
-          </svg>
-        </div>
-      </div>
-    </section>
-
-    <div class="strip">
-      <div class="wrap">
-        <span>Mobile repair &amp; troubleshooting</span>
-        <span>Printing, design &amp; custom gifts</span>
-        <span>Accessories &amp; digital assistance</span>
-      </div>
-    </div>
-
-    <section class="section" id="services">
-      <div class="wrap">
-        <div class="section-head">
-          <div><div class="eyebrow">01 / Service directory</div><h2>What brings you in?</h2></div>
-          <p>Open a section, choose the exact service and send an enquiry to the shop.</p>
-        </div>
-
-        <div class="zones">
-          <a class="zone" href="#repair-panel" style="--accent:#315d73">
-            <span class="icon"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#art-phone"/></svg></span>
-            <h3>Repairing</h3>
-            <p>Display/folder, ringer, microphone, back panel, battery and charging problems.</p>
-            <span class="more">Open repair options →</span>
-          </a>
-
-          <a class="zone" href="#print-panel" style="--accent:#866237">
-            <span class="icon"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#art-print"/></svg></span>
-            <h3>Custom Print &amp; Designing</h3>
-            <p>Documents, photos, wedding cards, graphic design, mugs, bottles and personalised gifts.</p>
-            <span class="more">Open printing &amp; gifts →</span>
-          </a>
-
-          <a class="zone" href="#accessories-panel" style="--accent:#47745b">
-            <span class="icon"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#art-headphones"/></svg></span>
-            <h3>Accessories</h3>
-            <p>Mobile covers, chargers, cables and other phone accessories. Ask about your model.</p>
-            <span class="more">Open accessory options →</span>
-          </a>
-
-          <a class="zone" href="#csc-panel" style="--accent:#6a607b">
-            <span class="icon"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#art-doc"/></svg></span>
-            <h3>CSC Services</h3>
-            <p>Online applications, document assistance, resumes, scanning and FSSAI-related help.</p>
-            <span class="more">Open digital services →</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section work-section" id="work">
-      <div class="wrap">
-        <div class="section-head">
-          <div><div class="eyebrow">02 / Personalised products</div><h2>A name. A photo. Your idea.</h2></div>
-          <p>Choose a product and tell us what you want to make. Design, availability and price are discussed before an order is agreed.</p>
-        </div>
-
-        <div class="products">
-          <a class="product" href="#enquiry" data-service="mug" data-back="print-panel">
-            <div class="media" data-photo="assets/images/gifts/mugs/mug-1.jpg">
-              <svg viewBox="0 0 120 120" aria-hidden="true"><use href="#art-mug"/></svg>
-            </div>
-            <div class="product-copy"><h3>Custom mugs</h3><p>Photo, name, birthday and wedding designs.</p><small>Ask about a mug →</small></div>
-          </a>
-
-          <a class="product" href="#enquiry" data-service="tshirt" data-back="print-panel">
-            <div class="media" data-photo="assets/images/gifts/tshirts/tshirt-1.jpg">
-              <svg viewBox="0 0 120 120" aria-hidden="true"><use href="#art-shirt"/></svg>
-            </div>
-            <div class="product-copy"><h3>Custom T-shirts</h3><p>Your artwork or message on a wearable gift.</p><small>Ask about a T-shirt →</small></div>
-          </a>
-
-          <a class="product" href="#enquiry" data-service="bottle" data-back="print-panel">
-            <div class="media" data-photo="assets/images/gifts/bottles/bottle-1.jpg">
-              <svg viewBox="0 0 120 120" aria-hidden="true"><use href="#art-bottle"/></svg>
-            </div>
-            <div class="product-copy"><h3>Personalised bottles</h3><p>Names and artwork for gifts or personal use.</p><small>Ask about a bottle →</small></div>
-          </a>
-
-          <a class="product" href="#enquiry" data-service="frame" data-back="print-panel">
-            <div class="media" data-photo="assets/images/gifts/frames/frame-1.jpg">
-              <svg viewBox="0 0 120 120" aria-hidden="true"><use href="#art-frame"/></svg>
-            </div>
-            <div class="product-copy"><h3>Photo frames</h3><p>Printed memories and personalised photo gifts.</p><small>Ask about a frame →</small></div>
-          </a>
-
-          <a class="product" href="#enquiry" data-service="invitation" data-back="print-panel">
-            <div class="media" data-photo="assets/images/printing/wedding-cards.jpg">
-              <svg viewBox="0 0 120 120" aria-hidden="true"><use href="#art-doc"/></svg>
-            </div>
-            <div class="product-copy"><h3>Wedding &amp; invitation cards</h3><p>Share your event details, style and quantity.</p><small>Ask about invitations →</small></div>
-          </a>
-
-          <a class="product" href="#enquiry" data-service="skin" data-back="print-panel">
-            <div class="media" data-photo="assets/images/gifts/skins/skin-1.jpg">
-              <svg viewBox="0 0 120 120" aria-hidden="true"><use href="#art-phone"/></svg>
-            </div>
-            <div class="product-copy"><h3>Custom mobile skins</h3><p>Ask about artwork and compatibility for your phone.</p><small>Ask about a skin →</small></div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="visit">
-      <div class="wrap">
-        <div class="section-head">
-          <div><div class="eyebrow">03 / Plan your visit</div><h2>A clear next step.</h2></div>
-          <p>No automatic booking or payment is taken on this website. Start with an enquiry.</p>
-        </div>
-
-        <div class="steps">
-          <article class="step"><span class="step-number">01</span><h3>Choose the service</h3><p>Select the repair, product or digital task you need. Add your phone model or product requirements.</p></article>
-          <article class="step"><span class="step-number">02</span><h3>Confirm the details</h3><p>Ask for the price, parts availability, expected completion time and any documents required.</p></article>
-          <article class="step"><span class="step-number">03</span><h3>Arrange your visit</h3><p>Confirm opening hours and the shop location before travelling. Approve the agreed work directly with the shop.</p></article>
-        </div>
-
-        <div class="advice"><strong>Keep your information safe:</strong> Never enter OTPs, passwords, payment PINs or identity-document numbers in the enquiry form.</div>
-      </div>
-    </section>
-
-    <section class="section work-section">
-      <div class="wrap faq">
-        <div class="section-head"><div><div class="eyebrow">04 / Helpful answers</div><h2>Before you enquire</h2></div></div>
-
-        <details><summary>Is display replacement always ₹1,099?</summary><p>No. ₹1,099 is a starting price for eligible models, subject to confirmation. Your phone model, compatible panel, part quality and stock determine the final quote.</p></details>
-        <details><summary>How long does a repair take?</summary><p>The shop needs to check the fault and parts availability before confirming a completion estimate. The website does not promise same-day repairs.</p></details>
-        <details><summary>Can I request a particular display type?</summary><p>Yes. Select your preference in the enquiry form. LCD, OLED and AMOLED are not interchangeable on every phone; the shop must check compatibility.</p></details>
-        <details><summary>Does this website send my message automatically?</summary><p>No. Continuing opens WhatsApp with the enquiry. You review it and press Send inside WhatsApp.</p></details>
-        <details><summary>Is this a government website?</summary><p>No. This is the business website of DSC Mobile Zone. It provides information about the shop's services and does not claim government endorsement.</p></details>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="wrap contact">
-        <div>
-          <div class="eyebrow">05 / Contact the shop</div>
-          <h2>DSC Mobile Zone</h2>
-          <p class="muted">Tell us what you need. Confirm availability, price and timing before your visit.</p>
-          <div class="actions">
-            <a class="button primary" href="tel:+919541291967">Call 95412 91967</a>
-            <a class="button secondary" href="tel:+919596175562">Call 95961 75562</a>
-            <a class="button whatsapp" href="https://wa.me/919541291967">WhatsApp</a>
-            <a class="button secondary" href="#enquiry">General enquiry</a>
-          </div>
-        </div>
-        <dl>
-          <div><dt>Area</dt><dd>Boniyar, Baramulla, Jammu &amp; Kashmir</dd></div>
-          <div><dt>Opening hours</dt><dd>Please call or message to confirm.</dd></div>
-          <div><dt>Email</dt><dd><a href="mailto:mirelectronics06@gmail.com">[mirelectronics06@gmail.com](mailto:mirelectronics06@gmail.com)</a></dd></div>
-          <div><dt>Directions</dt><dd>Ask the shop for its exact location before travelling.</dd></div>
-        </dl>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap">
-      <strong>DSC Mobile Zone · Boniyar</strong>
-      <p>Private business website, not an official government portal. Service availability, pricing and timelines must be confirmed directly with the shop.</p>
-      <p>This page does not store enquiry submissions in a website database. Continuing to WhatsApp shares the message with WhatsApp; you must press Send there to deliver it.</p>
-      <p>Build R7 · Reliable link-based navigation</p>
-    </div>
-  </footer>
-</div>
-
-<!-- =====================================================
-     REPAIR OPTIONS — STATIC HTML, NOT GENERATED BY SCRIPT
-====================================================== -->
-<section class="overlay" id="repair-panel" aria-labelledby="repair-title">
-  <a class="backdrop" href="#services" aria-label="Close repair options" tabindex="-1"></a>
-  <div class="sheet" tabindex="-1">
-    <div class="sheet-head">
-      <div><div class="eyebrow">Mobile care</div><h2 id="repair-title">Repairing</h2></div>
-      <a class="close" href="#services" aria-label="Close repair options">×</a>
-    </div>
-    <div class="sheet-body">
-      <p class="sheet-note">Select your problem to open the enquiry form. Final price and waiting time are confirmed after diagnosis and a parts-availability check.</p>
-      <div class="advice" style="margin:0 0 20px"><strong>Display/folder replacement: from ₹1,099</strong> for eligible models. This is not a universal price for all displays.</div>
-      <div class="services">
-        <a class="service" href="#enquiry" data-service="display" data-back="repair-panel">
-          <span class="media thumb" data-photo="assets/images/repairs/display.jpg">📱</span>
-          <span><strong>Display / folder replacement</strong><span class="description">Broken screen, lines or no display. Choose a panel preference in the form; compatibility must be checked.</span><span class="choose">Choose display service →</span></span>
-        </a>
-        <a class="service" href="#enquiry" data-service="ringer" data-back="repair-panel">
-          <span class="media thumb" data-photo="assets/images/repairs/ringer.jpg">🔊</span>
-          <span><strong>Ringer / loudspeaker</strong><span class="description">Low, distorted or missing ringtone and media sound.</span><span class="choose">Ask for an estimate →</span></span>
-        </a>
-        <a class="service" href="#enquiry" data-service="mic" data-back="repair-panel">
-          <span class="media thumb" data-photo="assets/images/repairs/mic.jpg">🎙️</span>
-          <span><strong>Microphone</strong><span class="description">Callers cannot hear you, or recordings are unclear.</span><span class="choose">Ask for an estimate →</span></span>
-        </a>
-        <a class="service" href="#enquiry" data-service="earpiece" data-back="repair-panel">
-          <span class="media thumb">📞</span>
-          <span><strong>Earpiece / call audio</strong><span class="description">Trouble hearing the person on a call.</span><span class="choose">Ask for an estimate →</span></span>
-        </a>
-        <a class="service" href="#enquiry" data-service="backpanel" data-back="repair-panel">
-          <span class="media thumb" data-photo="assets/images/repairs/backpanel.jpg">📲</span>
-          <span><strong>Back panel / back glass</strong><span class="description">Share the phone model and damage details to check part availability.</span><span class="choose">Check your model →</span></span>
-        </a>
-        <a class="service" href="#enquiry" data-service="battery" data-back="repair-panel">
-          <span class="media thumb" data-photo="assets/images/repairs/battery.jpg">🔋</span>
-          <span><strong>Battery problem</strong><span class="description">Fast drain or shutdowns. If the battery is swollen, stop using and charging the device.</span><span class="choose">Request inspection →</span></span>
-        </a>
-        <a class="service" href="#enquiry" data-service="charging" data-back="repair-panel">
-          <span class="media thumb" data-photo="assets/images/repairs/charging.jpg">🔌</span>
-          <span><strong>Charging port / charging issue</strong><span class="description">Loose connection, slow charging or a phone that will not charge.</span><span class="choose">Request inspection →</span></span>
-        </a>
-        <a class="service" href="#enquiry" data-service="software" data-back="repair-panel">
-          <span class="media thumb" data-photo="assets/images/repairs/software.jpg">⚙️</span>
-          <span><strong>Software &amp; troubleshooting</strong><span class="description">Hanging, settings, updates and other mobile problems.</span><span class="choose">Describe the problem →</span></span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRINTING, DESIGN AND GIFTS -->
-<section class="overlay" id="print-panel" aria-labelledby="print-title">
-  <a class="backdrop" href="#services" aria-label="Close printing options" tabindex="-1"></a>
-  <div class="sheet" tabindex="-1">
-    <div class="sheet-head">
-      <div><div class="eyebrow">Print &amp; gift studio</div><h2 id="print-title">Custom Print &amp; Designing</h2></div>
-      <a class="close" href="#services" aria-label="Close printing options">×</a>
-    </div>
-    <div class="sheet-body">
-      <p class="sheet-note">Tell us the size, quantity and idea. Prices and completion times are quoted for your requirements.</p>
-      <h3>Photos, documents and design</h3>
-      <div class="services">
-        <a class="service" href="#enquiry" data-service="documents" data-back="print-panel"><span class="media thumb" data-photo="assets/images/printing/documents.jpg">📄</span><span><strong>Document / A4 printing</strong><span class="description">Tell us the page count and colour or black-and-white requirements.</span><span class="choose">Enquire →</span></span></a>
-        <a class="service" href="#enquiry" data-service="photos" data-back="print-panel"><span class="media thumb" data-photo="assets/images/printing/photos.jpg">🖼️</span><span><strong>Photo printing</strong><span class="description">2×2, 4×4 and 4×6 photo enquiries. Confirm units and required dimensions with the shop.</span><span class="choose">Enquire →</span></span></a>
-        <a class="service" href="#enquiry" data-service="passport" data-back="print-panel"><span class="media thumb" data-photo="assets/images/printing/passport.jpg">🪪</span><span><strong>Passport / application photos</strong><span class="description">Provide the application's exact photo specifications.</span><span class="choose">Enquire →</span></span></a>
-        <a class="service" href="#enquiry" data-service="invitation" data-back="print-panel"><span class="media thumb" data-photo="assets/images/printing/wedding-cards.jpg">💌</span><span><strong>Wedding &amp; invitation cards</strong><span class="description">Share event details, preferred design and quantity.</span><span class="choose">Enquire →</span></span></a>
-        <a class="service" href="#enquiry" data-service="design" data-back="print-panel"><span class="media thumb" data-photo="assets/images/printing/design.jpg">🎨</span><span><strong>Graphic designing</strong><span class="description">Posters, business materials, social-media and product artwork.</span><span class="choose">Enquire →</span></span></a>
-      </div>
-
-      <h3>Personalised products</h3>
-      <div class="services">
-        <a class="service" href="#enquiry" data-service="mug" data-back="print-panel"><span class="media thumb" data-photo="assets/images/gifts/mugs/mug-1.jpg">☕</span><span><strong>Custom mugs</strong><span class="description">Photo, name, birthday, wedding and full-wrap designs.</span><span class="choose">Enquire →</span></span></a>
-        <a class="service" href="#enquiry" data-service="tshirt" data-back="print-panel"><span class="media thumb" data-photo="assets/images/gifts/tshirts/tshirt-1.jpg">👕</span><span><strong>Custom T-shirts</strong><span class="description">Share size, quantity, colour preference and design.</span><span class="choose">Enquire →</span></span></a>
-        <a class="service" href="#enquiry" data-service="bottle" data-back="print-panel"><span class="media thumb" data-photo="assets/images/gifts/bottles/bottle-1.jpg">🎁</span><span><strong>Custom bottles</strong><span class="description">Names, personalised artwork and gifting designs.</span><span class="choose">Enquire →</span></span></a>
-        <a class="service" href="#enquiry" data-service="cap" data-back="print-panel"><span class="media thumb" data-photo="assets/images/gifts/caps/cap-1.jpg">🧢</span><span><strong>Printed caps</strong><span class="description">Ask about cap styles, designs and availability.</span><span class="choose">Enquire →</span></span></a>
-        <a class="service" href="#enquiry" data-service="keychain" data-back="print-panel"><span class="media thumb" data-photo="assets/images/gifts/keychains/keychain-1.jpg">🔑</span><span><strong>Custom keychains</strong><span class="description">Name and photo gift enquiries.</span><span class="choose">Enquire →</span></span></a>
-        <a class="service" href="#enquiry" data-service="frame" data-back="print-panel"><span class="media thumb" data-photo="assets/images/gifts/frames/frame-1.jpg">🖼️</span><span><strong>Photo frames</strong><span class="description">Share your preferred size and style.</span><span class="choose">Enquire →</span></span></a>
-        <a class="service" href="#enquiry" data-service="skin" data-back="print-panel"><span class="media thumb" data-photo="assets/images/gifts/skins/skin-1.jpg">📱</span><span><strong>Mobile skins</strong><span class="description">Provide the exact phone model and artwork idea.</span><span class="choose">Enquire →</span></span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ACCESSORIES -->
-<section class="overlay" id="accessories-panel" aria-labelledby="accessories-title">
-  <a class="backdrop" href="#services" aria-label="Close accessories" tabindex="-1"></a>
-  <div class="sheet" tabindex="-1">
-    <div class="sheet-head">
-      <div><div class="eyebrow">Mobile essentials</div><h2 id="accessories-title">Accessories</h2></div>
-      <a class="close" href="#services" aria-label="Close accessories">×</a>
-    </div>
-    <div class="sheet-body">
-      <p class="sheet-note">Stock, compatibility, price and any warranty must be confirmed for the specific product.</p>
-      <div class="services">
-        <a class="service" href="#enquiry" data-service="cover" data-back="accessories-panel"><span class="media thumb" data-photo="assets/images/accessories/covers.jpg">📲</span><span><strong>Mobile covers</strong><span class="description">Share your exact phone model and preferred style.</span><span class="choose">Check availability →</span></span></a>
-        <a class="service" href="#enquiry" data-service="charger" data-back="accessories-panel"><span class="media thumb" data-photo="assets/images/accessories/chargers.jpg">🔌</span><span><strong>Chargers</strong><span class="description">Ask about compatible options across different budgets.</span><span class="choose">Check availability →</span></span></a>
-        <a class="service" href="#enquiry" data-service="cable" data-back="accessories-panel"><span class="media thumb" data-photo="assets/images/accessories/cables.jpg">🔋</span><span><strong>Cables &amp; charging accessories</strong><span class="description">Mention your phone model or required connector.</span><span class="choose">Check availability →</span></span></a>
-        <a class="service" href="#enquiry" data-service="other-accessory" data-back="accessories-panel"><span class="media thumb" data-photo="assets/images/accessories/earphones.jpg">🎧</span><span><strong>Other mobile accessories</strong><span class="description">Describe the item you want; the shop will confirm current stock.</span><span class="choose">Ask about an item →</span></span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CSC -->
-<section class="overlay" id="csc-panel" aria-labelledby="csc-title">
-  <a class="backdrop" href="#services" aria-label="Close digital services" tabindex="-1"></a>
-  <div class="sheet" tabindex="-1">
-    <div class="sheet-head">
-      <div><div class="eyebrow">Digital assistance</div><h2 id="csc-title">CSC Services</h2></div>
-      <a class="close" href="#services" aria-label="Close digital services">×</a>
-    </div>
-    <div class="sheet-body">
-      <p class="sheet-note">Requirements vary by application. Confirm availability, official charges and the shop's assistance fee separately. Approval decisions are made by the relevant authority.</p>
-      <div class="services">
-        <a class="service" href="#enquiry" data-service="application" data-back="csc-panel"><span class="media thumb" data-photo="assets/images/csc/forms.jpg">📝</span><span><strong>Online applications</strong><span class="description">Tell us the application or form name.</span><span class="choose">Ask about assistance →</span></span></a>
-        <a class="service" href="#enquiry" data-service="government-form" data-back="csc-panel"><span class="media thumb">🏛️</span><span><strong>Government form guidance</strong><span class="description">Enquire about help using an official application portal.</span><span class="choose">Ask about assistance →</span></span></a>
-        <a class="service" href="#enquiry" data-service="fssai" data-back="csc-panel"><span class="media thumb" data-photo="assets/images/csc/fssai.jpg">📋</span><span><strong>FSSAI-related assistance</strong><span class="description">Describe the business and application help required. Do not submit sensitive documents here.</span><span class="choose">Ask about assistance →</span></span></a>
-        <a class="service" href="#enquiry" data-service="resume" data-back="csc-panel"><span class="media thumb" data-photo="assets/images/csc/resume.jpg">💼</span><span><strong>Resume / CV preparation</strong><span class="description">Formatting, design and printing enquiries.</span><span class="choose">Enquire →</span></span></a>
-        <a class="service" href="#enquiry" data-service="scanning" data-back="csc-panel"><span class="media thumb" data-photo="assets/images/csc/scanning.jpg">🖨️</span><span><strong>Scanning &amp; PDF preparation</strong><span class="description">Ask about scanning or preparing documents for an application.</span><span class="choose">Enquire →</span></span></a>
-        <a class="service" href="#enquiry" data-service="digital-help" data-back="csc-panel"><span class="media thumb">💻</span><span><strong>Other digital help</strong><span class="description">Describe the computer-based task you need assistance with.</span><span class="choose">Enquire →</span></span></a>
-      </div>
-      <div class="advice">This is not a government portal. Never enter identity-document numbers, OTPs or passwords in an enquiry.</div>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================================
-     ENQUIRY
-     Native HTML form works without JavaScript:
-     it sends the "text" field to the WhatsApp click-to-chat URL.
-====================================================== -->
-<section class="overlay" id="enquiry" aria-labelledby="enquiry-title">
-  <a class="backdrop" href="#services" aria-label="Close enquiry" tabindex="-1"></a>
-  <div class="sheet form-sheet" tabindex="-1">
-    <div class="sheet-head">
-      <div><div class="eyebrow">Contact DSC Mobile Zone</div><h2 id="enquiry-title">Service enquiry</h2></div>
-      <a class="close" href="#services" aria-label="Close enquiry">×</a>
-    </div>
-    <div class="sheet-body">
-      <a class="form-back" id="form-back" href="#services">← Back to services</a>
-      <p class="sheet-note">This sends an enquiry, not a confirmed booking. Review the message in WhatsApp and press Send there.</p>
-
-      <form id="enquiry-form" action="https://wa.me/919541291967" method="get">
-        <!-- Disabled until enhancement is ready. -->
-        <fieldset id="guided-fields" disabled hidden>
-          <div class="form-grid">
-            <label class="full" for="service-choice">Service *</label>
-            <select id="service-choice" class="full" required>
-              <option value="">Select a service</option>
-              <optgroup label="Repairing">
-                <option value="display">Display / folder replacement</option>
-                <option value="ringer">Ringer / loudspeaker</option>
-                <option value="mic">Microphone</option>
-                <option value="earpiece">Earpiece / call audio</option>
-                <option value="backpanel">Back panel / back glass</option>
-                <option value="battery">Battery problem</option>
-                <option value="charging">Charging issue</option>
-                <option value="software">Software / troubleshooting</option>
-              </optgroup>
-              <optgroup label="Printing, designing and gifts">
-                <option value="documents">Document / A4 printing</option>
-                <option value="photos">Photo printing</option>
-                <option value="passport">Passport / application photos</option>
-                <option value="invitation">Wedding / invitation cards</option>
-                <option value="design">Graphic designing</option>
-                <option value="mug">Custom mug</option>
-                <option value="tshirt">Custom T-shirt</option>
-                <option value="bottle">Custom bottle</option>
-                <option value="cap">Custom cap</option>
-                <option value="keychain">Custom keychain</option>
-                <option value="frame">Photo frame</option>
-                <option value="skin">Mobile skin</option>
-              </optgroup>
-              <optgroup label="Accessories">
-                <option value="cover">Mobile cover</option>
-                <option value="charger">Charger</option>
-                <option value="cable">Cable / charging accessory</option>
-                <option value="other-accessory">Other mobile accessory</option>
-              </optgroup>
-              <optgroup label="CSC and digital help">
-                <option value="application">Online application</option>
-                <option value="government-form">Government form guidance</option>
-                <option value="fssai">FSSAI-related assistance</option>
-                <option value="resume">Resume / CV</option>
-                <option value="scanning">Scanning / PDF</option>
-                <option value="digital-help">Other digital assistance</option>
-              </optgroup>
-              <option value="general">General enquiry</option>
-            </select>
-
-            <div class="full" id="display-options" hidden>
-              <label for="display-type">Display preference</label>
-              <select id="display-type">
-                <option>Not sure - please advise</option>
-                <option>Budget-compatible LCD - ask for quote</option>
-                <option>Higher-grade compatible LCD - ask for quote</option>
-                <option>OLED / AMOLED - subject to compatibility</option>
-                <option>Original / OEM - ask about availability and evidence</option>
-              </select>
-              <p class="small muted">From ₹1,099 applies only to eligible models. Types are not interchangeable on every phone. Compatibility, final price and timing must be confirmed.</p>
-            </div>
-
-            <label for="customer-name">Your name *
-              <input id="customer-name" autocomplete="name" maxlength="80" required>
-            </label>
-            <label for="customer-phone">Phone number *
-              <input id="customer-phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="22" required placeholder="10-digit mobile or country code">
-            </label>
-            <label class="full" for="customer-area">Address / village / area *
-              <input id="customer-area" autocomplete="address-level2" maxlength="140" required placeholder="Your village or area is sufficient for an enquiry">
-            </label>
-            <label for="customer-model">Phone model / product
-              <input id="customer-model" maxlength="100" placeholder="Exact phone model or product">
-            </label>
-            <label for="customer-budget">Budget range *
-              <select id="customer-budget" required>
-                <option value="">Choose a budget</option>
-                <option>Below ₹1,000</option>
-                <option>₹1,000–₹1,500</option>
-                <option>₹1,501–₹3,000</option>
-                <option>₹3,001–₹6,000</option>
-                <option>Above ₹6,000</option>
-                <option>Please advise / send a quote</option>
-              </select>
-            </label>
-            <label class="full" for="customer-details">More details
-              <textarea id="customer-details" maxlength="600" placeholder="Fault, size, quantity, colour, design idea or application name"></textarea>
-            </label>
-          </div>
-        </fieldset>
-
-        <!-- Reliable no-script alternative, hidden only after setup succeeds. -->
-        <div id="manual-fields">
-          <label for="wa-message">Your enquiry message *</label>
-          <p class="small muted">Fill in the message below, then continue to WhatsApp.</p>
-          <textarea id="wa-message" name="text" required rows="10">Hello DSC Mobile Zone,
-Service:
-Name:
-Phone:
-Village / area:
-Phone model / product:
-Budget:
-Details:
-
-Please confirm the price, availability and expected time.</textarea>
-        </div>
-
-        <label class="consent">
-          <input type="checkbox" required>
-          <span>I agree to share these enquiry details with DSC Mobile Zone through WhatsApp. I understand that I must press Send in WhatsApp.</span>
-        </label>
-
-        <p class="small muted" id="routing-note">This opens the shop's WhatsApp. Do not enter OTPs, passwords, payment PINs or identity-document numbers.</p>
-        <p id="form-error" class="error" role="alert"></p>
-
-        <button class="button whatsapp" type="submit">Continue to WhatsApp →</button>
-
-        <p class="small muted" style="margin-top:17px">
-          Prefer to call?
-          <a href="tel:+919541291967">95412 91967</a> /
-          <a href="tel:+919596175562">95961 75562</a>
-        </p>
-      </form>
-    </div>
-  </div>
-</section>
-
+    $newScript = @'
 <script>
 (function () {
   "use strict";
 
+  /* DSC-SERVICE-SPECIFIC-FORMS-1 */
+
+  var numbers = ["919541291967", "919596175562"];
+  var $ = function (id) { return [document.getElementById](https://document.getElementById)(id); };
+
   /*
-    Enquiry routing:
-    Keep only numbers the business actually uses for WhatsApp.
-    Numbers include country code without the + sign.
+    Field definitions.
+    Product choices are customer preferences, not promises of stock.
   */
-  var businessNumbers = ["919541291967", "919596175562"];
-
-  var form = [document.getElementById](https://document.getElementById)("enquiry-form");
-  var guided = [document.getElementById](https://document.getElementById)("guided-fields");
-  var manual = [document.getElementById](https://document.getElementById)("manual-fields");
-  var message = [document.getElementById](https://document.getElementById)("wa-message");
-  var service = [document.getElementById](https://document.getElementById)("service-choice");
-  var displayOptions = [document.getElementById](https://document.getElementById)("display-options");
-  var phone = [document.getElementById](https://document.getElementById)("customer-phone");
-  var errorBox = [document.getElementById](https://document.getElementById)("form-error");
-
-  function updateDisplayOptions() {
-    [displayOptions.hidden](https://displayOptions.hidden) = [service.value](https://service.value) !== "display";
+  function choice(key, label, options, required) {
+    return {
+      key: key, label: label, type: "select",
+      options: [options.split](https://options.split)("|"),
+      required: required !== false
+    };
   }
 
-  function validatePhone() {
-    var digits = [phone.value.replace](https://phone.value.replace)(/\D/g, "");
-    var valid = [digits.length](https://digits.length) >= 10 && [digits.length](https://digits.length) <= 15;
-    [phone.setCustomValidity](https://phone.setCustomValidity)(
-      valid ? "" : "Enter a phone number containing 10 to 15 digits."
+  function shortText(key, label, required, placeholder) {
+    return {
+      key: key, label: label, type: "text",
+      required: required !== false,
+      placeholder: placeholder || ""
+    };
+  }
+
+  function longText(key, label, required, placeholder) {
+    return {
+      key: key, label: label, type: "textarea",
+      required: required === true,
+      placeholder: placeholder || ""
+    };
+  }
+
+  function quantity(label) {
+    return {
+      key: "quantity", label: label || "Quantity",
+      type: "number", required: true
+    };
+  }
+
+  function deadline() {
+    return {
+      key: "requestedDate",
+      label: "Preferred completion date - subject to confirmation",
+      type: "date", required: false
+    };
+  }
+
+  function model() {
+    return shortText(
+      "model", "Phone brand and exact model", true,
+      "For example: Samsung Galaxy A14 5G"
     );
   }
 
-  /*
-    Nothing below controls whether service panels open.
-    The links and CSS :target handle that independently.
-  */
-  try {
-    [service.addEventListener](https://service.addEventListener)("change", updateDisplayOptions);
+  function optionalBudget() {
+    return choice(
+      "budget", "Preferred budget - optional",
+      "Below Rs 1,000|Rs 1,000-1,500|Rs 1,501-3,000|Rs 3,001-6,000|Above Rs 6,000|Please advise",
+      false
+    );
+  }
 
-    [phone.addEventListener](https://phone.addEventListener)("input", function () {
-      [phone.setCustomValidity](https://phone.setCustomValidity)("");
+  var schemas = {
+    tshirt: [
+      choice("style", "T-shirt style",
+        "Round-neck|Polo / collar|V-neck|Other - explain in notes|Please advise"),
+      choice("size", "Size",
+        "XS|S|M|L|XL|2XL|3XL|Children's size|Mixed sizes|Not sure"),
+      shortText("sizeBreakdown", "Sizes and quantities", true,
+        "For example: 2 Medium, 3 Large"),
+      shortText("colour", "Preferred T-shirt colour", true,
+        "For example: white, black or navy"),
+      choice("fabric", "Fabric preference",
+        "Cotton|Polyester|Cotton blend|Please advise"),
+      quantity("Number of T-shirts"),
+      choice("printing", "Printing requirement",
+        "Plain / no printing|Text or name|Photo|Logo / artwork|Text and photo"),
+      choice("position", "Print position",
+        "Front|Back|Front and back|Sleeve|Other - explain in notes"),
+      longText("artwork", "Text or artwork instructions", false,
+        "Type the exact text or describe the design. Send the image separately in WhatsApp."),
+      deadline()
+    ],
+
+    mug: [
+      choice("type", "Mug preference",
+        "Standard white mug|Coloured handle / inner mug|Colour-changing mug - confirm availability|Please advise"),
+      quantity("Number of mugs"),
+      choice("design", "Mug design",
+        "Name / text|Photo|Logo|Photo and text|Please design it for me"),
+      longText("personalisation", "Exact text and design instructions", false,
+        "Name, spelling, occasion and preferred colours"),
+      deadline()
+    ],
+
+    bottle: [
+      choice("type", "Bottle preference",
+        "Metal bottle|Plastic bottle|Insulated bottle - confirm availability|Please advise"),
+      shortText("capacity", "Preferred capacity", false,
+        "For example: 500 ml, 750 ml or 1 litre"),
+      shortText("colour", "Preferred bottle colour", false),
+      quantity("Number of bottles"),
+      longText("personalisation", "Name / logo / artwork instructions", true,
+        "Describe the personalisation. Attach artwork later in WhatsApp."),
+      deadline()
+    ],
+
+    cap: [
+      choice("style", "Cap style",
+        "Standard cap|Trucker / mesh cap - confirm availability|Please advise"),
+      shortText("colour", "Preferred colour", true),
+      quantity("Number of caps"),
+      longText("personalisation", "Text or logo instructions", true),
+      deadline()
+    ],
+
+    keychain: [
+      choice("shape", "Preferred keychain shape",
+        "Round|Rectangle|Heart|Other - explain in notes|Please advise"),
+      quantity("Number of keychains"),
+      longText("personalisation", "Name / photo / design instructions", true),
+      deadline()
+    ],
+
+    frame: [
+      shortText("size", "Preferred frame size", true,
+        "Include units, or write 'please advise'"),
+      choice("orientation", "Photo orientation",
+        "Portrait|Landscape|Square|Please advise"),
+      choice("type", "Frame preference",
+        "Standard photo frame|Lighted frame - confirm availability|Please advise"),
+      quantity("Number of frames"),
+      longText("personalisation", "Photo and text instructions", false),
+      deadline()
+    ],
+
+    skin: [
+      model(),
+      choice("finish", "Finish preference",
+        "Matte|Glossy|Please advise"),
+      longText("design", "Skin design instructions", true,
+        "Describe your artwork, colour or name text"),
+      quantity("Number of skins")
+    ],
+
+    display: [
+      model(),
+      choice("fault", "Screen problem",
+        "Cracked screen but working|Lines or black spots|No display|Touch not working|Ghost touch|Other"),
+      choice("panel", "Display preference",
+        "Budget-compatible panel|Higher-grade compatible panel|OLED / AMOLED if compatible|Original / OEM - confirm availability|Please advise"),
+      optionalBudget()
+    ],
+
+    ringer: [
+      model(),
+      choice("fault", "Speaker problem",
+        "No sound|Low sound|Crackling / distorted sound|Sound cuts in and out|Other"),
+      optionalBudget()
+    ],
+
+    mic: [
+      model(),
+      choice("fault", "Microphone problem",
+        "Callers cannot hear me|Voice recordings are unclear|Problem only on some calls/apps|Other"),
+      optionalBudget()
+    ],
+
+    earpiece: [
+      model(),
+      choice("fault", "Call audio problem",
+        "Cannot hear the caller|Very low call volume|Distorted call sound|Other"),
+      optionalBudget()
+    ],
+
+    backpanel: [
+      model(),
+      shortText("colour", "Phone / replacement panel colour", true),
+      choice("fault", "Back panel condition",
+        "Cracked glass|Broken or loose panel|Dented panel|Other"),
+      optionalBudget()
+    ],
+
+    battery: [
+      model(),
+      choice("fault", "Battery problem",
+        "Fast battery drain|Unexpected shutdowns|Phone only works while charging|Swollen battery|Other"),
+      optionalBudget()
+    ],
+
+    charging: [
+      model(),
+      choice("fault", "Charging problem",
+        "Not charging|Charging slowly|Loose connection|Intermittent charging|Other"),
+      choice("cableTest", "Have you tried another compatible charger/cable?",
+        "Yes|No|Not sure"),
+      optionalBudget()
+    ],
+
+    software: [
+      model(),
+      choice("fault", "Help needed",
+        "Phone is slow / hanging|App problem|Settings / setup|Update assistance|Other"),
+      longText("symptoms", "Describe what happens", true,
+        "Do not include passwords or OTPs")
+    ],
+
+    documents: [
+      choice("paper", "Paper size",
+        "A4|Other size - confirm availability|Please advise"),
+      choice("colour", "Print colour",
+        "Black and white|Colour|Mixed - explain in notes"),
+      choice("sides", "Printing sides",
+        "Single-sided|Double-sided|Please advise"),
+      shortText("pages", "Pages in the document", true,
+        "For example: 12 pages"),
+      quantity("Number of copies"),
+      deadline()
+    ],
+
+    photos: [
+      choice("size", "Photo print size",
+        "2 x 2 inches|4 x 4 inches|4 x 6 inches|Other size - specify in notes"),
+      quantity("Number of prints"),
+      choice("finish", "Paper finish preference",
+        "Glossy|Matte|Please advise"),
+      deadline()
+    ],
+
+    passport: [
+      shortText("application", "Which application is the photo for?", true,
+        "For example: passport, exam form or another application"),
+      shortText("dimensions", "Required photo dimensions / specifications", false,
+        "Use the application's requirements, or ask us to check"),
+      quantity("Number of printed photos"),
+      choice("digital", "Do you also need a digital copy?",
+        "Yes|No|Not sure")
+    ],
+
+    invitation: [
+      choice("event", "Event type",
+        "Wedding|Engagement|Birthday|Other event"),
+      shortText("eventDate", "Event date", false),
+      choice("format", "What do you need?",
+        "Printed cards|Digital invitation only|Printed and digital"),
+      quantity("Quantity"),
+      shortText("language", "Language", true,
+        "For example: English, Urdu or both"),
+      longText("content", "Names, wording and design instructions", false,
+        "You can also send the wording separately in WhatsApp"),
+      deadline()
+    ],
+
+    design: [
+      choice("designType", "Design required",
+        "Poster|Business card|Social-media post|Logo|Product artwork|Other"),
+      shortText("dimensions", "Size or platform", false,
+        "For example: A4 poster or Instagram square post"),
+      longText("brief", "Design brief", true,
+        "Business name, message, colours and style"),
+      choice("output", "Preferred output",
+        "Print-ready PDF|PNG / JPG|Please advise"),
+      deadline()
+    ],
+
+    cover: [
+      model(),
+      choice("style", "Cover preference",
+        "Transparent|Plain colour|Printed / patterned|Protective / rugged|Flip cover|Please advise"),
+      shortText("colour", "Preferred colour", false),
+      quantity("Number of covers"),
+      optionalBudget()
+    ],
+
+    charger: [
+      model(),
+      choice("type", "What do you need?",
+        "Charger adapter only|Adapter and cable|Please advise"),
+      shortText("power", "Preferred wattage, if known", false,
+        "For example: 20 W, or leave blank"),
+      quantity("Quantity"),
+      optionalBudget()
+    ],
+
+    cable: [
+      choice("connector", "Cable / connector type",
+        "USB-C|Micro-USB|Lightning|USB-C to USB-C|Other|Not sure"),
+      shortText("device", "Device it is for", false),
+      shortText("length", "Preferred cable length", false),
+      quantity("Quantity"),
+      optionalBudget()
+    ],
+
+    "other-accessory": [
+      shortText("item", "Accessory you need", true,
+        "For example: wired earphones"),
+      shortText("device", "Device / compatibility details", false),
+      quantity("Quantity"),
+      optionalBudget()
+    ],
+
+    application: [
+      shortText("application", "Application / form name", true),
+      choice("stage", "Assistance needed",
+        "New application|Correction / update|Status guidance|Please advise"),
+      longText("help", "Describe the help needed", false,
+        "Do not enter identity numbers, passwords or OTPs")
+    ],
+
+    "government-form": [
+      shortText("application", "Official service / form name", true),
+      choice("stage", "Assistance needed",
+        "New application guidance|Correction guidance|Status guidance|Please advise"),
+      longText("help", "Relevant notes", false,
+        "No sensitive identity details are needed here")
+    ],
+
+    fssai: [
+      shortText("business", "Business name", false),
+      shortText("businessType", "Type of food business", true),
+      choice("stage", "Assistance needed",
+        "New application guidance|Renewal guidance|Modification guidance|Please advise"),
+      longText("help", "Relevant notes", false)
+    ],
+
+    resume: [
+      choice("task", "Resume service",
+        "Create a new resume|Update an existing resume|Formatting / redesign|Print an existing resume"),
+      shortText("role", "Job role / field", false),
+      choice("output", "Required output",
+        "Digital PDF|Printed copies|Digital and printed"),
+      deadline()
+    ],
+
+    scanning: [
+      shortText("pages", "Approximate number of pages", true),
+      choice("format", "Output format",
+        "One combined PDF|Separate PDFs|JPG images|Please advise"),
+      shortText("limit", "Upload size limit, if any", false,
+        "For example: below 200 KB per document"),
+      longText("instructions", "Other requirements", false)
+    ],
+
+    "digital-help": [
+      shortText("task", "What task do you need help with?", true),
+      longText("help", "Describe the requirement", true,
+        "Do not include passwords, OTPs or identity numbers")
+    ],
+
+    general: [
+      longText("requirement", "What would you like to ask?", true)
+    ]
+  };
+
+  /*
+    T-shirt conditional questions.
+    Plain shirts do not ask for a print position or artwork.
+  */
+  [schemas.tshirt](https://schemas.tshirt)[2].when = ["size", "Mixed sizes"];
+
+  [schemas.tshirt.forEach](https://schemas.tshirt.forEach)(function (field) {
+    if ([field.key](https://field.key) === "position" || [field.key](https://field.key) === "artwork") {
+      [field.whenNot](https://field.whenNot) = ["printing", "Plain / no printing"];
+    }
+  });
+
+  var form = $("enquiry-form");
+  var guided = $("guided-fields");
+  var manual = $("manual-fields");
+  var message = $("wa-message");
+  var errorBox = $("form-error");
+
+  var originalService = $("service-choice");
+  var optionsHTML = [originalService.innerHTML](https://originalService.innerHTML);
+
+  var service;
+  var fieldsArea;
+  var activeFields = [];
+  var fieldMap = {};
+  var currentService = "";
+  var drafts = {};
+
+  function element(tag, className, text) {
+    var node = [document.createElement](https://document.createElement)(tag);
+    if (className) [node.className](https://node.className) = className;
+    if (text !== undefined) [node.textContent](https://node.textContent) = text;
+    return node;
+  }
+
+  function makeField(definition, parent, prefix) {
+    var wrapper = element("div");
+    if ([definition.type](https://definition.type) === "textarea") [wrapper.className](https://wrapper.className) = "full";
+
+    var id = prefix + [definition.key](https://definition.key);
+    var label = element(
+      "label", "",
+      [definition.label](https://definition.label) + ([definition.required](https://definition.required) ? " *" : "")
+    );
+    [label.htmlFor](https://label.htmlFor) = id;
+
+    var input;
+
+    if ([definition.type](https://definition.type) === "select") {
+      input = element("select");
+
+      var blank = element(
+        "option", "",
+        [definition.required](https://definition.required) ? "Choose an option" : "Not specified"
+      );
+      [blank.value](https://blank.value) = "";
+      [input.appendChild](https://input.appendChild)(blank);
+
+      [definition.options.forEach](https://definition.options.forEach)(function (text) {
+        var option = element("option", "", text);
+        [option.value](https://option.value) = text;
+        [input.appendChild](https://input.appendChild)(option);
+      });
+    } else if ([definition.type](https://definition.type) === "textarea") {
+      input = element("textarea");
+      [input.maxLength](https://input.maxLength) = 700;
+    } else {
+      input = element("input");
+      [input.type](https://input.type) = [definition.type](https://definition.type) || "text";
+
+      if ([input.type](https://input.type) === "number") {
+        [input.min](https://input.min) = "1";
+        [input.step](https://input.step) = "1";
+        [input.max](https://input.max) = "10000";
+      } else if ([input.type](https://input.type) !== "date") {
+        [input.maxLength](https://input.maxLength) = 180;
+      }
+    }
+
+    [input.id](https://input.id) = id;
+    [input.required](https://input.required) = Boolean([definition.require](https://definition.require)d);
+    if ([definition.placeholde](https://definition.placeholde)r) [input.placeholder](https://input.placeholder) = [definition.placeholder](https://definition.placeholder);
+
+    [wrapper.appendChild](https://wrapper.appendChild)(label);
+    [wrapper.appendChild](https://wrapper.appendChild)(input);
+    [parent.appendChild](https://parent.appendChild)(wrapper);
+
+    return {
+      definition: definition,
+      wrapper: wrapper,
+      input: input
+    };
+  }
+
+  function rememberFields() {
+    if (!currentService) return;
+
+    var saved = {};
+    [activeFields.forEach](https://activeFields.forEach)(function (field) {
+      saved[field.definition.key] = [field.input.value](https://field.input.value);
     });
-    [phone.addEventListener](https://phone.addEventListener)("blur", validatePhone);
+    drafts[currentService] = saved;
+  }
+
+  function applyConditions() {
+    [activeFields.forEach](https://activeFields.forEach)(function (field) {
+      var definition = [field.definition](https://field.definition);
+      var visible = true;
+
+      if ([definition.whe](https://definition.whe)n) {
+        var controller = fieldMap[definition.when[0]];
+        visible = Boolean(
+          controller &&
+          [controller.input.value](https://controller.input.value) === [definition.when](https://definition.when)[1]
+        );
+      }
+
+      if ([definition.whenNo](https://definition.whenNo)t) {
+        var other = fieldMap[definition.whenNot[0]];
+        visible = Boolean(
+          other &&
+          [other.input.value](https://other.input.value) &&
+          [other.input.value](https://other.input.value) !== [definition.whenNot](https://definition.whenNot)[1]
+        );
+      }
+
+      [field.wrapper.hidden](https://field.wrapper.hidden) = !visible;
+      [field.input.disabled](https://field.input.disabled) = !visible;
+      [field.input.required](https://field.input.required) = visible && Boolean([definition.require](https://definition.require)d);
+    });
+  }
+
+  function chooseService(value) {
+    rememberFields();
+
+    currentService = schemas[value] ? value : "general";
+    [service.value](https://service.value) = currentService;
+
+    [fieldsArea.replaceChildren](https://fieldsArea.replaceChildren)();
+    activeFields = [];
+    fieldMap = {};
+
+    var definitions = schemas[currentService];
+    var saved = drafts[currentService] || {};
+
+    [definitions.forEach](https://definitions.forEach)(function (definition) {
+      var field = makeField(definition, fieldsArea, "specific-");
+
+      if (saved[definition.key] !== undefined) {
+        [field.input.value](https://field.input.value) = saved[definition.key];
+      }
+
+      [activeFields.push](https://activeFields.push)(field);
+      fieldMap[definition.key] = field;
+    });
+
+    applyConditions();
+
+    var option = [service.options](https://service.options)[service.selectedIndex];
+    $("enquiry-title").textContent =
+      option ? [option.text](https://option.text) + " enquiry" : "Service enquiry";
+
+    var note = $("service-form-note");
+
+    if (currentService === "tshirt") {
+      [note.textContent](https://note.textContent) =
+        "Choose style, size, colour and printing separately. Product and fabric preferences are subject to availability. For mixed sizes, list how many of each size you need.";
+    } else if (currentService === "display") {
+      [note.textContent](https://note.textContent) =
+        "The earlier starting price of Rs 1,099 applies only to eligible models. Panel compatibility, availability, final price and repair time must be confirmed.";
+    } else if (currentService === "battery") {
+      [note.textContent](https://note.textContent) =
+        "If the battery is swollen, stop using and charging the device and contact the shop for safe handling advice.";
+    } else {
+      [note.textContent](https://note.textContent) =
+        "These are enquiry preferences, not a confirmed order. The shop must confirm availability, price and completion time.";
+    }
+  }
+
+  try {
+    /*
+      Replace only the generic guided form.
+      Common contact details remain shared across services.
+    */
+    [guided.replaceChildren](https://guided.replaceChildren)();
+
+    var serviceLabel = element("label", "", "Selected service *");
+    [serviceLabel.htmlFor](https://serviceLabel.htmlFor) = "service-choice";
+    [guided.appendChild](https://guided.appendChild)(serviceLabel);
+
+    service = element("select");
+    [service.id](https://service.id) = "service-choice";
+    [service.required](https://service.required) = true;
+    [service.innerHTML](https://service.innerHTML) = optionsHTML;
+    [guided.appendChild](https://guided.appendChild)(service);
+
+    var note = element("p", "small muted");
+    [note.id](https://note.id) = "service-form-note";
+    [note.style.marginTop](https://note.style.marginTop) = "12px";
+    [guided.appendChild](https://guided.appendChild)(note);
+
+    fieldsArea = element("div", "form-grid");
+    [fieldsArea.id](https://fieldsArea.id) = "service-specific-fields";
+    [guided.appendChild](https://guided.appendChild)(fieldsArea);
+
+    var contactHeading = element("h3", "", "Your contact details");
+    [contactHeading.style.margin](https://contactHeading.style.margin) = "25px 0 14px";
+    [guided.appendChild](https://guided.appendChild)(contactHeading);
+
+    var contactGrid = element("div", "form-grid");
+    [guided.appendChild](https://guided.appendChild)(contactGrid);
+
+    var nameField = makeField(
+      shortText("name", "Your name", true),
+      contactGrid, "contact-"
+    );
+    [nameField.input.autocomplete](https://nameField.input.autocomplete) = "name";
+
+    var phoneField = makeField(
+      {key:"phone", label:"Phone number", type:"tel", required:true},
+      contactGrid, "contact-"
+    );
+    [phoneField.input.autocomplete](https://phoneField.input.autocomplete) = "tel";
+    [phoneField.input.inputMode](https://phoneField.input.inputMode) = "tel";
+    [phoneField.input.maxLength](https://phoneField.input.maxLength) = 22;
+
+    var areaField = makeField(
+      shortText("area", "Village / area", true),
+      contactGrid, "contact-"
+    );
+    [areaField.input.autocomplete](https://areaField.input.autocomplete) = "address-level2";
+
+    var notesField = makeField(
+      longText("notes", "Additional notes", false),
+      contactGrid, "contact-"
+    );
+
+    var artworkNote = element(
+      "p", "small muted",
+      "Photos and logos are not attached by this form. After WhatsApp opens, attach your artwork there. A requested completion date is not a promised delivery date."
+    );
+    [artworkNote.style.marginTop](https://artworkNote.style.marginTop) = "16px";
+    [guided.appendChild](https://guided.appendChild)(artworkNote);
+
+    function checkPhone() {
+      var digits = [phoneField.input.value.replace](https://phoneField.input.value.replace)(/\D/g, "");
+      var valid = [digits.length](https://digits.length) >= 10 && [digits.length](https://digits.length) <= 15;
+      [phoneField.input.setCustomValidity](https://phoneField.input.setCustomValidity)(
+        valid ? "" : "Enter a phone number containing 10 to 15 digits."
+      );
+    }
+
+    [phoneField.input.addEventListener](https://phoneField.input.addEventListener)("input", function () {
+      [phoneField.input.setCustomValidity](https://phoneField.input.setCustomValidity)("");
+    });
+    [phoneField.input.addEventListener](https://phoneField.input.addEventListener)("blur", checkPhone);
+
+    [service.addEventListener](https://service.addEventListener)("change", function () {
+      chooseService([service.valu](https://service.valu)e);
+    });
+
+    [fieldsArea.addEventListener](https://fieldsArea.addEventListener)("change", applyConditions);
+
+    /*
+      Service links still use normal HTML navigation.
+      This handler only selects the correct form.
+    */
+    [document.addEventListener](https://document.addEventListener)("click", function (event) {
+      var link = [event.target.closest](https://event.target.closest)("a[href='#enquiry']");
+      if (!link) return;
+
+      var selected = [link.getAttribute](https://link.getAttribute)("data-service") || "general";
+      chooseService(selected);
+
+      var back = [link.getAttribute](https://link.getAttribute)("data-back");
+      $("form-back").href = back ? "#" + back : "#services";
+    });
 
     [form.addEventListener](https://form.addEventListener)("submit", function (event) {
       if ([guided.disable](https://guided.disable)d) return;
 
       try {
         [errorBox.textContent](https://errorBox.textContent) = "";
-        validatePhone();
+        checkPhone();
 
         if (!form.reportValidity()) {
           [event.preventDefault](https://event.preventDefault)();
           return;
         }
 
-        var selectedOption = [service.options](https://service.options)[service.selectedIndex];
+        var option = [service.options](https://service.options)[service.selectedIndex];
         var lines = [
-          "DSC Mobile Zone - website enquiry",
+          "DSC Mobile Zone - service enquiry",
           "",
-          "Service: " + [selectedOption.text](https://selectedOption.text),
-          "Name: " + [document.getElementById](https://document.getElementById)("customer-name").value.trim(),
-          "Phone: " + [phone.value.trim](https://phone.value.trim)(),
-          "Village / area: " + [document.getElementById](https://document.getElementById)("customer-area").value.trim(),
-          "Phone model / product: " +
-            ([document.getElementById](https://document.getElementById)("customer-model").value.trim() || "Not provided"),
-          "Budget: " + [document.getElementById](https://document.getElementById)("customer-budget").value
+          "SERVICE: " + [option.text](https://option.text),
+          "",
+          "REQUEST DETAILS"
         ];
 
-        if ([service.value](https://service.value) === "display") {
-          [lines.push](https://lines.push)(
-            "Display preference: " + [document.getElementById](https://document.getElementById)("display-type").value,
-            "Starting price shown: from INR 1,099 for eligible models; final quote required."
-          );
+        [activeFields.forEach](https://activeFields.forEach)(function (field) {
+          if ([field.input.disabled](https://field.input.disabled) || [field.wrapper.hidde](https://field.wrapper.hidde)n) return;
+
+          var value = [field.input.value.trim](https://field.input.value.trim)();
+          if (value) {
+            [lines.push](https://lines.push)([field.definition.label](https://field.definition.label) + ": " + value);
+          }
+        });
+
+        [lines.push](https://lines.push)(
+          "",
+          "CUSTOMER DETAILS",
+          "Name: " + [nameField.input.value.trim](https://nameField.input.value.trim)(),
+          "Phone: " + [phoneField.input.value.trim](https://phoneField.input.value.trim)(),
+          "Village / area: " + [areaField.input.value.trim](https://areaField.input.value.trim)()
+        );
+
+        if ([notesField.input.value.trim](https://notesField.input.value.trim)()) {
+          [lines.push](https://lines.push)("Additional notes: " + [notesField.input.value.trim](https://notesField.input.value.trim)());
         }
 
         [lines.push](https://lines.push)(
-          "Details: " +
-            ([document.getElementById](https://document.getElementById)("customer-details").value.trim() || "Not provided"),
           "",
-          "Please confirm availability, the final price and expected completion time."
+          "Please confirm availability, final price and completion time.",
+          "This is an enquiry, not a confirmed order."
         );
 
         [message.value](https://message.value) = [lines.join](https://lines.join)("\n");
 
-        var chosenNumber =
-          businessNumbers[Math.floor([Math.random](https://Math.random)() * [businessNumbers.lengt](https://businessNumbers.lengt)h)];
+        var number = numbers[Math.floor([Math.random](https://Math.random)() * [numbers.lengt](https://numbers.lengt)h)];
+        [form.action](https://form.action) = "https://wa.me/" + number;
 
-        [form.action](https://form.action) = "https://wa.me/" + chosenNumber;
-
-        /*
-          Allow the browser's normal form submission.
-          The textarea named "text" is encoded automatically.
-          No [window.open](https://window.open), popup, API key or backend is needed.
-        */
+        // Normal browser submission opens WhatsApp in the same tab.
       } catch (error) {
         [event.preventDefault](https://event.preventDefault)();
         [guided.disabled](https://guided.disabled) = true;
@@ -1077,22 +720,8 @@ Please confirm the price, availability and expected time.</textarea>
         [manual.hidden](https://manual.hidden) = false;
         [message.required](https://message.required) = true;
         [errorBox.textContent](https://errorBox.textContent) =
-          "Please use the message box below to complete your enquiry, then continue to WhatsApp.";
+          "Please complete the message box and continue to WhatsApp.";
       }
-    });
-
-    [document.addEventListener](https://document.addEventListener)("click", function (event) {
-      var link = [event.target.closest](https://event.target.closest)("a[data-service]");
-      if (!link) return;
-
-      [service.value](https://service.value) = [link.getAttribute](https://link.getAttribute)("data-service");
-      updateDisplayOptions();
-
-      var back = [link.getAttribute](https://link.getAttribute)("data-back");
-      if (back) {
-        [document.getElementById](https://document.getElementById)("form-back").href = "#" + back;
-      }
-      // Do not prevent the normal HTML link from opening the enquiry panel.
     });
 
     [guided.disabled](https://guided.disabled) = false;
@@ -1100,31 +729,32 @@ Please confirm the price, availability and expected time.</textarea>
     [manual.hidden](https://manual.hidden) = true;
     [message.required](https://message.required) = false;
 
-    [document.getElementById](https://document.getElementById)("routing-note").textContent =
-      "Continuing opens one of our two business WhatsApp numbers, selected at random. Review the message and press Send in WhatsApp. No payment or booking is made here.";
+    $("routing-note").textContent =
+      "The enquiry opens one of our two business WhatsApp numbers, selected at random. Review the details and press Send in WhatsApp.";
+
+    chooseService("general");
+
   } catch (error) {
     [guided.disabled](https://guided.disabled) = true;
     [guided.hidden](https://guided.hidden) = true;
     [manual.hidden](https://manual.hidden) = false;
+    [message.required](https://message.required) = true;
+    [errorBox.textContent](https://errorBox.textContent) =
+      "You can still write your enquiry in the message box and continue to WhatsApp.";
   }
 
-  /* Keyboard and focus improvements for the CSS panels. */
-  var page = [document.getElementById](https://document.getElementById)("site-page");
+  /* Keep the existing panel keyboard and focus behaviour. */
+  var page = $("site-page");
   var activePanel = null;
   var lastOpener = null;
 
   function syncPanel() {
-    var id = [window.location.hash.slice](https://window.location.hash.slice)(1);
-    var candidate = [document.getElementById](https://document.getElementById)(id);
-
+    var candidate = $([window.location.hash.slice](https://window.location.hash.slice)(1));
     activePanel =
       candidate && [candidate.classList.contains](https://candidate.classList.contains)("overlay") ? candidate : null;
 
     [document.body.classList.toggle](https://document.body.classList.toggle)("dialog-open", Boolean(activePanel));
-
-    if ("inert" in page) {
-      [page.inert](https://page.inert) = Boolean(activePanel);
-    }
+    if ("inert" in page) [page.inert](https://page.inert) = Boolean(activePanel);
 
     if (activePanel) {
       var sheet = [activePanel.querySelector](https://activePanel.querySelector)(".sheet");
@@ -1134,9 +764,9 @@ Please confirm the price, availability and expected time.</textarea>
         "aria-labelledby",
         [activePanel.getAttribute](https://activePanel.getAttribute)("aria-labelledby")
       );
-      [activePanel.querySelector](https://activePanel.querySelector)(".close").focus({ preventScroll: true });
+      [activePanel.querySelector](https://activePanel.querySelector)(".close").focus({preventScroll:true});
     } else if (lastOpener) {
-      [lastOpener.focus](https://lastOpener.focus)({ preventScroll: true });
+      [lastOpener.focus](https://lastOpener.focus)({preventScroll:true});
       lastOpener = null;
     }
   }
@@ -1148,10 +778,8 @@ Please confirm the price, availability and expected time.</textarea>
     var href = [link.getAttribute](https://link.getAttribute)("href") || "";
     if ([href.charAt](https://href.charAt)(0) !== "#") return;
 
-    var target = [document.getElementById](https://document.getElementById)([href.slice](https://href.slice)(1));
-    if (target && [target.classList.contains](https://target.classList.contains)("overlay")) {
-      lastOpener = link;
-    }
+    var target = $([href.slice](https://href.slice)(1));
+    if (target && [target.classList.contains](https://target.classList.contains)("overlay")) lastOpener = link;
   });
 
   [window.addEventListener](https://window.addEventListener)("hashchange", syncPanel);
@@ -1171,8 +799,8 @@ Please confirm the price, availability and expected time.</textarea>
       ".sheet a[href], .sheet button, .sheet input, .sheet select, .sheet textarea"
     );
 
-    var focusable = [Array.prototype.filter.call](https://Array.prototype.filter.call)(nodes, function (element) {
-      return !element.matches(":disabled") && [element.getClientRects](https://element.getClientRects)().length > 0;
+    var focusable = [Array.prototype.filter.call](https://Array.prototype.filter.call)(nodes, function (node) {
+      return !node.matches(":disabled") && [node.getClientRects](https://node.getClientRects)().length > 0;
     });
 
     if (!focusable.length) return;
@@ -1191,33 +819,47 @@ Please confirm the price, availability and expected time.</textarea>
 
   syncPanel();
 
-  /*
-    Optional real photographs.
-    Missing files leave the built-in illustration visible.
-    Image failures do not affect links, panels or the enquiry form.
-  */
-  var mediaBlocks = [document.querySelectorAll](https://document.querySelectorAll)("[data-photo]");
-
-  function loadPhoto(block) {
-    var path = [block.getAttribute](https://block.getAttribute)("data-photo");
-    if (!path) return;
-
-    var image = new Image();
-    [image.className](https://image.className) = "photo";
-    [image.alt](https://image.alt) = "";
-    [image.decoding](https://image.decoding) = "async";
-
-    [image.onload](https://image.onload) = function () {
-      [block.appendChild](https://block.appendChild)(image);
-    };
-    [image.onerror](https://image.onerror) = function () {
-      // Keep the built-in illustration; no broken-image box.
-    };
-    [image.src](https://image.src) = path;
-  }
-
-  [Array.prototype.forEach.call](https://Array.prototype.forEach.call)(mediaBlocks, loadPhoto);
+  /* Keep optional photographs and illustration fallbacks. */
+  [Array.prototype.forEach.call](https://Array.prototype.forEach.call)(
+    [document.querySelectorAll](https://document.querySelectorAll)("[data-photo]"),
+    function (block) {
+      var image = new Image();
+      [image.className](https://image.className) = "photo";
+      [image.alt](https://image.alt) = "";
+      [image.decoding](https://image.decoding) = "async";
+      [image.onload](https://image.onload) = function () { [block.appendChild](https://block.appendChild)(image); };
+      [image.onerror](https://image.onerror) = function () {};
+      [image.src](https://image.src) = [block.getAttribute](https://block.getAttribute)("data-photo");
+    }
+  );
 })();
 </script>
-</body>
-</html>
+'@
+
+    $backupRoot = Join-Path $HOME "DSC-Website-Backups"
+    New-Item -ItemType Directory -Path $backupRoot -Force | Out-Null
+
+    $backupName = "before-service-forms-" + (Get-Date -Format "yyyyMMdd-HHmmss-fff") + ".html"
+    $backupFile = Join-Path $backupRoot $backupName
+    Copy-Item -LiteralPath $file -Destination $backupFile
+
+    $end = $finish + "</script>".Length
+    $updated = $html.Substring(0, $start) + $newScript + $html.Substring($end)
+
+    $updated = $updated.Replace(
+        "Build R7 · Reliable link-based navigation",
+        "Build R7.1 · Service-specific enquiry forms"
+    )
+
+    Set-Content -LiteralPath $file -Value $updated -Encoding UTF8
+
+    Write-Host "`nService-specific forms added." -ForegroundColor Green
+    Write-Host "Backup: $backupFile"
+    Write-Host "Open the local page and press Ctrl+F5."
+
+    try {
+        Start-Process msedge -ArgumentList ('"' + $file + '"')
+    } catch {
+        Invoke-Item -LiteralPath $file
+    }
+}
